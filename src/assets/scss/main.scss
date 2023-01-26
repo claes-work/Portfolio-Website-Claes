@@ -57,7 +57,7 @@ p {
   }
 }
 
-@media only screen and (min-width: 490px) {
+@media only screen and (min-width: 480px) {
   h1, h2 { font-size: 46px; }
   h3     { font-size: 30px; }
 }
@@ -80,8 +80,13 @@ $bc-dark-2: #121212;
 $bc-dark-3: #191919;
 $bc-dark-4: #1F1F1F;
 
+// Light background colors
+$bc-light-default: #FFFFFF;
+$bc-light-1: #f6f6f6;
+
 // Text colors
 $default-text-color: #FFFFFF;
+$primary-text-color: $bc-dark-4;
 $secondary-text-color: #8a8f98;
 
 // border colors

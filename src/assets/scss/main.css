@@ -55,7 +55,7 @@ p span {
   color: #53FDCAFF;
 }
 
-@media only screen and (min-width: 490px) {
+@media only screen and (min-width: 480px) {
   h1, h2 {
     font-size: 46px;
   }

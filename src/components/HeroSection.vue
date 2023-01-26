@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div id="hero-section">
+  <section id="hero-section">
    <div class="container">
      <div class="text-wrapper">
        <span class="subheading">SINCE 2019</span>
@@ -25,7 +25,7 @@
        />
      </div>
    </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss">

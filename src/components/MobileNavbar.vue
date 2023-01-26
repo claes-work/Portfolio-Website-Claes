@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div id="mobile-navbar"></div>
+  <nav id="mobile-navbar"></nav>
 </template>
 
 
