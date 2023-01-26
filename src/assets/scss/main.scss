@@ -7,3 +7,82 @@ body, html {
   margin: 0;
   padding: 0;
 }
+
+#app {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  line-height: 1.1;
+  font-weight: 700;
+  color: #FFFFFF;
+
+  span {
+    color: #53FDCAFF;
+  }
+}
+
+h1, h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: .4px;
+  color: #8a8f98;
+  margin: 0;
+
+  span {
+    color: #53FDCAFF;
+  }
+}
+
+@media only screen and (min-width: 490px) {
+  h1, h2 { font-size: 46px; }
+  h3     { font-size: 30px; }
+}
+
+@media only screen and (min-width: 991px) {
+  h1, h2 { font-size: 52px; }
+  h3     { font-size: 36px; }
+  p      { font-size: 18px; }
+}
+
+/*************************************************************************/
+/* ------------------------ Theme Color Variables ---------------------- */
+/*************************************************************************/
+
+$main-color: #53FDCA;
+
+// Dark background colors
+$bc-dark-1: #0F0F0F;
+$bc-dark-2: #121212;
+$bc-dark-3: #191919;
+$bc-dark-4: #1F1F1F;
+
+// Text colors
+$default-text-color: #FFFFFF;
+$secondary-text-color: #8a8f98;
+
+// border colors
+$border-val: 1px solid #252525;

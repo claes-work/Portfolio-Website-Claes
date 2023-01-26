@@ -1,0 +1,153 @@
+#hero-section {
+  width: 100%;
+  background-color: $bc-dark-3;
+  padding: 100px 15px 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .subheading {
+      display: block;
+      width: 100%;
+      color: $main-color;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .hero-image {
+      width: 60%;
+      max-width: 260px;
+      margin: 25px 0;
+    }
+
+    .transition-banner {
+      position: absolute;
+      left: 0;
+      bottom: -20px;
+      width: 100%;
+      background-color: $bc-dark-1;
+
+      h3 {
+        text-align: center;
+        padding: 10px 8px;
+      }
+    }
+
+    .hero-background {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #hero-section {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+
+    .container {
+      flex-direction: row;
+      column-gap: 15px;
+      flex: 1;
+
+      .text-wrapper {
+        width: 460px;
+      }
+
+      .hero-image {
+        position: absolute;
+        left: 62%;
+        bottom: 0;
+        width: 60%;
+        max-width: 260px;
+        margin: 35px 0;
+        z-index: 10;
+      }
+
+      .transition-banner {
+        bottom: -30px;
+        z-index: 10;
+
+        h3 {
+          padding: 18px 8px;
+        }
+      }
+
+      .hero-background {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: calc(62% + 140px);
+        height: 70vh;
+        width: 100%;
+        background-color: $bc-dark-4;
+        z-index: 0;
+
+        .shape {
+          position: absolute;
+          left: 50px;
+          bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  #hero-section {
+    height: 74vh;
+
+    .container {
+      .text-wrapper {
+        width: 520px;
+      }
+
+      .transition-banner {
+        bottom: -34px;
+      }
+
+      .hero-image {
+        width: 290px;
+        max-width: unset;
+        right: 50px;
+        margin-bottom: 44px;
+      }
+
+      .hero-background {
+        left: calc(62% + 155px);
+        height: 74vh;
+
+        .shape {
+          bottom: 70px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #hero-section .container {
+    .hero-image {
+      width: 320px;
+      left: 58%;
+    }
+
+    .hero-background {
+      left: calc(58% + 175px);
+
+      .shape {
+        bottom: 120px;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+#mobile-navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 63px;
+  border-bottom: $border-val;
+  background-color: $bc-dark-3;
+  z-index: 1000;
+}
