@@ -1,0 +1,53 @@
+#tech-stack-tab {
+  width: 100%;
+  max-width: 1075px;
+  height: 100%;
+  margin: 0 auto;
+
+  #table-header {
+    display: none;
+  }
+
+  .table-row {
+    display: grid;
+    width: 100%;
+    margin-top: -1px;
+    grid-template-rows: 100%;
+    padding-top: 30px;
+
+    .heading {
+      color: $default-text-color;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .column {
+      width: 100%;
+      margin-bottom: 25px;
+      background-color: #252525;
+      border: 1px solid #3B3B3B;
+      padding: 30px;
+
+      .logo-name {
+        color: $default-text-color;
+        font-size: 18px;
+      }
+
+      li {
+        margin-bottom: 12px;
+        color: $default-text-color;
+        font-size: 18px;
+      }
+    }
+
+    .column.technology {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+    }
+
+    .column.usage {
+      padding-left: 40px;
+    }
+  }
+}

@@ -22,7 +22,7 @@ body, html {
   margin: 0 auto;
 }
 
-h1, h2, h3 {
+h1, h2, h3, ul {
   margin: 0;
 }
 
@@ -79,6 +79,7 @@ $bc-dark-1: #0F0F0F;
 $bc-dark-2: #121212;
 $bc-dark-3: #191919;
 $bc-dark-4: #1F1F1F;
+$bc-dark-5: #252525;
 
 // Light background colors
 $bc-light-default: #FFFFFF;
@@ -88,6 +89,8 @@ $bc-light-1: #f6f6f6;
 $default-text-color: #FFFFFF;
 $primary-text-color: $bc-dark-4;
 $secondary-text-color: #8a8f98;
+$tertiary-text-color: #7C7C7C;
 
 // border colors
-$border-val: 1px solid #252525;
+$nav-border-val: 1px solid #252525;
+$primary-border-val: 1px solid#3B3B3B;
