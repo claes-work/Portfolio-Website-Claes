@@ -62,6 +62,10 @@ p {
   h3     { font-size: 30px; }
 }
 
+@media only screen and (min-width: 768px) {
+  p { font-size: 16px; }
+}
+
 @media only screen and (min-width: 991px) {
   h1, h2 { font-size: 52px; }
   h3     { font-size: 36px; }
@@ -73,6 +77,8 @@ p {
 /*************************************************************************/
 
 $main-color: #53FDCA;
+$main-text-color: #31bd93;
+$main-color-light: rgba(68,219,174,.15);
 
 // Dark background colors
 $bc-dark-1: #0F0F0F;
@@ -80,6 +86,7 @@ $bc-dark-2: #121212;
 $bc-dark-3: #191919;
 $bc-dark-4: #1F1F1F;
 $bc-dark-5: #252525;
+$bc-dark-6: #3B3B3B;
 
 // Light background colors
 $bc-light-default: #FFFFFF;
@@ -92,5 +99,5 @@ $secondary-text-color: #8a8f98;
 $tertiary-text-color: #7C7C7C;
 
 // border colors
-$nav-border-val: 1px solid #252525;
-$primary-border-val: 1px solid#3B3B3B;
+$nav-border-val: 1px solid $bc-dark-5;
+$primary-border-val: 1px solid $bc-dark-6;

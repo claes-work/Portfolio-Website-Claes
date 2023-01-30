@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import TabContainer from "@/components/tab-view/TabContainer.vue";
+import TabContainer from "@/components/tab-view/TabHeader.vue";
 import TechStackTab from "@/components/tab-view/tech-stack-tab/TechStackTab.vue";
 </script>
 
 <template>
   <section id="rebalancing-tool-insides">
     <div class="container">
-      <h2>Project insides</h2>
+      <h3>Project insides</h3>
       <TabContainer />
       <TechStackTab />
     </div>
