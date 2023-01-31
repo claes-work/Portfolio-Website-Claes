@@ -6,5 +6,126 @@
   height: 63px;
   border-bottom: $nav-border-val;
   background-color: $bc-dark-3;
-  z-index: 1000;
+  padding: 0 2px 0 15px;
+  z-index: 900;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: $bc-dark-3;
+
+    h2 {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: .4px;
+    }
+
+    .ham {
+      width: 62px;
+      height: 62px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 400ms;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .hamRotate.active {
+      transform: rotate(45deg);
+    }
+    .hamRotate180.active {
+      transform: rotate(180deg);
+    }
+    .line {
+      fill: none;
+      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+      stroke: $bc-light-default;
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+    .ham1 .top {
+      stroke-dasharray: 40 139;
+    }
+    .ham1 .bottom {
+      stroke-dasharray: 40 180;
+    }
+    .ham1.active .top {
+      stroke-dashoffset: -98px;
+    }
+    .ham1.active .bottom {
+      stroke-dashoffset: -138px;
+    }
+  }
+
+  .mobile-nav-menu {
+    width: 100%;
+    height: calc(100vh - 63px);
+    background-color: $bc-dark-3;
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    transition: 550ms ease-out;
+    padding: 20px;
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+        cursor: pointer;
+
+        a {
+          display: block;
+          position: relative;
+          border-bottom: $nav-border-val;
+          margin-bottom: -1px;
+          color: $default-text-color;
+          letter-spacing: .4px;
+          font-size: 13px;
+          font-weight: 500;
+          padding: 18px 0;
+          text-decoration: none;
+        }
+
+        svg {
+          width: 15px;
+          height: 15px;
+        }
+
+        .contact-btn {
+          position: relative;
+          padding: 12px 15px;
+          margin-top: -3px;
+          background-color: $main-color;
+          color: $bc-dark-2;
+          text-decoration: none;
+          transition: 200ms ease-out;
+        }
+      }
+
+      li:last-child {
+        border: none;
+        margin-top: 15px;
+      }
+
+      li a:hover:not(li:last-child a:hover) {
+        color: $main-color;
+      }
+
+      li:last-child:hover .contact-btn {
+        background-color: $bc-light-1;
+      }
+
+      .router-link-exact-active {
+        color: $main-color;
+      }
+    }
+  }
+
+  .mobile-nav-menu.active {
+    top: 63px;
+  }
 }

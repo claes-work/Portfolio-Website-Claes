@@ -1,0 +1,72 @@
+#desktop-navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 63px;
+  border-bottom: $nav-border-val;
+  background-color: $bc-dark-3;
+  z-index: 800;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    h2 {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: .4px;
+    }
+
+    ul {
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      column-gap: 55px;
+
+      li {
+        list-style: none;
+        cursor: pointer;
+
+        a {
+          color: $default-text-color;
+          letter-spacing: .4px;
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration: none;
+          border-bottom: 3px solid transparent;
+          position: relative;
+          height: 63px;
+          padding: 20px 12px;
+        }
+
+        .contact-btn {
+          position: relative;
+          padding: 12px 15px;
+          top: -3px;
+          background-color: $main-color;
+          color: $bc-dark-2;
+          text-decoration: none;
+          transition: 200ms ease-out;
+        }
+      }
+
+      li a:hover:not(li:last-child a:hover) {
+        border-bottom-color: #44dbae;
+        color: $main-color;
+      }
+
+      li:last-child:hover .contact-btn {
+        background-color: $bc-light-1;
+      }
+
+      .router-link-exact-active {
+        color: $main-color;
+        border-bottom-color: #44dbae;
+      }
+    }
+  }
+}

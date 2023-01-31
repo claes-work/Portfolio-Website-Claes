@@ -13,6 +13,25 @@ body, html {
   min-height: 100vh;
   overflow-x: hidden;
 }
+#app .transparent-underlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 350ms ease-out;
+  pointer-events: none;
+  z-index: 900;
+}
+#app .transparent-underlay.active {
+  pointer-events: all;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+#app #personal-tech-stack-section {
+  padding-top: 100px !important;
+}
 
 .container {
   position: relative;
@@ -22,7 +41,7 @@ body, html {
   margin: 0 auto;
 }
 
-h1, h2, h3, ul {
+h1, h2, h3, h4, ul {
   margin: 0;
 }
 

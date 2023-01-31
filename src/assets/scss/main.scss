@@ -12,6 +12,28 @@ body, html {
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+
+  .transparent-underlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0);
+    transition: 350ms ease-out;
+    pointer-events: none;
+    z-index: 900;
+  }
+
+  .transparent-underlay.active {
+    pointer-events: all;
+    background-color: rgba(0,0,0,0.6);
+    cursor: pointer;
+  }
+
+  #personal-tech-stack-section {
+    padding-top: 100px!important;
+  }
 }
 
 .container {
@@ -22,7 +44,7 @@ body, html {
   margin: 0 auto;
 }
 
-h1, h2, h3, ul {
+h1, h2, h3, h4, ul {
   margin: 0;
 }
 

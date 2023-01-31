@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { useMainStore } from "@/stores/MainStore";
 import MobileNavbar from "@/components/MobileNavbar.vue";
+import DesktopNavbar from "@/components/DesktopNavbar.vue";
+
+const store = useMainStore()
 </script>
 
 <template>
-  <MobileNavbar />
+  <MobileNavbar v-if="!store.isDesktop"/>
+  <DesktopNavbar v-if="store.isDesktop"/>
   <RouterView />
 </template>
 

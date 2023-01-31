@@ -1,22 +1,38 @@
 <script lang="ts" setup>
+
+const props = defineProps({
+  subHeading: {
+    type: String,
+    default: "",
+  },
+  htmlHeading: {
+    type: String,
+    default: "",
+  },
+  htmlText: {
+    type: String,
+    default: "",
+  },
+})
+
 </script>
 
 <template>
   <section id="hero-section">
    <div class="container">
      <div class="text-wrapper">
-       <span class="subheading">SINCE 2019</span>
-       <h1>Creative <br><span>Frontend-Developer</span></h1>
-       <p>Hi, I'm Sebastian a passionated Frontend Developer from Germany. <span>I am currently seeking a full remote position</span> as a Vue Developer. I have experience and skills in building responsive, user-friendly and high-performance web applications.</p>
+       <span class="subheading">{{ props.subHeading }}</span>
+       <h1 v-html="props.htmlHeading"></h1>
+       <p v-html="htmlText"></p>
      </div>
      <img
          class="hero-image"
          src="@/assets/images/Sebastian_Claes_Hero_Image.png"
          alt="Sebastian Claes Hero Image"
      />
-     <div class="transition-banner">
-       <h3>Explore my <span>latest projects</span></h3>
-     </div>
+     <slot name="divider-content">
+
+     </slot>
      <div class="hero-background">
        <img
            class="shape"
