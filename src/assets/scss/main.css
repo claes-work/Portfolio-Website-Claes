@@ -29,9 +29,6 @@ body, html {
   background-color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
-#app #personal-tech-stack-section {
-  padding-top: 100px !important;
-}
 
 .container {
   position: relative;
