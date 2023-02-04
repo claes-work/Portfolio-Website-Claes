@@ -1,95 +1,63 @@
 <script lang="ts" setup>
 import TableHeader from "@/components/tab-view/tech-stack-tab/TableHeader.vue";
 import TableRow from "@/components/tab-view/tech-stack-tab/TableRow.vue";
-import FigmaIcon from "@/components/icons/FigmaIcon.vue";
+import type { PropType } from "vue";
+import type { TechData } from "@/models/TechData";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Pagination, Navigation } from 'swiper';
+import { Virtual } from 'swiper';
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-// define your modules list here
-const modules = [Pagination, Navigation]
+const props = defineProps({
+  sliderData: {
+    type: Object as PropType<TechData[]>,
+    required: true,
+  }
+})
+
+console.log(props.sliderData)
 </script>
 
 <template>
   <div id="tech-stack-tab">
     <TableHeader />
-
     <Swiper
-      :slides-per-view="1"
-      :space-between="15"
-      :pagination="{ clickable: true }"
-      :modules="[modules]"
+        :slides-per-view="1"
+        :space-between="15"
+        :pagination="{ clickable: true }"
+        :modules="[Virtual]"
+        :auto-height="true"
+        :observer="true"
+        virtual
     >
-      <SwiperSlide>
+      <SwiperSlide
+          v-for="(slide, index) in props.sliderData"
+          :key="index"
+          :virtualIndex="index"
+      >
         <TableRow >
           <template #technology>
-            <FigmaIcon />
-            <span>Figma</span>
+            <div class="logo" :style="{ backgroundImage: slide.icon }" ></div>
+            <span>{{ slide.title }}</span>
           </template>
           <template #usage>
-            <li>Wireframes</li>
-            <li>Full Design</li>
+            <li v-for="(li, index) in slide.usageList" :key="index" v-html="li"></li>
           </template>
           <template #description>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>{{ slide.description }}</p>
           </template>
           <template #implemented-by>
-            <div class="profile-image"></div>
+            <div
+                class="profile-image"
+            ></div>
             <div class="name-wrapper">
-              <div class="github">@claes-work</div>
-              <div class="name">Sebastian Claes</div>
-            </div>
-          </template>
-        </TableRow>
-      </SwiperSlide>
-      <SwiperSlide>
-        <TableRow >
-          <template #technology>
-            <FigmaIcon />
-            <span>Figma</span>
-          </template>
-          <template #usage>
-            <li>Wireframes</li>
-            <li>Full Design</li>
-          </template>
-          <template #description>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-          </template>
-          <template #implemented-by>
-            <div class="profile-image"></div>
-            <div class="name-wrapper">
-              <div class="github">@claes-work</div>
-              <div class="name">Sebastian Claes</div>
-            </div>
-          </template>
-        </TableRow>
-      </SwiperSlide>
-      <SwiperSlide>
-        <TableRow >
-          <template #technology>
-            <FigmaIcon />
-            <span>Figma</span>
-          </template>
-          <template #usage>
-            <li>Wireframes</li>
-            <li>Full Design</li>
-          </template>
-          <template #description>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-          </template>
-          <template #implemented-by>
-            <div class="profile-image"></div>
-            <div class="name-wrapper">
-              <div class="github">@claes-work</div>
-              <div class="name">Sebastian Claes</div>
+              <div class="github">{{ slide.implementedBy.tag }}</div>
+              <div class="name">{{ slide.implementedBy.fullName }}</div>
             </div>
           </template>
         </TableRow>
       </SwiperSlide>
     </Swiper>
-
-
   </div>
 </template>
 

@@ -124,6 +124,10 @@ $primary-border-val: 1px solid $bc-dark-6;
 /* ---------------------------- Swiper --------------------------------- */
 /*************************************************************************/
 
+.swiper {
+  height: auto;
+}
+
 .swiper-pagination {
   margin-bottom: 12px;
 }

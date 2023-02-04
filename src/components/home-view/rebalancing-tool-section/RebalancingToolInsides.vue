@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import TabContainer from "@/components/tab-view/TabHeader.vue";
 import TechStackTab from "@/components/tab-view/tech-stack-tab/TechStackTab.vue";
+import { techStackData } from "@/data/TechStackData"
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import TechStackTab from "@/components/tab-view/tech-stack-tab/TechStackTab.vue"
     <div class="container">
       <h3>Project insides</h3>
       <TabContainer />
-      <TechStackTab />
+      <TechStackTab :slider-data="techStackData" />
     </div>
   </section>
 </template>
