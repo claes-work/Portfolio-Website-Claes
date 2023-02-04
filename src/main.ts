@@ -1,5 +1,8 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 import App from './App.vue'
 import router from './router'

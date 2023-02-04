@@ -119,3 +119,18 @@ $tertiary-text-color: #7C7C7C;
 // border colors
 $nav-border-val: 1px solid $bc-dark-5;
 $primary-border-val: 1px solid $bc-dark-6;
+
+/*************************************************************************/
+/* ---------------------------- Swiper --------------------------------- */
+/*************************************************************************/
+
+.swiper-pagination {
+  margin-bottom: 12px;
+}
+
+.swiper-pagination-bullet {
+  margin: 0 8px !important;
+  background: $bc-light-default;
+  width: 10px;
+  height: 10px;
+}

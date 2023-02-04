@@ -17,9 +17,9 @@
       display: flex;
       flex-direction: column;
       padding: 10px;
-      background-color: #252525;
+      background-color: $bc-dark-5;
       border: $primary-border-val;
-      margin: 0 auto 15px;
+      margin: 0 auto 25px;
 
       .tab-button {
         width: 100%;
