@@ -26,7 +26,11 @@ const btnText: ComputedRef<string> = computed((): string => {
     <span v-if="!mainStore.isDesktop">Description:</span>
     <div class="column description" :class="{ open : fullColumnHeight }">
       <slot name="description"></slot>
-      <div class="show-more" @click="fullColumnHeight = !fullColumnHeight">
+      <div
+          class="show-more"
+          v-if="mainStore.isDesktop"
+          @click="fullColumnHeight = !fullColumnHeight"
+      >
         <span>{{ btnText }}</span>
         <ArrowDownIcon />
       </div>

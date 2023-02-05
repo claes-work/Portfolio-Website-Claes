@@ -5,6 +5,10 @@
   height: 100%;
   margin: 0 auto;
 
+  #table-header {
+    display: none;
+  }
+
   .table-row {
     width: 100%;
     max-width: 768px;
@@ -65,54 +69,10 @@
 
     .column.description {
       position: relative;
-      max-height: 130px;
       overflow: hidden;
 
       p {
         color: $secondary-text-color;
-      }
-
-      .show-more {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 60%;
-        background-image: linear-gradient(to top, rgba(31,31,31, 0.9) 45%, rgba(31,31,31,0));
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        column-gap: 8px;
-        padding-bottom: 20px;
-
-        span {
-          color: $main-color;
-          text-align: center;
-          font-size: 14px;
-          margin: 0;
-        }
-
-        svg {
-          width: 14px;
-          height: 16px;
-          fill: $main-color !important;
-        }
-      }
-    }
-
-    .column.description.open {
-      max-height: unset;
-      padding-bottom: 36px;
-
-      .show-more {
-        height: auto;
-        background-image: unset;
-        padding-bottom: 12px;
-
-        svg {
-          transform: rotate(180deg);
-        }
       }
     }
 
@@ -209,9 +169,53 @@
 
       .column.description {
         padding: 10px 15px;
+        max-height: 130px;
 
         p {
           font-size: 14px;
+        }
+
+        .show-more {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 60%;
+          background-image: linear-gradient(to top, rgba(31,31,31, 0.9) 45%, rgba(31,31,31,0));
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          column-gap: 8px;
+          padding-bottom: 20px;
+
+          span {
+            color: $main-color;
+            text-align: center;
+            font-size: 14px;
+            margin: 0;
+          }
+
+          svg {
+            width: 14px;
+            height: 16px;
+            fill: $main-color !important;
+          }
+        }
+      }
+
+      .column.description.open {
+        max-height: unset;
+        padding-bottom: 36px;
+
+        .show-more {
+          height: auto;
+          background-image: unset;
+          padding-bottom: 12px;
+
+          svg {
+            transform: rotate(180deg);
+          }
         }
       }
 
