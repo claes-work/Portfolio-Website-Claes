@@ -7,6 +7,9 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Virtual } from 'swiper';
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { useMainStore } from "@/stores/MainStore";
+
+const mainStore = useMainStore()
 
 const props = defineProps({
   sliderData: {
@@ -14,14 +17,13 @@ const props = defineProps({
     required: true,
   }
 })
-
-console.log(props.sliderData)
 </script>
 
 <template>
   <div id="tech-stack-tab">
     <TableHeader />
     <Swiper
+        v-if="!mainStore.isDesktop"
         :slides-per-view="1"
         :space-between="15"
         :pagination="{ clickable: true }"
@@ -58,6 +60,32 @@ console.log(props.sliderData)
         </TableRow>
       </SwiperSlide>
     </Swiper>
+
+    <TableRow
+        v-if="mainStore.isDesktop"
+        v-for="(row, index) in props.sliderData"
+        :key="index"
+    >
+      <template #technology>
+        <div class="logo" :style="{ backgroundImage: row.icon }" ></div>
+        <span>{{ row.title }}</span>
+      </template>
+      <template #usage>
+        <li v-for="(li, index) in row.usageList" :key="index" v-html="li"></li>
+      </template>
+      <template #description>
+        <p>{{ row.description }}</p>
+      </template>
+      <template #implemented-by>
+        <div
+            class="profile-image"
+        ></div>
+        <div class="name-wrapper">
+          <div class="github">{{ row.implementedBy.tag }}</div>
+          <div class="name">{{ row.implementedBy.fullName }}</div>
+        </div>
+      </template>
+    </TableRow>
   </div>
 </template>
 

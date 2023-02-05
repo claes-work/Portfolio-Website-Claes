@@ -5,10 +5,6 @@
   height: 100%;
   margin: 0 auto;
 
-  #table-header {
-    display: none;
-  }
-
   .table-row {
     width: 100%;
     max-width: 768px;
@@ -67,8 +63,57 @@
       }
     }
 
-    .column.description p {
-      color: $secondary-text-color;
+    .column.description {
+      position: relative;
+      max-height: 130px;
+      overflow: hidden;
+
+      p {
+        color: $secondary-text-color;
+      }
+
+      .show-more {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 60%;
+        background-image: linear-gradient(to top, rgba(31,31,31, 0.9) 45%, rgba(31,31,31,0));
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        column-gap: 8px;
+        padding-bottom: 20px;
+
+        span {
+          color: $main-color;
+          text-align: center;
+          font-size: 14px;
+          margin: 0;
+        }
+
+        svg {
+          width: 14px;
+          height: 16px;
+          fill: $main-color !important;
+        }
+      }
+    }
+
+    .column.description.open {
+      max-height: unset;
+      padding-bottom: 36px;
+
+      .show-more {
+        height: auto;
+        background-image: unset;
+        padding-bottom: 12px;
+
+        svg {
+          transform: rotate(180deg);
+        }
+      }
     }
 
     .column.implemented-by {
@@ -94,6 +139,87 @@
           font-size: 16px;
           color: $default-text-color;
         }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  #tech-stack-tab {
+    #table-header {
+      display: flex;
+      align-items: center;
+      height: 54px;
+      border-top: $primary-border-val;
+      border-bottom: $primary-border-val;
+      background-color: $bc-dark-5;
+
+      .th {
+        padding-left: 15px;
+        font-size: 14px;
+        color: $default-text-color;
+      }
+
+      .th.technology {
+        min-width: 16%;
+      }
+
+      .th.usage {
+        min-width: 22%;
+      }
+
+      .th.description {
+        flex: 1
+      }
+      .th.implemented-by {
+        min-width: 20%;
+      }
+    }
+
+    .table-row {
+      max-width: unset;
+      flex-direction: row;
+      background-color: unset;
+      border-bottom: $primary-border-val;
+      border-top: unset;
+      border-left: unset;
+      border-right: unset;
+      padding: 0;
+
+      .column {
+        margin: 0;
+      }
+
+      .column:not(.column:first-child) {
+        border-left: $primary-border-val;
+      }
+
+      .column.technology {
+        min-width: 16%;
+        background-color: unset;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 18px 0 0 15px;
+      }
+
+      .column.usage {
+        min-width: 22%;
+        padding: 10px 0 0 28px;
+      }
+
+      .column.description {
+        padding: 10px 15px;
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .column.implemented-by {
+        min-width: 20%;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 18px 0 18px 15px;
       }
     }
   }

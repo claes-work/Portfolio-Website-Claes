@@ -1,28 +1,20 @@
 <template>
-  <template>
-    <svg class="arrow-down" :class="{ open: props.isOpen }" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M89.45 87.5l143.1 152c4.375 4.625 6.562 10.56 6.562 16.5c0 5.937-2.188 11.87-6.562 16.5l-143.1 152C80.33 434.1 65.14 434.5 55.52 425.4c-9.688-9.125-10.03-24.38-.9375-33.94l128.4-135.5l-128.4-135.5C45.49 110.9 45.83 95.75 55.52 86.56C65.14 77.47 80.33 77.87 89.45 87.5z"/></svg>
-  </template>
-
-  <svg
-    :class="{ open: props.isOpen }"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 8 6"
-  >
-    <path d="M4,0,8,6H0Z" :transform="transform" fill="#FFFFFF" />
+  <svg width="12" height="7" viewBox="0 0 12 7" :fill="fill" xmlns="http://www.w3.org/2000/svg" rotate="">
+    <line x1="1.06066" y1="1" x2="6" y2="5.93934" :stroke="fill" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="6" y1="5.93934" x2="10.9393" y2="1" :stroke="fill" stroke-width="1.5" stroke-linecap="round"/>
   </svg>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
 const props = defineProps({
   isOpen: {
     type: Boolean,
     default: true,
   },
-})
-// Bind the transform property in order to arrange the select arrow
-const transform = computed(() => {
-  return !props.isOpen ? 'translate(8 6) rotate(180)' : ''
+  fill: {
+    type: String,
+    default: '#53FDCA'
+  }
 })
 </script>
 
