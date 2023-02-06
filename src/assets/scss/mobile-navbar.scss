@@ -79,13 +79,14 @@
 
         a {
           display: block;
+          font-family: 'Space Mono',sans-serif;
+          letter-spacing: 1px;
+          font-size: 14px;
+          font-weight: 500;
           position: relative;
           border-bottom: $nav-border-val;
           margin-bottom: -1px;
           color: $default-text-color;
-          letter-spacing: .4px;
-          font-size: 13px;
-          font-weight: 500;
           padding: 18px 0;
           text-decoration: none;
         }

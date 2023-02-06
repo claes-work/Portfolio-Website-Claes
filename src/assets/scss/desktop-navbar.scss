@@ -30,10 +30,12 @@
       li {
         list-style: none;
         cursor: pointer;
+        font-family: 'Space Mono',sans-serif;
 
         a {
           color: $default-text-color;
-          letter-spacing: .4px;
+          font-family: 'Space Mono',sans-serif;
+          letter-spacing: 1px;
           font-size: 14px;
           font-weight: 500;
           text-decoration: none;
