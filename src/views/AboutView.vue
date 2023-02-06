@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HeroSection from "@/components/home-view/hero-section/HeroSection.vue";
-import TimeLine from "@/components/home-view/time-line-section/TimelineSection.vue";
-import PersonalTechStackSection from "@/components/home-view/personal-tech-stack-section/PersonalTechStackSection.vue";
+import HeroSection from "@/components/about-view/hero-section/HeroSection.vue";
+import TimeLine from "@/components/about-view/time-line-section/TimelineSection.vue";
+import PersonalTechStackSection from "@/components/about-view/personal-tech-stack-section/PersonalTechStackSection.vue";
 import type { TimelineRow } from "@/models/TimelineRow";
 
 const timelineData: TimelineRow[] = [

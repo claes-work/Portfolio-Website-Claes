@@ -3,20 +3,6 @@ import type { Ref } from "vue";
 import type { TechData } from "@/models/TechData";
 export const techStackData: Ref<TechData[]> = ref([
     {
-        icon: "url(src/assets/images/tech-icons/figma_logo.png)",
-        title: "Figma",
-        usageList: [
-            "Wireframes",
-            "Full design"
-        ],
-        description: "Having a design before starting development helps to ensure that the project's goals and requirements are clearly understood, and that the final product will meet those requirements. It also helps to identify potential issues and constraints early on, which can save time and resources during the development process. Additionally, a design provides a clear plan for development, which can help to keep the project on track and ensure that the final product is cohesive and visually appealing.",
-        implementedBy: {
-            profileImg: "",
-            tag: "@claes-work",
-            fullName: "Sebastian Claes"
-        }
-    },
-    {
         icon: "url(src/assets/images/tech-icons/vite_logo.png)",
         title: "Vite",
         usageList: [
@@ -69,6 +55,20 @@ export const techStackData: Ref<TechData[]> = ref([
             "Nesting"
         ],
         description: "Sass is a better choice than plain css because it provides a powerful set of features that make styling web pages more efficient and maintainable. Sass allows you to use variables, nesting, mixins and functions, which makes it easy to reuse and organize the code. With Sass, you can also use mathematical operations, functions, and other advanced features that help to make your stylesheets more dynamic and expressive. Additionally, Sass also allows you to use partials, which are smaller Sass files that can be imported into other Sass files, making it easy to organize and maintain large projects. Furthermore, it has a large and active community, which means that there are many resources and third-party packages available to help developers. All these features make Sass a great choice for professional development.",
+        implementedBy: {
+            profileImg: "",
+            tag: "@claes-work",
+            fullName: "Sebastian Claes"
+        }
+    },
+    {
+        icon: "url(src/assets/images/tech-icons/figma_logo.png)",
+        title: "Figma",
+        usageList: [
+            "Wireframes",
+            "Full design"
+        ],
+        description: "Having a design before starting development helps to ensure that the project's goals and requirements are clearly understood, and that the final product will meet those requirements. It also helps to identify potential issues and constraints early on, which can save time and resources during the development process. Additionally, a design provides a clear plan for development, which can help to keep the project on track and ensure that the final product is cohesive and visually appealing.",
         implementedBy: {
             profileImg: "",
             tag: "@claes-work",

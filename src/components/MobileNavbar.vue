@@ -26,8 +26,8 @@ const isActive: Ref<boolean> = ref(false)
 
     <div class="mobile-nav-menu" :class="{ active: isActive }">
       <ul>
-        <li><RouterLink :to="{ name: 'home' }" >HOME</RouterLink></li>
-        <li><RouterLink :to="{ name: 'projects' }">PROJECTS</RouterLink></li>
+        <li><RouterLink :to="{ name: 'home' }" >OWN PROJECTS</RouterLink></li>
+        <li><RouterLink :to="{ name: 'projects' }">OUR CLIENTS</RouterLink></li>
         <li><RouterLink :to="{ name: 'about' }" >ABOUT US</RouterLink></li>
         <li><a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a></li>
       </ul>
