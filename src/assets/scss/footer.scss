@@ -1,0 +1,131 @@
+footer {
+  width: 100%;
+  background-color: $bc-dark-2;
+
+  .container {
+    padding: 40px 15px;
+  }
+
+  .container.columns {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    column-gap: 35px;
+    row-gap: 35px;
+    border-bottom: $nav-border-val;
+
+    .column {
+      width: 100%;
+
+      .heading {
+        color: $default-text-color;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .subheading {
+        color: $main-color;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-family: 'Space Mono',sans-serif;
+        letter-spacing: 1px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          list-style: none;
+          margin-bottom: 10px;
+          color: $default-text-color;
+          font-size: 14px;
+          line-height: 1.6;
+          font-weight: 400;
+          letter-spacing: .4px;
+
+          a {
+            text-decoration: none;
+            color: $default-text-color;
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: .4px;
+            cursor: pointer;
+          }
+
+          a:hover {
+            color: $main-color;
+          }
+        }
+      }
+    }
+
+    .column.col-4 ul li {
+      display: flex;
+      align-items: flex-start;
+      column-gap: 15px;
+
+      svg {
+        width: 15px;
+        height: 15px;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .copyright-wrapper {
+    .container {
+      display: flex;
+      justify-content: space-between;
+
+      .copyright,
+      .design-by {
+        display: block;
+        font-size: 12px;
+        color: #676e73;
+
+        span {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  footer {
+    .container {
+      padding: 40px 20px;
+    }
+
+    .container.columns {
+      flex-wrap: wrap;
+      flex-direction: row;
+
+      .column {
+        max-width: 300px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  footer .container.columns {
+    flex-wrap: unset;
+    column-gap: 70px;
+
+    .column {
+      width: auto;
+      max-width: unset;
+    }
+
+    .column.col-1 {
+      max-width: 300px;
+    }
+  }
+}
