@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { PropType } from "vue";
 import type { TimelineRow } from "@/models/TimelineRow";
-import TimeLineRow from "@/components/about-view/time-line-section/TimelineRow.vue";
+import TimeLineRow from "@/components/pages/about/time-line-section/TimelineRow.vue";
 
 const props = defineProps({
   timelineData: {

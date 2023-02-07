@@ -1,0 +1,46 @@
+<script lang="ts" setup>
+import { ref } from "vue";
+import TabHeader from "@/components/content-elements/tab-element/TabHeader.vue";
+import { TabView } from "@/models/TabView";
+import type { TabView as TabViewType } from "@/models/TabView";
+import type { Ref } from "vue";
+import ProjectFeatures from "@/components/pages/projects/rebalancing-tool-section/project-insides/ProjectFeatures.vue";
+import TechStack from "@/components/pages/projects/rebalancing-tool-section/project-insides/TechStack.vue";
+import ProjectIdea from "@/components/pages/projects/rebalancing-tool-section/project-insides/ProjectIdea.vue";
+import ProjectFiles from "@/components/pages/projects/rebalancing-tool-section/project-insides/ProjectFiles.vue";
+
+// The visible tab
+const selectedTab: Ref<TabViewType> = ref(TabView.TECH_STACK)
+
+// function, that is called by TabHeader child component
+const changeTab = (tabName: TabView) => {
+  selectedTab.value = tabName
+}
+
+// Compare selected tab and return bool
+const isTab = (tabName: TabView) => {
+  return selectedTab.value === tabName
+}
+</script>
+
+<template>
+  <section id="rebalancing-tool-insides">
+    <div class="container">
+      <h3>Project insides</h3>
+
+      <TabHeader
+          @change-tab="changeTab"
+          :selected-tab="selectedTab"
+      />
+
+      <ProjectFeatures v-if="isTab(TabView.FEATURES)"     />
+      <TechStack       v-if="isTab(TabView.TECH_STACK)"   />
+      <ProjectIdea     v-if="isTab(TabView.PROJECT_IDEA)" />
+      <ProjectFiles    v-if="isTab(TabView.FILES)"        />
+    </div>
+  </section>
+</template>
+
+<style lang="scss">
+@import "@/assets/scss/tab-section.scss";
+</style>

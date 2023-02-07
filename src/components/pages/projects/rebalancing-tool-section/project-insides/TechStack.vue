@@ -1,26 +1,18 @@
 <script lang="ts" setup>
-import TableHeader from "@/components/tab-view/tech-stack-tab/TableHeader.vue";
-import TableRow from "@/components/tab-view/tech-stack-tab/TableRow.vue";
-import type { PropType } from "vue";
-import type { TechData } from "@/models/TechData";
+import TableHeader from "@/components/content-elements/table-element/TableHeader.vue";
+import TableRow from "@/components/content-elements/table-element/TableRow.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Virtual } from 'swiper';
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { techStackData } from "@/data/TechStackData"
 import { useMainStore } from "@/stores/MainStore";
 
 const mainStore = useMainStore()
-
-const props = defineProps({
-  sliderData: {
-    type: Object as PropType<TechData[]>,
-    required: true,
-  }
-})
 </script>
 
 <template>
-  <div id="tech-stack-tab">
+  <div id="project-tech-stack">
     <TableHeader />
     <Swiper
         v-if="!mainStore.isDesktop"
@@ -33,7 +25,7 @@ const props = defineProps({
         virtual
     >
       <SwiperSlide
-          v-for="(slide, index) in props.sliderData"
+          v-for="(slide, index) in techStackData"
           :key="index"
           :virtualIndex="index"
       >
@@ -63,7 +55,7 @@ const props = defineProps({
 
     <TableRow
         v-if="mainStore.isDesktop"
-        v-for="(row, index) in props.sliderData"
+        v-for="(row, index) in techStackData"
         :key="index"
     >
       <template #technology>
@@ -90,5 +82,5 @@ const props = defineProps({
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/tab-view/tech-stack-tab.scss";
+@import "@/assets/scss/tab-view/project-tech-stack.scss";
 </style>
