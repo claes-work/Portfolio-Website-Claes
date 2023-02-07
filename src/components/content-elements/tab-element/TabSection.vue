@@ -4,10 +4,10 @@ import TabHeader from "@/components/content-elements/tab-element/TabHeader.vue";
 import { TabView } from "@/models/TabView";
 import type { TabView as TabViewType } from "@/models/TabView";
 import type { Ref } from "vue";
-import ProjectFeatures from "@/components/pages/projects/rebalancing-tool-section/project-insides/ProjectFeatures.vue";
-import TechStack from "@/components/pages/projects/rebalancing-tool-section/project-insides/TechStack.vue";
-import ProjectIdea from "@/components/pages/projects/rebalancing-tool-section/project-insides/ProjectIdea.vue";
-import ProjectFiles from "@/components/pages/projects/rebalancing-tool-section/project-insides/ProjectFiles.vue";
+import ProjectFeatures from "@/components/pages/projects/rebalancing-tool/project-insides/ProjectFeatures.vue";
+import TechStack from "@/components/pages/projects/rebalancing-tool/project-insides/TechStack.vue";
+import ProjectIdea from "@/components/pages/projects/rebalancing-tool/project-insides/ProjectIdea.vue";
+import ProjectFiles from "@/components/pages/projects/rebalancing-tool/project-insides/ProjectFiles.vue";
 
 // The visible tab
 const selectedTab: Ref<TabViewType> = ref(TabView.TECH_STACK)
@@ -24,7 +24,7 @@ const isTab = (tabName: TabView) => {
 </script>
 
 <template>
-  <section id="rebalancing-tool-insides">
+  <section id="tab-section">
     <div class="container">
       <h3>Project insides</h3>
 
@@ -42,5 +42,5 @@ const isTab = (tabName: TabView) => {
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/tab-section.scss";
+@import "@/assets/scss/content-elements/tab-section.scss";
 </style>

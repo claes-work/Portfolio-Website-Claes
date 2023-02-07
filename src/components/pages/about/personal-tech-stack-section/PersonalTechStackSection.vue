@@ -18,5 +18,5 @@
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/personal-tech-stack-section.scss";
+@import "@/assets/scss/pages/about/personal-tech-stack-section.scss";
 </style>

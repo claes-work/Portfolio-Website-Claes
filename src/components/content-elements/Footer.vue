@@ -54,5 +54,5 @@ import EmailIcon from "@/components/icons/footer/EmailIcon.vue";
 
 
 <style lang="scss">
-@import "@/assets/scss/footer.scss";
+@import "@/assets/scss/content-elements/footer.scss";
 </style>

@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import type { Ref } from "vue";
-import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
 
 const isActive: Ref<boolean> = ref(false)
 </script>
@@ -26,8 +25,7 @@ const isActive: Ref<boolean> = ref(false)
 
     <div class="mobile-nav-menu" :class="{ active: isActive }">
       <ul>
-        <li><RouterLink :to="{ name: 'home' }" >OWN PROJECTS</RouterLink></li>
-        <li><RouterLink :to="{ name: 'projects' }">OUR CLIENTS</RouterLink></li>
+        <li><RouterLink :to="{ name: 'projects' }">PROJECTS</RouterLink></li>
         <li><RouterLink :to="{ name: 'about' }" >ABOUT US</RouterLink></li>
         <li><a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a></li>
       </ul>
@@ -37,5 +35,5 @@ const isActive: Ref<boolean> = ref(false)
 
 
 <style lang="scss">
-@import "@/assets/scss/mobile-navbar.scss";
+@import "@/assets/scss/content-elements/navbar/mobile-navbar.scss";
 </style>

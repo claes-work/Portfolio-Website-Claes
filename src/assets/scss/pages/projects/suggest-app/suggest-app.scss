@@ -1,4 +1,4 @@
-#suggest-section {
+#suggest-app {
   padding: 0 15px;
   background-color: $bc-light-1;
 
@@ -82,7 +82,7 @@
 }
 
 @media only screen and (min-width: 480px) {
-  #suggest-section .container .text-wrapper {
+  #suggest-app .container .text-wrapper {
     width: calc(86%);
     max-width: unset;
     margin: 0 auto 45px;
@@ -90,7 +90,7 @@
 }
 
 @media only screen and (min-width: 580px) {
-  #suggest-section .container .text-wrapper {
+  #suggest-app .container .text-wrapper {
     width: calc(82%);
     max-width: unset;
     margin: 0 auto 45px;
@@ -107,7 +107,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  #suggest-section {
+  #suggest-app {
     background-color: $bc-light-default;
 
     .container {
@@ -129,7 +129,7 @@
 }
 
 @media only screen and (min-width: 991px) {
-  #suggest-section .container {
+  #suggest-app .container {
     max-width: 1075px;
 
     .iphone-image {
@@ -139,7 +139,7 @@
 }
 
 @media only screen and (min-width: 1280px) {
-  #suggest-section {
+  #suggest-app {
     padding: 45px 20px;
 
     .container {
@@ -164,7 +164,7 @@
     }
   }
 
-  #suggest-section .container::before {
+  #suggest-app .container::before {
     content: '';
     position: absolute;
     width: 88%;

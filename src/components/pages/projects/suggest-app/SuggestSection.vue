@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section id="suggest-section">
+  <section id="suggest-app">
     <div class="container">
       <div class="text-wrapper">
         <div class="logo"></div>
@@ -32,5 +32,5 @@
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/suggest-section.scss";
+@import "@/assets/scss/pages/projects/suggest-app/suggest-app.scss";
 </style>

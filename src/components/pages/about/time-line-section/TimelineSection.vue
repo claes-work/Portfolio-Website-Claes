@@ -27,5 +27,5 @@ const props = defineProps({
 
 
 <style lang="scss">
-@import "@/assets/scss/timeline-section.scss";
+@import "@/assets/scss/pages/about/timeline-section.scss";
 </style>

@@ -45,5 +45,5 @@ const props = defineProps({
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/hero-section.scss";
+@import "@/assets/scss/pages/about/hero-section.scss";
 </style>

@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <section id="rebalancing-tool-section">
+  <section id="rebalancing-tool">
     <div class="container">
       <div class="text-wrapper">
         <div class="logo"></div>
@@ -31,5 +31,5 @@
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/rebalancing-tool-section.scss";
+@import "@/assets/scss/pages/projects/rebalancing-tool/rebalancing-tool.scss";
 </style>

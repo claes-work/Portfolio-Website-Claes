@@ -8,5 +8,5 @@
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/tab-view/project-idea.scss";
+@import "@/assets/scss/pages/projects/rebalancing-tool/project-insides/project-idea.scss";
 </style>

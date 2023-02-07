@@ -82,5 +82,5 @@ const mainStore = useMainStore()
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/tab-view/project-tech-stack.scss";
+@import "@/assets/scss/pages/projects/rebalancing-tool/project-insides/project-tech-stack.scss";
 </style>

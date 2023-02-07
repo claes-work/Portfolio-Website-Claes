@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import { useMainStore } from "@/stores/MainStore";
-import MobileNavbar from "@/components/content-elements/MobileNavbar.vue";
-import DesktopNavbar from "@/components/content-elements/DesktopNavbar.vue";
+import MobileNavbar from "@/components/content-elements/navbar/MobileNavbar.vue";
+import DesktopNavbar from "@/components/content-elements/navbar/DesktopNavbar.vue";
 import Footer from "@/components/content-elements/Footer.vue";
 
 const store = useMainStore()

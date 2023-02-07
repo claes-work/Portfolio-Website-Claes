@@ -7,8 +7,7 @@ import { RouterLink } from "vue-router";
     <div class="container">
       <h2>Claes & Huebner GbR</h2>
       <ul>
-        <li><RouterLink :to="{ name: 'home' }" >OUR PROJECTS</RouterLink></li>
-        <li><RouterLink :to="{ name: 'projects' }">OUR CLIENTS</RouterLink></li>
+        <li><RouterLink :to="{ name: 'projects' }" >PROJECTS</RouterLink></li>
         <li><RouterLink :to="{ name: 'about' }" >ABOUT US</RouterLink></li>
         <li><a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a></li>
       </ul>
@@ -18,5 +17,5 @@ import { RouterLink } from "vue-router";
 
 
 <style lang="scss">
-@import "@/assets/scss/desktop-navbar.scss";
+@import "@/assets/scss/content-elements/navbar/desktop-navbar.scss";
 </style>
