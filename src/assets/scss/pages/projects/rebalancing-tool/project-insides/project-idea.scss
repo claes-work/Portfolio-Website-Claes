@@ -1,8 +1,135 @@
 #project-idea {
-  position: relative;
+  position: relative; //
+  overflow: hidden; //
   width: 100%;
   max-width: 1075px;
   height: 100%;
   margin: 0 auto;
+  padding: 18px 18px 145px;
+  background-color: #252525;
+  border: 1px solid #3B3B3B;
 
+  .heading {
+    font-size: 24px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  p {
+    position: relative;
+    margin-bottom: 25px;
+    z-index: 10;
+  }
+
+  .button {
+    position: relative;
+    height: 58px;
+    width: 100%;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.2s, background-color 0.2s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    color: #FFFFFF;
+    z-index: 10;
+  }
+
+  .button:hover {
+    background-color: #53FDCA;
+    color: #121212;
+  }
+
+  .wireframes-bc {
+    width: 420px;
+    max-width: 850px;
+    position: absolute;
+    bottom: -65px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  #project-idea .heading {
+    font-size: 30px;
+  }
+}
+
+
+@media only screen and (min-width: 500px) {
+  #project-idea {
+    .button {
+      width: 240px;
+    }
+
+    .wireframes-bc {
+      right: 0;
+      bottom: -70px;
+      transform: translateX(12%);
+    }
+  }
+}
+
+@media only screen and (min-width: 680px) {
+  #project-idea .wireframes-bc {
+    width: 600px;
+    bottom: -160px;
+    transform: unset;
+    right: -70px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #project-idea {
+    .heading {
+      max-width: 500px;
+      line-height: 1.25;
+    }
+
+    p {
+      width: 60%;
+    }
+
+    .wireframes-bc {
+      width: 100%;
+      bottom: -130px;
+      right: -140px;
+    }
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  #project-idea {
+    width: calc(100% + 20px);
+    max-width: unset;
+    padding: 18px 18px 145px;
+    margin-bottom: -40px;
+    background-color: unset;
+    border: unset;
+
+    .heading {
+      font-size: 36px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #project-idea {
+    padding: 18px 50px 145px;
+
+    p {
+      width: 68%;
+    }
+
+    .wireframes-bc {
+      bottom: -140px;
+      right: -115px;
+    }
+  }
 }
