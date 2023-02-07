@@ -16,12 +16,9 @@ const router = createRouter({
       component: AboutView
     }
   ],
+  // Always start at the top after route change
   scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { top: 0 }
-    }
+    return (savedPosition) ? savedPosition : { top: 0 }
   },
 })
 
