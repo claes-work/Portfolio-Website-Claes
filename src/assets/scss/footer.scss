@@ -65,6 +65,18 @@ footer {
       }
     }
 
+    .column.col-3 ul li a {
+      span {
+        padding: 3px 5px;
+        background: $main-color;
+        color: $bc-dark-2;
+        border-radius: 2px;
+        margin-right: 2px;
+        font-size: 10px;
+        font-weight: 600;
+      }
+    }
+
     .column.col-4 ul li {
       display: flex;
       align-items: flex-start;
