@@ -1,0 +1,117 @@
+#project-files {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 25px;
+  column-gap: 60px;
+  padding: 18px;
+  background-color: #252525;
+  border: 1px solid #3B3B3B;
+  margin: 0 auto;
+
+  .file-wrapper {
+    .header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      column-gap: 15px;
+      margin-bottom: 25px;
+
+      .logo {
+        width: 26px;
+        height: 26px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .logo.figma   { background-image: url("@/assets/images/tech-icons/figma_logo.png"); }
+      .logo.github  { background-image: url("@/assets/images/Github.png"); }
+      .logo.webapp  { background-image: url("@/assets/images/Portfolio_Rebalancing_Tool_Logo.png"); }
+      .logo.members { background-image: url("@/assets/images/Members.png"); }
+
+
+      span {
+        font-size: 18px;
+        color: $default-text-color;
+        margin-bottom: 0;
+      }
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        column-gap: 18px;
+        margin-bottom: 12px;
+
+        a {
+          text-decoration: underline;
+          color: $secondary-text-color;
+          line-height: 1.6;
+        }
+
+        a:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  #project-files {
+    padding: 40px 18px;
+    justify-content: space-between;
+    row-gap: 40px;
+
+    .file-wrapper {
+      min-width: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .header {
+        width: unset;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 525px) {
+  #project-files {
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  #project-files {
+    background-color: unset;
+    border: unset;
+    column-gap: 18px;
+
+    .file-wrapper {
+      width: calc(25% - 54px);
+      flex-wrap: unset;
+      padding: 18px;
+      background-color: #252525;
+      border: 1px solid #3B3B3B;
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #project-files {
+    margin: 25px auto;
+    column-gap: 25px;
+
+      .file-wrapper {
+        width: calc(25% - 75px);
+    }
+  }
+}
