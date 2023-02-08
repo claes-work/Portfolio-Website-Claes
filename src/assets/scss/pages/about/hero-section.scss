@@ -29,19 +29,6 @@
       margin: 25px 0;
     }
 
-    .transition-banner {
-      position: absolute;
-      left: 0;
-      bottom: -20px;
-      width: 100%;
-      background-color: $bc-dark-1;
-
-      h3 {
-        text-align: center;
-        padding: 10px 8px;
-      }
-    }
-
     .hero-background {
       display: none;
     }
@@ -74,15 +61,6 @@
         z-index: 10;
       }
 
-      .transition-banner {
-        bottom: -30px;
-        z-index: 10;
-
-        h3 {
-          padding: 18px 8px;
-        }
-      }
-
       .hero-background {
         display: block;
         position: absolute;
@@ -110,10 +88,6 @@
     .container {
       .text-wrapper {
         width: 520px;
-      }
-
-      .transition-banner {
-        bottom: -34px;
       }
 
       .hero-image {

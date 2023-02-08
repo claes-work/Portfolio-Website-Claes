@@ -3,7 +3,7 @@
   padding: 0 15px;
 
   .container {
-    padding: 40px 0;
+    padding: 0 0 40px;
 
     .subheading {
       display: inline-block;
@@ -93,8 +93,4 @@
       margin-top: unset;
     }
   }
-}
-
-@media only screen and (min-width: 991px) {
-
 }

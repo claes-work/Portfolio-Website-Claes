@@ -3,6 +3,7 @@ import HeroSection from "@/components/pages/about/hero-section/HeroSection.vue";
 import TimeLine from "@/components/pages/about/time-line-section/TimelineSection.vue";
 import PersonalTechStackSection from "@/components/pages/about/personal-tech-stack-section/PersonalTechStackSection.vue";
 import type { TimelineRow } from "@/models/TimelineRow";
+import TransitionBanner from "@/components/content-elements/TransitionBanner.vue";
 
 const timelineData: TimelineRow[] = [
   {
@@ -25,10 +26,11 @@ const timelineData: TimelineRow[] = [
 
 <template>
   <HeroSection
-    sub-heading="Co-Founder"
+    sub-heading="Since 2018"
     html-heading="Creative <br><span>Frontend-Developer</span>"
     html-text="Hi, I'm Sebastian a passionated Frontend Developer from Germany. <span>I am currently seeking a full remote position</span> as a Vue Developer. I have experience and skills in building responsive, user-friendly and high-performance web applications."
   />
+  <TransitionBanner html-text="My mission is to <span>empower the Digital World</span> through <br>Innovative <span>Web-Design</span> and <span>Development</span>" />
   <PersonalTechStackSection />
   <TimeLine :timeline-data="timelineData" />
 </template>
