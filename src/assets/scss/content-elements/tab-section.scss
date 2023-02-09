@@ -74,6 +74,7 @@
     }
     .tab-header {
       flex-direction: row;
+      margin-bottom: 45px;
 
       .tab-button {
         justify-content: center;
@@ -84,15 +85,9 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
-  #tab-section .container .tab-header {
-    margin-bottom: 45px;
-  }
-}
-
 @media only screen and (min-width: 991px) {
   #tab-section .container {
-    padding: 40px 20px;
+    padding: 45px 20px;
   }
 }
 

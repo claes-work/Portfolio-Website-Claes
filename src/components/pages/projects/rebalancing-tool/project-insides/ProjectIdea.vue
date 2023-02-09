@@ -3,20 +3,24 @@
 
 <template>
   <div id="project-idea">
-    <div class="text-wrapper">
-      <h2 class="heading">The Importance of <span>Rebalancing</span> Your <span>Portfolio</span></h2>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      <a
-          class="button"
-          href="https://suggest-app.com/"
-          title="suggest-app.com"
-      >Download Wireframes</a>
-    </div>
+    <h2 class="heading">From <span>Excel Sheets</span> to a Custom <span>Portfolio Rebalancing</span> App</h2>
+
     <img
         class="wireframes-bc"
         src="@/assets/images/Portfolio_Rebalancing_Tool_Wireframes.png"
         alt="Portfolio Rebalancing Tool Wireframes"
     />
+
+    <p>
+      In 2019, I started investing and quickly realized that tracking my investments through excel sheets was not enough to fulfill my needs. I wanted access to more detailed stock data and the ability to group all my asset classes in one place. This is when I had the idea of creating a portfolio rebalancing app. I spent over a year developing the concept and design and initially started writing the backend in PHP, as it was the only backend language I knew. I used Vuejs for the frontend. As I continued working on the project, I decided to bring it to the next level and teamed up with a business partner. He improve the backend, which was re-written in Java. This allowed me to focus more on my strengths in design and frontend development.
+    </p>
+
+    <a
+        class="button"
+        href="#"
+        title="#"
+    >Explore more</a>
+
   </div>
 </template>
 

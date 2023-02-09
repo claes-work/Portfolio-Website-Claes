@@ -27,6 +27,14 @@ const isTab = (tabName: TabView) => {
   <div class="tab-header">
     <div
         class="tab-button"
+        :class="{ active : isTab(TabView.PROJECT_IDEA) }"
+        @click="$emit('change-tab', TabView.PROJECT_IDEA)"
+    >
+      <ProjectIdeaIcon />
+      <span>Project Idea</span>
+    </div>
+    <div
+        class="tab-button"
         :class="{ active : isTab(TabView.FEATURES) }"
         @click="$emit('change-tab', TabView.FEATURES)"
     >
@@ -40,14 +48,6 @@ const isTab = (tabName: TabView) => {
     >
       <TechStackIcon />
       <span>TechStack</span>
-    </div>
-    <div
-        class="tab-button"
-        :class="{ active : isTab(TabView.PROJECT_IDEA) }"
-        @click="$emit('change-tab', TabView.PROJECT_IDEA)"
-    >
-      <ProjectIdeaIcon />
-      <span>Project Idea</span>
     </div>
     <div
         class="tab-button"

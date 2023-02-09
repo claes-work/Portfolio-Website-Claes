@@ -3,9 +3,9 @@
   overflow: hidden; //
   width: 100%;
   max-width: 1075px;
-  height: 100%;
+  height: 80%;
   margin: 0 auto;
-  padding: 18px 18px 145px;
+  padding: 18px 18px 18px;
   background-color: #252525;
   border: 1px solid #3B3B3B;
 
@@ -13,12 +13,35 @@
     font-size: 24px;
     text-align: left;
     margin-bottom: 20px;
+    max-width: 580px;
   }
 
   p {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .button {
     position: relative;
-    margin-bottom: 25px;
+    height: 58px;
+    width: 100%;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.2s, background-color 0.2s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    color: #FFFFFF;
     z-index: 10;
+  }
+
+  .wireframes-bc {
+    display: none;
   }
 
   .button {
@@ -45,15 +68,8 @@
     color: #121212;
   }
 
-  .wireframes-bc {
-    width: 420px;
-    max-width: 850px;
-    position: absolute;
-    bottom: -65px;
-    right: 50%;
-    transform: translateX(50%);
-  }
 }
+
 
 @media only screen and (min-width: 480px) {
   #project-idea .heading {
@@ -67,40 +83,42 @@
     .button {
       width: 240px;
     }
-
-    .wireframes-bc {
-      right: 0;
-      bottom: -70px;
-      transform: translateX(12%);
-    }
-  }
-}
-
-@media only screen and (min-width: 680px) {
-  #project-idea .wireframes-bc {
-    width: 600px;
-    bottom: -160px;
-    transform: unset;
-    right: -70px;
   }
 }
 
 @media only screen and (min-width: 768px) {
   #project-idea {
     .heading {
-      max-width: 500px;
       line-height: 1.25;
     }
 
     p {
-      width: 60%;
+      text-align: justify;
     }
 
     .wireframes-bc {
-      width: 100%;
-      bottom: -130px;
-      right: -140px;
+      display: block;
+      width: 110%;
+      float: right;
+      shape-outside: url('@/assets/images/Project_Idea_Text_Shape.png');
+      shape-margin: 60px;
+      margin-right: -350px;
+      margin-bottom: -170px;
     }
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  #project-idea .wireframes-bc {
+    margin-bottom: -220px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #project-idea .wireframes-bc {
+    width: 100%;
+    margin-bottom: -220px;
+    margin-right: -255px;
   }
 }
 
@@ -108,28 +126,42 @@
   #project-idea {
     width: calc(100% + 20px);
     max-width: unset;
-    padding: 18px 18px 145px;
     margin-bottom: -40px;
+    padding: 0px 18px 25px;
     background-color: unset;
     border: unset;
 
     .heading {
       font-size: 36px;
     }
+
+    .wireframes-bc {
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: -220px;
+      margin-right: -255px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  #project-idea .wireframes-bc {
+    margin-bottom: -300px;
+    margin-right: -255px;
+    shape-margin: 80px;
+    margin-top: -45px;
   }
 }
 
 @media only screen and (min-width: 1280px) {
   #project-idea {
-    padding: 18px 50px 145px;
-
-    p {
-      width: 68%;
-    }
+    padding: 18px 50px 45px;
 
     .wireframes-bc {
-      bottom: -140px;
-      right: -115px;
+      margin-bottom: -300px;
+      margin-right: -280px;
+      shape-margin: 90px;
+      margin-top: -100px;
     }
   }
 }

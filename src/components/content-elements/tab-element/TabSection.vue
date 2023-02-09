@@ -10,7 +10,7 @@ import ProjectIdea from "@/components/pages/projects/rebalancing-tool/project-in
 import ProjectFiles from "@/components/pages/projects/rebalancing-tool/project-insides/ProjectFiles.vue";
 
 // The visible tab
-const selectedTab: Ref<TabViewType> = ref(TabView.TECH_STACK)
+const selectedTab: Ref<TabViewType> = ref(TabView.PROJECT_IDEA)
 
 // function, that is called by TabHeader child component
 const changeTab = (tabName: TabView) => {
@@ -26,16 +26,16 @@ const isTab = (tabName: TabView) => {
 <template>
   <section id="tab-section">
     <div class="container">
-      <h3>Project insides</h3>
+    <!--<h3>Project insides</h3>-->
 
       <TabHeader
           @change-tab="changeTab"
           :selected-tab="selectedTab"
       />
 
+      <ProjectIdea     v-if="isTab(TabView.PROJECT_IDEA)" />
       <ProjectFeatures v-if="isTab(TabView.FEATURES)"     />
       <TechStack       v-if="isTab(TabView.TECH_STACK)"   />
-      <ProjectIdea     v-if="isTab(TabView.PROJECT_IDEA)" />
       <ProjectFiles    v-if="isTab(TabView.FILES)"        />
     </div>
   </section>
