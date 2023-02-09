@@ -30,7 +30,7 @@ import EmailIcon from "@/components/icons/footer/EmailIcon.vue";
         <ul>
           <li><a href="https://www.linkedin.com/in/sebastian-claes-a85a92220/" title="linkedin/sebastian-claes"><span>Co-Founder</span> Sebastian Claes</a></li>
           <li><a href="https://www.linkedin.com/in/tobias-h%C3%BCbner-b19ba416a/" title="linkedin/tobias-hübner"><span>Co-Founder</span> Tobias Hübner</a></li>
-          <li><a href="#" title="linkedin/maik-irgendwas"><span>Backend-Dev</span> Maik Irgendwas</a></li>
+          <li><a href="#" title="linkedin/maik-irgendwas"><span>Backend-Dev</span> Maik Kampmeier</a></li>
           <li><a href="#" title="linkedin/marc-klose"><span>Intern</span> Marc Klose</a></li>
         </ul>
       </div>
