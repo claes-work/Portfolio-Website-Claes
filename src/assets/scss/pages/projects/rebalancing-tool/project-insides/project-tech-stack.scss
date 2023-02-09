@@ -1,3 +1,24 @@
+#tab-section.suggest-app {
+  #project-tech-stack .table-row {
+    .column.description .show-more {
+      span {
+        color: #FB893D;
+      }
+      svg line {
+        stroke: #FB893D;
+      }
+    }
+    .column.usage li span {
+      color: #FB893D;
+    }
+    .column.implemented-by .name-wrapper .github {
+      color: #FB893D;
+    }
+  }
+}
+
+
+
 #project-tech-stack {
   position: relative;
   width: 100%;
@@ -62,7 +83,7 @@
         margin-bottom: 5px;
 
         span {
-          color: $main-text-color;
+          color: $main-color;
         }
       }
     }
@@ -90,7 +111,7 @@
 
       .name-wrapper {
         .github {
-          color: $main-text-color;
+          color: $main-color;
           font-size: 14px;
           font-weight: 500;
           margin-bottom: 5px;
@@ -199,7 +220,10 @@
           svg {
             width: 14px;
             height: 16px;
-            fill: $main-color !important;
+
+            line {
+              stroke: $main-color;
+            }
           }
         }
       }

@@ -1,3 +1,10 @@
+#tab-section.suggest-app h2 span {
+  color: #FB893D;
+}
+#tab-section.suggest-app .button:hover {
+  background-color: #FB893D;
+}
+
 #project-idea {
   position: relative;
   overflow: hidden;

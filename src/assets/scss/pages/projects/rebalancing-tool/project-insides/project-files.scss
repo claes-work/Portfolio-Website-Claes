@@ -1,3 +1,17 @@
+#tab-section.suggest-app #project-files .file-wrapper ul li {
+  a:hover {
+    color: #FB893D;
+  }
+  svg {
+    rect {
+      fill: #3b2e26;
+    }
+    path {
+      fill:  #FB893D;
+    }
+  }
+}
+
 #project-files {
   position: relative;
   width: 100%;
@@ -58,6 +72,16 @@
 
         a:hover {
           color: $main-color;
+        }
+
+        svg {
+          rect {
+            fill: #212F2B;
+          }
+          path {
+            fill: $main-text-color;
+            stroke: none;
+          }
         }
       }
     }

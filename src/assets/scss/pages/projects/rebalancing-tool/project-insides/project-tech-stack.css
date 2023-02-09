@@ -1,9 +1,9 @@
 /* Error: Undefined variable.
  *    ,
- * 18 |     background-color: $bc-dark-5;
+ * 39 |     background-color: $bc-dark-5;
  *    |                       ^^^^^^^^^^
  *    '
- *   project-tech-stack.scss 18:23  root stylesheet */
+ *   project-tech-stack.scss 39:23  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 18 \2502      background-color: $bc-dark-5;\d\a    \2502                        ^^^^^^^^^^\a    \2575 \a   project-tech-stack.scss 18:23  root stylesheet";
+  content: "Error: Undefined variable.\a    \2577 \a 39 \2502      background-color: $bc-dark-5;\d\a    \2502                        ^^^^^^^^^^\a    \2575 \a   project-tech-stack.scss 39:23  root stylesheet";
 }
