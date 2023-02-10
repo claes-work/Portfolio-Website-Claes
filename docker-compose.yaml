@@ -1,0 +1,11 @@
+version: "3"
+
+
+# for test serving of build output, does not contain a working backend
+services:
+  sg-frontend:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
