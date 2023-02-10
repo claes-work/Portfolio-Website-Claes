@@ -16,7 +16,7 @@ import EmailIcon from "@/components/icons/footer/EmailIcon.vue";
         </div>
       </div>
       <div class="column col-2">
-        <h4 class="subheading">Projects</h4>
+        <h4 class="subheading">ProjectFolderPaths</h4>
         <ul>
           <li><a href="#" title="Portfolio Rebalancing Tool">Portfolio Rebalancing Tool</a></li>
           <li><a href="#" title="Suggest App">Suggest App</a></li>

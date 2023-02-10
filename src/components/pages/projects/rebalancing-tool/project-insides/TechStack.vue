@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Virtual } from 'swiper';
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { techStackData } from "@/data/TechStackData"
+import { techStackData } from "@/data/rebalancing-tool/TechStackData"
 import { useMainStore } from "@/stores/MainStore";
 
 const mainStore = useMainStore()

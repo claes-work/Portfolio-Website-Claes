@@ -1,34 +1,44 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import type { PropType, Ref } from "vue";
-import { TabView } from "@/models/TabView";
-import type { TabView as TabViewType } from "@/models/TabView";
+import { computed, ref, toRaw } from "vue";
+import type { PropType } from "vue";
 import type { ThemeColorClasses } from "@/models/ThemeColorClasses";
-import TabHeader from "@/components/content-elements/tab-element/TabHeader.vue";
-import ProjectFeatures from "@/components/pages/projects/rebalancing-tool/project-insides/ProjectFeatures.vue";
-import TechStack from "@/components/pages/projects/rebalancing-tool/project-insides/TechStack.vue";
-import ProjectIdea from "@/components/pages/projects/rebalancing-tool/project-insides/ProjectIdea.vue";
-import ProjectFiles from "@/components/pages/projects/rebalancing-tool/project-insides/ProjectFiles.vue";
+import TabButton from "@/components/content-elements/tab-element/TabButton.vue";
+import type { ProjectTab } from "@/models/ProjectTab";
 
 const props = defineProps({
   themeColor: {
     type: Object as PropType<ThemeColorClasses>,
     required: true
+  },
+  projectTabs: {
+    type: Object as PropType<ProjectTab[]>,
+    required: true
   }
 })
 
-// The visible tab
-const selectedTab: Ref<TabViewType> = ref(TabView.PROJECT_IDEA)
-
-// function, that is called by TabHeader child component
-const changeTab = (tabName: TabView) => {
-  selectedTab.value = tabName
+const filterArray = (property: string, value: any) => {
+  return props.projectTabs.filter((el: any) => el[property] === value)[0]
 }
 
-// Compare selected tab and return bool
-const isTab = (tabName: TabView) => {
-  return selectedTab.value === tabName
+// Get the active component
+const getComponent = computed(() => {
+  let component = filterArray('isActive', true)
+  return toRaw(component).component
+})
+
+// Change isActive property in oder to render the clicked component
+const changeComponent = (componentName: any) => {
+  // get active record
+  let oldComponent = filterArray('isActive', true)
+  oldComponent.isActive = false
+
+  // Get record that matches the component name
+  let newComponent = filterArray('componentName', componentName)
+  newComponent.isActive = true
 }
+
+const activeComponent = ref(getComponent)
+
 </script>
 
 <template>
@@ -36,15 +46,20 @@ const isTab = (tabName: TabView) => {
     <div class="container">
     <!--<h3>Project insides</h3>-->
 
-      <TabHeader
-          @change-tab="changeTab"
-          :selected-tab="selectedTab"
-      />
+      <div class="tab-header">
+        <TabButton
+            v-for="tab in projectTabs"
+            :tab-name="tab.componentName"
+            :class="{ active : tab.isActive }"
+            @click="changeComponent(tab.componentName)"
+        >
+          <template #tab-icon>
+            <component :is="tab.icon"></component>
+          </template>
+        </TabButton>
+      </div>
 
-      <ProjectIdea     v-if="isTab(TabView.PROJECT_IDEA)" />
-      <ProjectFeatures v-if="isTab(TabView.FEATURES)"     />
-      <TechStack       v-if="isTab(TabView.TECH_STACK)"   />
-      <ProjectFiles    v-if="isTab(TabView.FILES)"        />
+      <component :is="activeComponent"></component>
     </div>
   </section>
 </template>
