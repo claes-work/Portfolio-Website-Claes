@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import Video from "@/components/pages/projects/rebalancing-tool/RebalancingVideo.vue";
 </script>
 
 <template>

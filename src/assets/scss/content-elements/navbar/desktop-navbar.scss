@@ -16,8 +16,9 @@
 
     h2 {
       font-size: 15px;
-      font-weight: 500;
-      letter-spacing: .4px;
+      font-weight: 900;
+      font-family: Varino, sans-serif;
+      color: $main-color;
     }
 
     ul {
@@ -69,6 +70,16 @@
         color: $main-color;
         border-bottom-color: #44dbae;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #desktop-navbar {
+    padding: 0 20px;
+
+    .container {
+      padding: 0;
     }
   }
 }

@@ -8,7 +8,7 @@ const isActive: Ref<boolean> = ref(false)
 <template>
   <nav id="mobile-navbar">
     <div class="container">
-      <h2>Claes & Huebner GbR</h2>
+      <h2>Claes</h2>
 
       <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80" :class="{ active: isActive }" @click="isActive = !isActive">
         <path
@@ -26,7 +26,7 @@ const isActive: Ref<boolean> = ref(false)
     <div class="mobile-nav-menu" :class="{ active: isActive }">
       <ul>
         <li><RouterLink :to="{ name: 'projects' }">PROJECTS</RouterLink></li>
-        <li><RouterLink :to="{ name: 'about' }" >ABOUT US</RouterLink></li>
+        <li><RouterLink :to="{ name: 'about' }" >ABOUT ME</RouterLink></li>
         <li><a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a></li>
       </ul>
     </div>
