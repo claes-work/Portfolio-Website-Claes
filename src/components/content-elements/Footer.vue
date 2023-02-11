@@ -3,20 +3,23 @@
 import LocationIcon from "@/components/icons/footer/LocationIcon.vue";
 import PhoneIcon from "@/components/icons/footer/PhoneIcon.vue";
 import EmailIcon from "@/components/icons/footer/EmailIcon.vue";
+import GitHubIcon from "@/components/icons/footer/GitHubIcon.vue";
+import LinkedInIcon from "@/components/icons/footer/LinkedInIcon.vue";
+import XingIcon from "@/components/icons/footer/XingIcon.vue";
 </script>
 
 <template>
   <footer>
     <div class="container columns">
       <div class="column col-1">
-        <h4 class="heading">Claes & Huebner GbR</h4>
-        <p>Thank you for visiting our website! We appreciate your interest and hope you found what you were looking for. If there is anything more we can assist with, please don't hesitate to reach out. Your support means a lot to us. Thank you again for stopping by!</p>
+        <h4 class="heading">Sebastian Claes</h4>
+        <p>Thank you for visiting my website! I appreciate your interest and hope you found what you were looking for. If there is anything more I can assist with, please don't hesitate to reach out. Your support means a lot to me. Thank you again for stopping by!</p>
         <div class="sozial-media-wrapper">
 
         </div>
       </div>
       <div class="column col-2">
-        <h4 class="subheading">ProjectFolderPaths</h4>
+        <h4 class="subheading">Projects</h4>
         <ul>
           <li><a href="#" title="Portfolio Rebalancing Tool">Portfolio Rebalancing Tool</a></li>
           <li><a href="#" title="Suggest App">Suggest App</a></li>
@@ -26,12 +29,11 @@ import EmailIcon from "@/components/icons/footer/EmailIcon.vue";
         </ul>
       </div>
       <div class="column col-3">
-        <h4 class="subheading">Members</h4>
+        <h4 class="subheading">Social Media</h4>
         <ul>
-          <li><a href="https://www.linkedin.com/in/sebastian-claes-a85a92220/" title="linkedin/sebastian-claes"><span>Co-Founder</span> Sebastian Claes</a></li>
-          <li><a href="https://www.linkedin.com/in/tobias-h%C3%BCbner-b19ba416a/" title="linkedin/tobias-hübner"><span>Co-Founder</span> Tobias Hübner</a></li>
-          <li><a href="#" title="linkedin/maik-irgendwas"><span>Backend-Dev</span> Maik Kampmeier</a></li>
-          <li><a href="#" title="linkedin/marc-klose"><span>Intern</span> Marc Klose</a></li>
+          <li><GitHubIcon /> <a href="https://www.linkedin.com/in/sebastian-claes-a85a92220/" title="linkedin/sebastian-claes">GitHub</a></li>
+          <li><LinkedInIcon /> <a href="https://www.linkedin.com/in/tobias-h%C3%BCbner-b19ba416a/" title="linkedin/tobias-hübner">LinkedIn</a></li>
+          <li><XingIcon /> <a href="#" title="linkedin/maik-irgendwas">XING</a></li>
         </ul>
       </div>
       <div class="column col-4">
@@ -45,7 +47,7 @@ import EmailIcon from "@/components/icons/footer/EmailIcon.vue";
     </div>
     <div class="copyright-wrapper">
       <div class="container">
-        <p class="copyright">left: Copyright © 2023 <span>Claes & Huebner GbR</span> All Rights Reserved.</p>
+        <p class="copyright">Copyright © 2023 <span>Sebastian Claes</span> All Rights Reserved.</p>
         <p class="design-by">Design by: <span>Sebastian Claes</span></p>
       </div>
     </div>
