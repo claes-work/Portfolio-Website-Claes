@@ -5,7 +5,6 @@ import TabSection from "@/components/content-elements/tab-element/TabSection.vue
 import { ThemeColorClasses } from "@/models/ThemeColorClasses";
 import { rebalancingToolInsides } from "@/data/rebalancing-tool/RebalancingToolInsides"
 import { suggestAppInsides } from "@/data/suggest-app/SuggestAppInsides"
-import Video from "@/components/pages/projects/rebalancing-tool/RebalancingVideo.vue";
 
 </script>
 
@@ -20,6 +19,4 @@ import Video from "@/components/pages/projects/rebalancing-tool/RebalancingVideo
       :theme-color="ThemeColorClasses.SUGGEST_APP"
       :project-tabs="suggestAppInsides"
   />
-
-  <Video />
 </template>

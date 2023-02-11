@@ -28,7 +28,9 @@ import Video from "@/components/pages/projects/rebalancing-tool/RebalancingVideo
             src="@/assets/images/MacBook_Portfolio_Rebalancer.png"
             alt="MacBook Portfolio Rebalancer"
         />
-        <Video />
+        <div class="player-container">
+          <Vue3VideoPlayer ref="player" src="src/assets/videos/test.mp4" />
+        </div>
       </div>
     </div>
   </section>
