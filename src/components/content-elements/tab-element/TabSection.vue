@@ -23,18 +23,25 @@ const filterArray = (property: string, value: any) => {
 // Get the active component
 const getComponent = computed(() => {
   let component = filterArray('isActive', true)
-  return toRaw(component).component
+  if (component) {
+    return toRaw(component).component
+  }
 })
 
 // Change isActive property in oder to render the clicked component
 const changeComponent = (componentName: any) => {
+
   // get active record
   let oldComponent = filterArray('isActive', true)
-  oldComponent.isActive = false
+  if(oldComponent) {
+    oldComponent.isActive = false
+  }
 
   // Get record that matches the component name
   let newComponent = filterArray('componentName', componentName)
-  newComponent.isActive = true
+  if (newComponent) {
+    newComponent.isActive = true
+  }
 }
 
 const activeComponent = ref(getComponent)
@@ -59,7 +66,7 @@ const activeComponent = ref(getComponent)
         </TabButton>
       </div>
 
-      <component :is="activeComponent"></component>
+      <component :is="activeComponent" @change-tab="changeComponent"></component>
     </div>
   </section>
 </template>

@@ -13,11 +13,13 @@
               class="button primary"
               href="https://portfolio-rebalancer.com/"
               title="portfolio-rebalancer.com"
+              target="_blank"
           >Try it now</a>
           <a
               class="button secondary"
               href="https://github.com/Asset-Rebalancing-Tool/AssetRebalancingTool"
               title="github.com/Asset-Rebalancing-Tool"
+              target="_blank"
           >Browse Code</a>
         </div>
       </div>

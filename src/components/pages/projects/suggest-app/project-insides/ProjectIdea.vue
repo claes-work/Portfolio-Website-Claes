@@ -15,11 +15,7 @@
       Our app is all about bringing people together through the power of music. With the increasing popularity of streaming services like Spotify, it's easier than ever to access a wide range of music from all over the world. But with so much choice, it can be difficult to find new Songs that really matches your taste in musik. That's where our app comes in. Our app tracks and compares the Spotify song history of all users in order to match people who have the most similar taste in music. Our app than can suggest tunes that one user loves but the other user may not have heard of. This not only helps expand each user's musical horizons, but also creates a platform for people to connect based on their shared love of music.
     </p>
 
-    <a
-        class="button"
-        href="#"
-        title="#"
-    >Explore more</a>
+    <div class="button" @click="$emit('change-tab', 'Features')">Explore more</div>
 
   </div>
 </template>

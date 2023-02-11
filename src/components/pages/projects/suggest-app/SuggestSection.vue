@@ -14,11 +14,13 @@
               class="button primary"
               href="https://suggest-app.com/"
               title="suggest-app.com"
+              target="_blank"
           ></a>
           <a
               class="button secondary"
               href="https://suggest-app.com/"
               title="suggest-app.com"
+              target="_blank"
           ></a>
         </div>
       </div>
