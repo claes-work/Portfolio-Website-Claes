@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import Video from "@/components/pages/projects/rebalancing-tool/RebalancingVideo.vue";
 </script>
 
 <template>
@@ -21,11 +22,14 @@
           >Browse Code</a>
         </div>
       </div>
-      <img
-          class="macbook-image"
-          src="@/assets/images/MacBook_Portfolio_Rebalancer.png"
-          alt="MacBook Portfolio Rebalancer"
-      >
+      <div class="macbook-image-wrapper">
+        <img
+            class="macbook-image"
+            src="@/assets/images/MacBook_Portfolio_Rebalancer.png"
+            alt="MacBook Portfolio Rebalancer"
+        />
+        <Video />
+      </div>
     </div>
   </section>
 </template>

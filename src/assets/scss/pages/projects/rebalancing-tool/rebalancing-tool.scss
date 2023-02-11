@@ -71,8 +71,21 @@
       }
     }
 
-    .macbook-image {
-      width: 100%;
+    .macbook-image-wrapper {
+      position: relative;
+
+      .macbook-image, {
+        width: 100%;
+      }
+
+      .player-container {
+        position: absolute;
+        top: 3%;
+        left: 11%;
+        width: 78%;
+        height: 84%;
+        z-index: 10;
+      }
     }
   }
 }
@@ -126,12 +139,25 @@
         z-index: 10;
       }
 
-      .macbook-image {
-        position: absolute;
-        left: 45.5%;
-        bottom: 0;
-        width: 700px;
-        z-index: 10;
+      .macbook-image-wrapper {
+        position: unset;
+
+        .macbook-image {
+          position: absolute;
+          left: 45.5%;
+          bottom: 0;
+          width: 700px;
+          z-index: 10;
+        }
+
+        .player-container {
+          position: absolute;
+          left: 52%;
+          top: 14%;
+          z-index: 10;
+          width: 550px;
+          height: 355px;
+        }
       }
     }
   }
@@ -144,9 +170,21 @@
     .container {
       padding: 50px;
 
-      .macbook-image {
-        bottom: -45px;
-        width: 775px;
+      .macbook-image-wrapper {
+
+        .macbook-image {
+          bottom: -45px;
+          width: 775px;
+        }
+
+        .player-container {
+          position: absolute;
+          left: 52%;
+          top: 14%;
+          z-index: 10;
+          width: 608px;
+          height: 395px;
+        }
       }
     }
   }
