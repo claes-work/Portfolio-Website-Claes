@@ -2,7 +2,7 @@ import { ref } from "vue";
 import type { Ref } from "vue";
 import type { ProjectTab } from "@/models/ProjectTab";
 import ProjectIdeaIcon from "@/components/icons/ProjectIdeaIcon.vue";
-import ProjectIdea from "@/components/pages/projects/suggest-app/project-insides/ProjectIdea.vue";
+import ProjectIdea from "@/components/pages/projects/rebalancing-tool/project-insides/ProjectIdea.vue";
 import FeaturesIcon from "@/components/icons/FeaturesIcon.vue";
 import ProjectFeatures from "@/components/pages/projects/rebalancing-tool/project-insides/ProjectFeatures.vue";
 import TechStackIcon from "@/components/icons/TechStackIcon.vue";

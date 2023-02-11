@@ -4,7 +4,7 @@ import SuggestSection from "@/components/pages/projects/suggest-app/SuggestSecti
 import TabSection from "@/components/content-elements/tab-element/TabSection.vue";
 import { ThemeColorClasses } from "@/models/ThemeColorClasses";
 import { rebalancingToolInsides } from "@/data/rebalancing-tool/RebalancingToolInsides"
-import { suggestAppInsides } from "@/data/rebalancing-tool/SuggestAppInsides"
+import { suggestAppInsides } from "@/data/suggest-app/SuggestAppInsides"
 </script>
 
 <template>

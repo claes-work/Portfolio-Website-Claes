@@ -89,62 +89,13 @@
   }
   #project-idea .wireframes-bc {
     display: block;
-    width: 110%;
-    float: right;
-    shape-outside: url("@/assets/images/Project_Idea_Text_Shape.png");
-    shape-margin: 60px;
-    margin-right: -350px;
-    margin-bottom: -170px;
-  }
-}
-@media only screen and (min-width: 860px) {
-  #project-idea .wireframes-bc {
-    margin-bottom: -220px;
-  }
-}
-@media only screen and (min-width: 900px) {
-  #project-idea .wireframes-bc {
     width: 100%;
-    margin-bottom: -220px;
-    margin-right: -255px;
+    float: right;
   }
 }
 @media only screen and (min-width: 991px) {
-  #project-idea {
-    width: calc(100% + 20px);
-    max-width: unset;
-    margin-bottom: -45px;
-    padding: 0 18px 25px;
-    background-color: unset;
-    border: unset;
-  }
   #project-idea .heading {
     font-size: 36px;
-  }
-  #project-idea .wireframes-bc {
-    width: 100%;
-    max-width: 1000px;
-    margin-bottom: -220px;
-    margin-right: -255px;
-  }
-}
-@media only screen and (min-width: 1100px) {
-  #project-idea .wireframes-bc {
-    margin-bottom: -300px;
-    margin-right: -255px;
-    shape-margin: 80px;
-    margin-top: -45px;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  #project-idea {
-    padding: 18px 50px 45px;
-  }
-  #project-idea .wireframes-bc {
-    margin-bottom: -300px;
-    margin-right: -280px;
-    shape-margin: 90px;
-    margin-top: -100px;
   }
 }
 
