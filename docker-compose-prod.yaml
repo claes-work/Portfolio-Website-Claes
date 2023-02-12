@@ -1,13 +1,22 @@
 version: "3"
 
 services:
-  sg-frontend:
+  portfolio-site:
     restart: always
     build:
       dockerfile: Dockerfile
     networks:
-      - jitcom_net
+      - claes-work
+  strapi:
+    image: strapi/strapi
+    volumes:
+      - vstrapi:/srv/app
+    ports:
+      - "188.68.62.174:1337:1337"
 
 networks:
-  jitcom_net:
+  claes-work:
     external: true
+
+volumes:
+  vstrapi:
