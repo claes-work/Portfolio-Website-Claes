@@ -13,8 +13,6 @@ services:
       - claes-work
     volumes:
       - vstrapi:/srv/app
-    ports:
-      - "188.68.62.174:1337:1337"
 
 networks:
   claes-work:
