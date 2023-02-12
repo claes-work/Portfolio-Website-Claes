@@ -1,14 +1,16 @@
 version: "3"
 
 services:
-  # portfolio-site:
-  # restart: always
-  # build:
-  # dockerfile: Dockerfile
-  # networks:
-  # - claes-work
+  portfolio-site:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+    networks:
+      - claes-work
   strapi:
     image: strapi/strapi:3.6-alpine
+    networks:
+      - claes-work
     volumes:
       - vstrapi:/srv/app
     ports:
