@@ -14,8 +14,8 @@ steps:
     environment:
       COMPOSE_PROJECT_NAME: webservicesclaes
     commands:
-      - docker compose -f docker-compose_prod.yaml build
-      - docker compose -f docker-compose_prod.yaml up -d
+      - docker compose -f docker-compose-prod.yaml build
+      - docker compose -f docker-compose-prod.yaml up -d
 
 
 trigger:
