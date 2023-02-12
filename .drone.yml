@@ -17,6 +17,7 @@ steps:
       - docker compose -f docker-compose_prod.yaml build
       - docker compose -f docker-compose_prod.yaml up -d
 
+
 trigger:
   branch:
     - master
