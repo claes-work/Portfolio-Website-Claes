@@ -27,6 +27,7 @@ const isActive: Ref<boolean> = ref(false)
       <ul>
         <li><RouterLink :to="{ name: 'projects' }">PROJECTS</RouterLink></li>
         <li><RouterLink :to="{ name: 'about' }" >ABOUT ME</RouterLink></li>
+        <li><RouterLink :to="{ name: 'blog' }" >Blog</RouterLink></li>
         <li><a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a></li>
       </ul>
     </div>

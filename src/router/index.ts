@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ProjectView from '@/components/pages/projects/ProjectPage.vue'
-import AboutView from '@/components/pages/about/AboutPage.vue'
+import ProjectPage from '@/components/pages/projects/ProjectPage.vue'
+import AboutPage from '@/components/pages/about/AboutPage.vue'
+import BlogPage from "@/components/pages/blog/BlogPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,12 +9,17 @@ const router = createRouter({
     {
       path: '/',
       name: 'projects',
-      component: ProjectView
+      component: ProjectPage
     },
     {
       path: '/about',
       name: 'about',
-      component: AboutView
+      component: AboutPage
+    },
+    {
+      path: '/blog',
+      name: 'blog',
+      component: BlogPage
     }
   ],
   // Always start at the top after route change
