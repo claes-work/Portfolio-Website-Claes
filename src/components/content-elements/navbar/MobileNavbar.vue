@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import type { Ref } from "vue";
+import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
+import { useMainStore } from "@/stores/MainStore";
 
-const isActive: Ref<boolean> = ref(false)
+const mainStore = useMainStore();
+const activeSubNav: Ref<boolean> = ref(false)
 </script>
 
 <template>
@@ -10,7 +13,7 @@ const isActive: Ref<boolean> = ref(false)
     <div class="container">
       <h2>Claes</h2>
 
-      <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80" :class="{ active: isActive }" @click="isActive = !isActive">
+      <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80" :class="{ active: mainStore.openNavMenu }" @click="mainStore.openNavMenu = !mainStore.openNavMenu">
         <path
             class="line top"
             d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
@@ -23,11 +26,20 @@ const isActive: Ref<boolean> = ref(false)
       </svg>
     </div>
 
-    <div class="mobile-nav-menu" :class="{ active: isActive }">
+    <div class="mobile-nav-menu" :class="{ active: mainStore.openNavMenu }">
       <ul>
-        <li><RouterLink :to="{ name: 'projects' }">PROJECTS</RouterLink></li>
+        <li :class="{ open : activeSubNav }">
+          <div class="sub-link" @click="activeSubNav = !activeSubNav">
+            <span>PROJECTS</span>
+            <ArrowDownIcon />
+          </div>
+          <div class="sub-link-content">
+            <RouterLink :to="{ name: 'projects' }">APPS</RouterLink>
+            <RouterLink :to="{ name: 'websites' }">WEBSITES</RouterLink>
+          </div>
+        </li>
         <li><RouterLink :to="{ name: 'about' }" >ABOUT ME</RouterLink></li>
-        <li><RouterLink :to="{ name: 'blog' }" >Blog</RouterLink></li>
+        <li><RouterLink :to="{ name: 'blog' }" >BLOG</RouterLink></li>
         <li><a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a></li>
       </ul>
     </div>

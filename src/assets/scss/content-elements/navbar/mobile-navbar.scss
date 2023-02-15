@@ -78,18 +78,25 @@
         list-style: none;
         cursor: pointer;
 
-        a {
-          display: block;
+        a, .sub-link {
+          display: flex;
+          justify-content: space-between;
           font-family: 'Space Mono',sans-serif;
           letter-spacing: 1px;
           font-size: 14px;
           font-weight: 500;
+          text-transform: uppercase;
           position: relative;
           border-bottom: $nav-border-val;
           margin-bottom: -1px;
           color: $default-text-color;
           padding: 18px 0;
           text-decoration: none;
+
+          .arrow-down {
+            margin-top: 2px;
+            stroke: #FFFFFF;
+          }
         }
 
         svg {
@@ -100,11 +107,39 @@
         .contact-btn {
           position: relative;
           padding: 12px 15px;
-          margin-top: -3px;
           background-color: $main-color;
           color: $bc-dark-2;
+          font-weight: 500;
           text-decoration: none;
           transition: 200ms ease-out;
+          width: 100%;
+          justify-content: center;
+          margin-top: 45px;
+        }
+
+        .sub-link-content {
+          display: none;
+        }
+      }
+
+      li.open {
+        .sub-link {
+          color: $main-color;
+          border-color: #6b6a6a;
+
+          .arrow-down {
+            stroke: $main-color;
+            transform: rotate(180deg);
+          }
+        }
+        .sub-link-content {
+          display: block;
+          padding: 12px;
+
+          a {
+            border: unset;
+            padding: 12px 0;
+          }
         }
       }
 
@@ -113,16 +148,26 @@
         margin-top: 15px;
       }
 
-      li a:hover:not(li:last-child a:hover) {
+      li a:hover:not(li:last-child a:hover),
+      .sub-link:hover {
         color: $main-color;
+
+        .arrow-down {
+          stroke: $main-color;
+        }
       }
 
       li:last-child:hover .contact-btn {
         background-color: $bc-light-1;
       }
 
-      .router-link-exact-active {
+      .router-link-exact-active,
+      .sub-link:hover {
         color: $main-color;
+
+        .arrow-down {
+          stroke: $main-color;
+        }
       }
     }
   }
