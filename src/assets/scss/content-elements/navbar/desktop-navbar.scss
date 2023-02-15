@@ -5,8 +5,9 @@
   width: 100%;
   height: 63px;
   border-bottom: $nav-border-val;
-  background-color: $bc-dark-3;
+  background-color: $bc-dark-2;
   z-index: 800;
+  overflow-y: visible;
 
   .container {
     display: flex;
@@ -29,11 +30,12 @@
       column-gap: 55px;
 
       li {
+        position: relative;
         list-style: none;
         cursor: pointer;
         font-family: 'Space Mono',sans-serif;
 
-        a {
+        a, .sub-link {
           color: $default-text-color;
           font-family: 'Space Mono',sans-serif;
           letter-spacing: 1px;
@@ -44,6 +46,29 @@
           position: relative;
           height: 63px;
           padding: 20px 12px;
+
+          .arrow-down {
+            stroke: #FFFFFF;
+          }
+        }
+
+        .sub-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 10px;
+          border-bottom: 2px solid transparent;
+        }
+
+        .sub-link.active {
+          border-bottom: 2px solid $main-color;
+          color: $main-color;
+
+          svg {
+            margin-left: unset;
+            stroke: $main-color;
+            transform: rotate(180deg);
+          }
         }
 
         .contact-btn {
@@ -57,20 +82,64 @@
         }
       }
 
-      li a:hover:not(li:last-child a:hover) {
-        border-bottom-color: #44dbae;
+      li a:hover:not(li:last-child a:hover),
+      .sub-link:hover {
+        border-bottom: 2px solid $main-color;
         color: $main-color;
+
+        .arrow-down {
+          stroke: $main-color;
+        }
       }
 
       li:last-child:hover .contact-btn {
         background-color: $bc-light-1;
       }
 
-      .router-link-exact-active {
+      .router-link-exact-active,
+      .sub-link {
         color: $main-color;
-        border-bottom-color: #44dbae;
+        //border-bottom-color: #44dbae;
+
+        .arrow-down {
+          stroke: $main-color;
+        }
       }
     }
+  }
+
+  .sub-link-content {
+    position: absolute;
+    top: 63px;
+    width: 100%;
+    height: auto;
+    background-color: $bc-dark-3;
+    //border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    z-index: 15;
+    padding: 18px 0;
+
+    .nested-link {
+      padding: 10px 14px;
+      height: auto;
+    }
+  }
+
+  .container ul li .router-link-active.router-link-exact-active.nested-link:hover,
+  .container ul li .nested-link {
+    border-bottom: none!important;
+  }
+
+
+  .sub-link-content::before {
+    content: '';
+    width: 200vw;
+    height: 100%;
+    background-color: $bc-dark-1;
+    position: absolute;
+    top: 0;
+    left: -100vw;
   }
 }
 
