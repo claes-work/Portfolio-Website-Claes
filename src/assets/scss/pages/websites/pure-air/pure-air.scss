@@ -1,0 +1,229 @@
+$pure-air-main-color: #1E90FF;
+
+#pure-air {
+  padding: 63px 15px 25px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .text-wrapper {
+      margin-bottom: 30px;
+
+      .website-label {
+        width: 135px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: $primary-text-color;
+        margin-bottom: 15px;
+
+        span {
+          color: $pure-air-main-color;
+        }
+      }
+
+      p {
+        margin-bottom: 25px;
+      }
+
+      .button-wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        .button {
+          height: 58px;
+          width: 100%;
+          padding: 14px 28px;
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          text-decoration: none;
+          transition: color .2s,background-color .2s;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .button.primary {
+          background-color: $pure-air-main-color;
+          color: $default-text-color;
+        }
+
+        .button.primary:hover {
+          background-color: $bc-dark-2;
+          color: $bc-light-default;
+        }
+
+        .button.secondary {
+          background-color: $bc-dark-2;
+          color: $bc-light-default;
+        }
+
+        .button.secondary:hover {
+          background-color: $pure-air-main-color;
+          color: $default-text-color;
+        }
+      }
+    }
+
+    .pure-air-image {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 580px) {
+  #pure-air .container {
+    .text-wrapper {
+      max-width: 500px;
+      margin: 0 0 45px;
+
+      .website-label {
+        width: 150px;
+        margin-right: calc(50vw - 262px);
+      }
+
+      .button-wrapper {
+        flex-direction: row;
+        justify-content: flex-start;
+        column-gap: 15px;
+
+        p {
+          max-width: 500px;
+        }
+
+        .button {
+          width: 175px;
+          height: 58px;
+        }
+      }
+    }
+
+    .pure-air-image {
+      max-width: 500px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #pure-air {
+    padding: 63px 25px 0;
+
+    .container {
+      position: relative;
+      flex-direction: row-reverse;
+      column-gap: 50px;
+
+      .website-label {
+        width: 150px;
+      }
+
+      .text-wrapper {
+        max-width: 400px;
+      }
+
+      .pure-air-image {
+        position: absolute;
+        right: 62%;
+        top: 15px;
+        width: 400px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  #pure-air {
+    padding: 150px 25px 45px;
+
+    .container {
+      flex-direction: row-reverse;
+      column-gap: 50px;
+
+      .text-wrapper {
+        .website-label {
+          position: absolute;
+          width: 150px;
+          top: -88px;
+          right: 246px;
+          margin-right: unset;
+        }
+      }
+
+      .pure-air-image {
+        width: 55%;
+        top: 50%;
+        right: 52%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #pure-air {
+    padding: 108px 0 45px;
+
+    .container {
+      padding: 40px;
+      z-index: 0;
+
+      .text-wrapper {
+        max-width: 500px;
+        z-index: 10;
+
+        .website-label {
+          right: 45px;
+          top: -6px;
+          margin-right: unset;
+        }
+      }
+
+      .pure-air-image {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 45%;
+        right: 56%;
+        z-index: 15;
+      }
+    }
+  }
+
+  #pure-air .container::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    right: 25px;
+    height: 100%;
+    top: 0;
+    background-color: $bc-light-1;
+    z-index: 5;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #pure-air {
+
+    .container {
+      padding: 100px 100px 100px 0;
+
+      .text-wrapper {
+        margin: 0;
+
+        .website-label {
+          width: 175px;
+        }
+      }
+
+      .pure-air-image {
+        max-width: 540px;
+        left: 0;
+      }
+    }
+  }
+}
