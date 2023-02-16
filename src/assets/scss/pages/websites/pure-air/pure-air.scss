@@ -9,7 +9,7 @@ $pure-air-main-color: #1E90FF;
     flex-direction: column;
 
     .text-wrapper {
-      margin-bottom: 30px;
+      margin-bottom: 102%;
 
       .website-label {
         width: 135px;
@@ -72,6 +72,8 @@ $pure-air-main-color: #1E90FF;
     }
 
     .pure-air-image {
+      position: absolute;
+      bottom: 0;
       width: 100%;
     }
   }
@@ -81,7 +83,7 @@ $pure-air-main-color: #1E90FF;
   #pure-air .container {
     .text-wrapper {
       max-width: 500px;
-      margin: 0 0 45px;
+      margin: 0 0 520px;
 
       .website-label {
         width: 150px;
@@ -125,6 +127,7 @@ $pure-air-main-color: #1E90FF;
 
       .text-wrapper {
         max-width: 400px;
+        margin-bottom: 40px;
       }
 
       .pure-air-image {
@@ -146,6 +149,8 @@ $pure-air-main-color: #1E90FF;
       column-gap: 50px;
 
       .text-wrapper {
+        margin-bottom: 60px;
+
         .website-label {
           position: absolute;
           width: 150px;
@@ -159,7 +164,7 @@ $pure-air-main-color: #1E90FF;
         width: 55%;
         top: 50%;
         right: 52%;
-        transform: translateY(-50%);
+        transform: translateY(-54%);
       }
     }
   }
@@ -170,7 +175,7 @@ $pure-air-main-color: #1E90FF;
     padding: 108px 0 45px;
 
     .container {
-      padding: 40px;
+      padding: 50px;
       z-index: 0;
 
       .text-wrapper {
