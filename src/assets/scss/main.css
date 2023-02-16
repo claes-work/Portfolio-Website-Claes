@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Red Hat Display 400", sans-serif;
 }
 
 body, html {
@@ -44,11 +44,12 @@ h1, h2, h3, h4, ul {
 
 h1, h2, h3 {
   line-height: 1.1;
-  font-weight: 700;
+  font-family: "Red Hat Display 700", sans-serif;
   color: #FFFFFF;
 }
 h1 span, h2 span, h3 span {
   color: #53FDCAFF;
+  font-family: "Red Hat Display 700", sans-serif;
 }
 
 h1, h2 {
@@ -159,12 +160,33 @@ p span {
 }
 
 /*************************************************************************/
-/* ------------------------ Vue3 Video Player -------------------------- */
+/* --------------------------- Font Families --------------------------- */
 /*************************************************************************/
 @font-face {
   font-family: "Varino";
   src: url("@/assets/fonts/FontsFree-Net-Centauri.ttf") format("truetype");
   font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Red Hat Display 400";
+  src: url("@/assets/fonts/RedHatDisplay-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Red Hat Display 700";
+  src: url("@/assets/fonts/RedHatDisplay-VariableFont_wght.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("@/assets/fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }

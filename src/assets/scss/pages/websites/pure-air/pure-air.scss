@@ -142,7 +142,7 @@ $pure-air-main-color: #1E90FF;
 
 @media only screen and (min-width: 991px) {
   #pure-air {
-    padding: 150px 25px 45px;
+    padding: 150px 25px 198px;
 
     .container {
       flex-direction: row-reverse;
@@ -172,10 +172,10 @@ $pure-air-main-color: #1E90FF;
 
 @media only screen and (min-width: 1024px) {
   #pure-air {
-    padding: 108px 0 45px;
+    padding: 108px 0 168px;
 
     .container {
-      padding: 50px;
+      padding: 40px;
       z-index: 0;
 
       .text-wrapper {
@@ -197,14 +197,20 @@ $pure-air-main-color: #1E90FF;
         z-index: 15;
       }
     }
+
+    .container::before {
+      width: calc(100% - 2px);
+      height: 92%;
+      right: 20px;
+    }
   }
 
   #pure-air .container::before {
     content: '';
     position: absolute;
     width: 80%;
-    right: 25px;
-    height: 100%;
+    right: 20px;
+    height: 90%;
     top: 0;
     background-color: $bc-light-1;
     z-index: 5;
@@ -213,6 +219,7 @@ $pure-air-main-color: #1E90FF;
 
 @media only screen and (min-width: 1280px) {
   #pure-air {
+    padding: 108px 0 192px;
 
     .container {
       padding: 100px 100px 100px 0;
@@ -222,6 +229,7 @@ $pure-air-main-color: #1E90FF;
 
         .website-label {
           width: 175px;
+          right: 20px;
         }
       }
 
@@ -229,6 +237,11 @@ $pure-air-main-color: #1E90FF;
         max-width: 540px;
         left: 0;
       }
+    }
+
+    .container::before {
+      height: 95%;
+      right: 0;
     }
   }
 }
