@@ -244,12 +244,13 @@ $pure-air-main-color: #0E243F;
 
       .diewell-website-image {
         width: 730px;
+        transform: translateY(-52%);
         right: 0;
       }
     }
 
     .container::before {
-      height: 95%;
+      height: 460px;
       right: unset;
       left: 0;
     }
