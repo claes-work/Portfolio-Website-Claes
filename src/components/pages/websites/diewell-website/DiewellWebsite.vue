@@ -2,16 +2,16 @@
 </script>
 
 <template>
-  <section id="pure-air">
+  <section id="diewell-website">
     <div class="container">
       <div class="text-wrapper">
         <img
             class="website-label"
-            src="@/assets/images/WordPress_Pure_Air_Website_Label_Logo.png"
+            src="@/assets/images/WordPress_Diewell_Website_Label_Logo.png"
             alt="WordPress Website Label Logo"
         />
         <div class="logo"></div>
-        <h2>My greatest<br><span>Success</span> Story</h2>
+        <h2>Design <span>Relaunch</span><br>diewell.de</h2>
         <p>This App simplifies the process of asset rebalancing. With a user-friendly interface, investors can easily track and manage their portfolio.</p>
         <div class="button-wrapper">
           <a
@@ -29,13 +29,8 @@
         </div>
       </div>
       <img
-          class="pure-air-image"
-          src="@/assets/images/Pure_Air_Antiviral_UV_I_Mac_Mockup.png"
-          alt="Pure Air Antiviral UV Website Mockup"
-      />
-      <img
-          class="pure-air-image tower"
-          src="@/assets/images/Pure_Air_Antiviral_UV_Tower_Mockup.png"
+          class="diewell-website-image"
+          src="@/assets/images/Ralf_Diewell_Website_Tablet_Mockup.png"
           alt="Pure Air Antiviral UV Website Mockup"
       />
     </div>
@@ -43,5 +38,5 @@
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/pages/websites/pure-air/pure-air.scss";
+@import "@/assets/scss/pages/websites/diewell-website/diewell-website.scss";
 </style>

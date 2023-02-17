@@ -1,7 +1,8 @@
-$pure-air-main-color: #1E90FF;
+$pure-air-main-color: #0E243F;
 
-#pure-air {
-  padding: 63px 15px 25px;
+#diewell-website {
+  padding: 0 15px 25px;
+  background-color: #F1F1F1FF;
 
   .container {
     display: flex;
@@ -9,7 +10,7 @@ $pure-air-main-color: #1E90FF;
     flex-direction: column;
 
     .text-wrapper {
-      margin-bottom: 102%;
+      margin-bottom: 82%;
 
       .website-label {
         width: 135px;
@@ -71,7 +72,7 @@ $pure-air-main-color: #1E90FF;
       }
     }
 
-    .pure-air-image {
+    .diewell-website-image {
       position: absolute;
       bottom: 0;
       width: 100%;
@@ -80,45 +81,49 @@ $pure-air-main-color: #1E90FF;
 }
 
 @media only screen and (min-width: 580px) {
-  #pure-air .container {
-    .text-wrapper {
-      max-width: 500px;
-      margin: 0 0 520px;
+  #diewell-website {
+    padding-bottom: 12px;
 
-      .website-label {
-        width: 150px;
-        margin-right: calc(50vw - 262px);
-      }
+    .container {
+      .text-wrapper {
+        max-width: 500px;
+        margin: 0 0 450px;
 
-      .button-wrapper {
-        flex-direction: row;
-        justify-content: flex-start;
-        column-gap: 15px;
-
-        p {
-          max-width: 500px;
+        .website-label {
+          width: 150px;
+          margin-right: calc(50vw - 262px);
         }
 
-        .button {
-          width: 175px;
-          height: 58px;
+        .button-wrapper {
+          flex-direction: row;
+          justify-content: flex-start;
+          column-gap: 15px;
+
+          p {
+            max-width: 500px;
+          }
+
+          .button {
+            width: 175px;
+            height: 58px;
+          }
         }
       }
-    }
 
-    .pure-air-image {
-      max-width: 500px;
+      .diewell-website-image {
+        max-width: 550px;
+      }
     }
   }
 }
 
 @media only screen and (min-width: 768px) {
-  #pure-air {
-    padding: 63px 25px 0;
+  #diewell-website {
+    padding: 0 25px;
 
     .container {
       position: relative;
-      flex-direction: row-reverse;
+      flex-direction: row;
       column-gap: 50px;
 
       .website-label {
@@ -130,37 +135,38 @@ $pure-air-main-color: #1E90FF;
         margin-bottom: 40px;
       }
 
-      .pure-air-image {
+      .diewell-website-image {
         position: absolute;
-        right: 62%;
-        top: 15px;
-        width: 400px;
+        left: 48%;
+        width: 520px;
       }
     }
   }
 }
 
 @media only screen and (min-width: 991px) {
-  #pure-air {
-    padding: 150px 25px 198px;
+  #diewell-website {
+    padding: 152px 19px 198px;
+    margin-top: -225px;
 
     .container {
-      flex-direction: row-reverse;
+      flex-direction: row;
       column-gap: 50px;
 
       .text-wrapper {
+        max-width: 440px;
         margin-bottom: 60px;
 
         .website-label {
           position: absolute;
           width: 150px;
-          top: -88px;
-          right: 246px;
+          top: -90px;
+          right: unset;
           margin-right: unset;
         }
       }
 
-      .pure-air-image {
+      .diewell-website-image {
         width: 55%;
         top: 50%;
         right: 52%;
@@ -171,11 +177,12 @@ $pure-air-main-color: #1E90FF;
 }
 
 @media only screen and (min-width: 1024px) {
-  #pure-air {
+  #diewell-website {
     padding: 108px 0 168px;
+    background-color: #EAEAEA;
 
     .container {
-      padding: 40px;
+      padding: 70px 40px 20px;
       z-index: 0;
 
       .text-wrapper {
@@ -183,17 +190,17 @@ $pure-air-main-color: #1E90FF;
         z-index: 10;
 
         .website-label {
-          right: 40px;
+          left: 42px;
           top: -6px;
           margin-right: unset;
         }
       }
 
-      .pure-air-image {
+      .diewell-website-image {
         top: 50%;
         transform: translateY(-50%);
-        width: 45%;
-        right: 56%;
+        width: 640px;
+        max-width: unset;
         z-index: 15;
       }
     }
@@ -201,16 +208,17 @@ $pure-air-main-color: #1E90FF;
     .container::before {
       width: calc(100% - 2px);
       height: 92%;
-      right: 20px;
+      left: 20px;
+      background-color: #FFFFFF;
     }
   }
 
-  #pure-air .container::before {
+  #diewell-website .container::before {
     content: '';
     position: absolute;
     width: 80%;
     right: 20px;
-    height: 90%;
+    height: 92%;
     top: 0;
     background-color: $bc-light-1;
     z-index: 5;
@@ -218,30 +226,32 @@ $pure-air-main-color: #1E90FF;
 }
 
 @media only screen and (min-width: 1280px) {
-  #pure-air {
+  #diewell-website {
     padding: 108px 0 192px;
 
     .container {
-      padding: 100px 100px 100px 0;
+      padding: 100px 100px 100px 95px;
 
       .text-wrapper {
         margin: 0;
 
         .website-label {
           width: 175px;
-          right: 20px;
+          left: 20px;
+          right: unset;
         }
       }
 
-      .pure-air-image {
-        max-width: 540px;
-        left: 0;
+      .diewell-website-image {
+        width: 730px;
+        right: 0;
       }
     }
 
     .container::before {
       height: 95%;
-      right: 0;
+      right: unset;
+      left: 0;
     }
   }
 }
