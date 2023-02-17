@@ -146,7 +146,7 @@ $pure-air-main-color: #0E243F;
 
 @media only screen and (min-width: 991px) {
   #diewell-website {
-    padding: 152px 19px 198px;
+    padding: 175px 19px 198px;
     margin-top: -225px;
 
     .container {
@@ -222,6 +222,12 @@ $pure-air-main-color: #0E243F;
     top: 0;
     background-color: $bc-light-1;
     z-index: 5;
+  }
+}
+
+@media only screen and (min-width: 1128px) {
+  #diewell-website {
+    padding: 145px 0 160px;
   }
 }
 

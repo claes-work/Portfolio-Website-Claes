@@ -8,7 +8,7 @@
         <img
             class="website-label"
             src="@/assets/images/WordPress_Diewell_Website_Label_Logo.png"
-            alt="WordPress Website Label Logo"
+            alt="WordPress Diewell Website Label Logo"
         />
         <div class="logo"></div>
         <h2>Design <span>Relaunch</span><br>diewell.de</h2>

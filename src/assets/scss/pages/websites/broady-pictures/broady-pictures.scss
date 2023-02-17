@@ -1,0 +1,257 @@
+$pure-air-main-color: #383224;
+
+#broady-pictures {
+  padding: 0 15px 25px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .text-wrapper {
+      margin-bottom: 86%;
+
+      .website-label {
+        width: 135px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: $primary-text-color;
+        margin-bottom: 15px;
+
+        span {
+          color: $pure-air-main-color;
+        }
+      }
+
+      p {
+        margin-bottom: 25px;
+      }
+
+      .button-wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        .button {
+          height: 58px;
+          width: 100%;
+          padding: 14px 28px;
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          text-decoration: none;
+          transition: color .2s,background-color .2s;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .button.primary {
+          background-color: $pure-air-main-color;
+          color: $default-text-color;
+        }
+
+        .button.primary:hover {
+          background-color: $bc-dark-2;
+          color: $bc-light-default;
+        }
+
+        .button.secondary {
+          background-color: $bc-dark-2;
+          color: $bc-light-default;
+        }
+
+        .button.secondary:hover {
+          background-color: $pure-air-main-color;
+          color: $default-text-color;
+        }
+      }
+    }
+
+    .broady-pictures-image {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 580px) {
+  #broady-pictures .container {
+    .text-wrapper {
+      max-width: 500px;
+      margin: 0 0 435px;
+
+      .website-label {
+        width: 150px;
+        margin-right: calc(50vw - 262px);
+      }
+
+      .button-wrapper {
+        flex-direction: row;
+        justify-content: flex-start;
+        column-gap: 15px;
+
+        p {
+          max-width: 500px;
+        }
+
+        .button {
+          width: 175px;
+          height: 58px;
+        }
+      }
+    }
+
+    .broady-pictures-image {
+      max-width: 500px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #broady-pictures {
+    padding: 0 25px;
+    margin-top: -225px;
+
+    .container {
+      position: relative;
+      flex-direction: row-reverse;
+      column-gap: 50px;
+
+      .website-label {
+        width: 150px;
+      }
+
+      .text-wrapper {
+        max-width: 400px;
+        margin-bottom: 40px;
+      }
+
+      .broady-pictures-image {
+        max-width: unset;
+        position: absolute;
+        right: 62%;
+        top: -62px;
+        width: 520px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  #broady-pictures {
+    padding: 172px 25px 230px;
+
+    .container {
+      flex-direction: row-reverse;
+      column-gap: 50px;
+
+      .text-wrapper {
+        margin-bottom: 0;
+
+        .website-label {
+          position: absolute;
+          width: 150px;
+          top: -88px;
+          right: 246px;
+          margin-right: unset;
+        }
+      }
+
+      .broady-pictures-image {
+        width: 60%;
+        top: 120px;
+        right: 46%;
+        transform: translateY(-54%);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #broady-pictures {
+    padding: 108px 0 205px;
+
+    .container {
+      padding: 40px;
+      z-index: 0;
+
+      .text-wrapper {
+        max-width: 500px;
+        z-index: 10;
+
+        .website-label {
+          right: 40px;
+          top: -6px;
+          margin-right: unset;
+        }
+      }
+
+      .broady-pictures-image {
+        top: 37%;
+        transform: translateY(-50%);
+        width: 590px;
+        right: 53%;
+        z-index: 15;
+      }
+    }
+
+    .container::before {
+      width: calc(100% - 2px);
+      height: 92%;
+      right: 20px;
+    }
+  }
+
+  #broady-pictures .container::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    right: 20px;
+    height: 100%;
+    top: 0;
+    background-color: $bc-light-1;
+    z-index: 5;
+  }
+}
+
+@media only screen and (min-width: 1128px) {
+  #broady-pictures {
+    padding: 145px 0 200px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #broady-pictures {
+    padding: 110px 0 205px;
+
+    .container {
+      padding: 100px 70px 100px 0;
+
+      .text-wrapper {
+        margin: 0;
+
+        .website-label {
+          width: 175px;
+          right: 20px;
+        }
+      }
+
+      .broady-pictures-image {
+        max-width: unset;
+        width: 720px;
+        left: -55px;
+        right: unset;
+      }
+    }
+
+    .container::before {
+      height: 95%;
+      right: 0;
+    }
+  }
+}

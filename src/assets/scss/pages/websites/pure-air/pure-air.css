@@ -3,7 +3,7 @@
  * 20 |         color: $primary-text-color;
  *    |                ^^^^^^^^^^^^^^^^^^^
  *    '
- *   pure-air.scss 20:16  root stylesheet */
+ *   broady-pictures.scss 20:16  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",

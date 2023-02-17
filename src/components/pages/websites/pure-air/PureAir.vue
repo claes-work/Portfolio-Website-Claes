@@ -8,7 +8,7 @@
         <img
             class="website-label"
             src="@/assets/images/WordPress_Pure_Air_Website_Label_Logo.png"
-            alt="WordPress Website Label Logo"
+            alt="WordPress Pure Air Website Label Logo"
         />
         <div class="logo"></div>
         <h2>My greatest<br><span>Success</span> Story</h2>
