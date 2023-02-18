@@ -1,18 +1,16 @@
 <script lang="ts" setup>
-
-import SearchIcon from "@/components/icons/SearchIcon.vue";
 </script>
 
 <template>
   <div class="blog-filter-bar">
-    <button class="blog-filter-btn">BlogFilter</button>
-    <button class="blog-filter-btn">BlogFilter</button>
-    <button class="blog-filter-btn">BlogFilter</button>
-    <button class="blog-filter-btn">BlogFilter</button>
-
-    <label for="search-bar">
-      <input id="search-bar" value="" placeholder="Search" />
-      <SearchIcon />
-    </label>
+    <button class="blog-filter-btn active">All</button>
+    <button class="blog-filter-btn">News</button>
+    <button class="blog-filter-btn">Development</button>
+    <button class="blog-filter-btn">Design</button>
+    <button class="blog-filter-btn">Guides</button>
   </div>
 </template>
+
+<style lang="scss">
+@import "@/assets/scss/pages/blog/bolg-filter.scss";
+</style>

@@ -210,7 +210,13 @@ $primary-border-val: 1px solid $bc-dark-6;
   font-display: swap;
 }
 
-
+@font-face {
+  font-family: 'Space Mono 400';
+  src: url('@/assets/fonts/SpaceMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: 'Space Mono';
@@ -219,3 +225,4 @@ $primary-border-val: 1px solid $bc-dark-6;
   font-style: normal;
   font-display: swap;
 }
+
