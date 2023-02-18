@@ -13,6 +13,11 @@ onMounted(async () => {
   data.value = await FetchAppSections.fetchRebalancingToolSection()
 })
 
+// Ensure mockup src is never null and add url prefix to upload path
+const mockupSrc = computed(() => {
+  return data.value.heroMockup ? 'https://strapi.claes-work.de' + data.value.heroMockup.url : ''
+})
+
 // Ensure video src is never null and add url prefix to upload path
 const videoSrc = computed(() => {
   return data.value.video ? 'https://strapi.claes-work.de' + data.value.video.url : ''
@@ -45,9 +50,10 @@ const markdown = computed(() => {
       </div>
       <div class="macbook-image-wrapper">
         <img
+            v-if="mockupSrc"
             class="macbook-image"
-            src="@/assets/images/MacBook_Portfolio_Rebalancer.png"
-            alt="MacBook Portfolio Rebalancer"
+            :src="mockupSrc"
+            :alt="data.heroMockup.alternativeText"
         />
         <div class="player-container" v-if="videoSrc">
           <Vue3VideoPlayer ref="player" :src="videoSrc" />
