@@ -1,15 +1,13 @@
+import type { BaseEntity } from "@/models/BaseEntity";
 import type { IButton } from "@/models/components/IButton";
-import type { ILogo } from "@/models/components/ILogo";
-import type { IVideo } from "@/models/components/IVideo";
+import type { IMedia } from "@/models/components/media/IMedia";
 
-export interface IRebalancingTool {
+export interface IRebalancingTool extends BaseEntity {
     id: number
     heading: string
     description: string
-    published_at: string
-    created_at: string
-    updated_at: string
     button: IButton[]
-    logo: ILogo
-    video: IVideo
+    logo: IMedia
+    video: IMedia
+    heroMockup: IMedia
 }
