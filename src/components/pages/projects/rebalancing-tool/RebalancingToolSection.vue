@@ -1,36 +1,34 @@
 <script lang="ts" setup>
-import { computed, onMounted, ref } from "vue";
+import { computed } from "vue";
 import { marked } from 'marked';
-import type { Ref } from "vue";
+import type { PropType } from "vue";
 import type { IRebalancingTool } from "@/models/rebalancing-tool/IRebalancingTool";
-import FetchAppSections from "@/services/FetchAppSections";
 
-// Typed data from strapi api
-const data: Ref<IRebalancingTool> = ref({} as IRebalancingTool)
-
-// Fetch strapi data on mounted
-onMounted(async () => {
-  data.value = await FetchAppSections.fetchRebalancingToolSection()
+const props = defineProps({
+  data: {
+    type: Object as PropType<IRebalancingTool>,
+    required: true
+  },
 })
 
 // Ensure mockup src is never null and add url prefix to upload path
 const logoSrc = computed(() => {
-  return data.value.logo ? 'https://strapi.claes-work.de' + data.value.logo.url : ''
+  return props.data.logo ? 'https://strapi.claes-work.de' + props.data.logo.url : ''
 })
 
 // Ensure mockup src is never null and add url prefix to upload path
 const mockupSrc = computed(() => {
-  return data.value.heroMockup ? 'https://strapi.claes-work.de' + data.value.heroMockup.url : ''
+  return props.data.heroMockup ? 'https://strapi.claes-work.de' + props.data.heroMockup.url : ''
 })
 
 // Ensure video src is never null and add url prefix to upload path
 const videoSrc = computed(() => {
-  return data.value.video ? 'https://strapi.claes-work.de' + data.value.video.url : ''
+  return props.data.video ? 'https://strapi.claes-work.de' + props.data.video.url : ''
 })
 
 // Render markdown from content editor
 const markdown = computed(() => {
-  return (data.value.description) ? marked(data.value.description) : ''
+  return (props.data.description) ? marked(props.data.description) : ''
 })
 </script>
 
