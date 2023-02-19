@@ -41,10 +41,10 @@ const markdown = computed(() => {
         <p v-html="markdown"></p>
         <div class="button-wrapper">
           <a
-              v-for="button in data.button"
+              v-for="(button, index)  in data.button"
               :key="button.id"
               class="button"
-              :class="button.id === 1 ? 'primary' : 'secondary'"
+              :class="index === 0 ? 'primary' : 'secondary'"
               :href="button.link"
               :title="button.titleAttr"
               :target="button.openInNewTab ? '_blank' : ''"
