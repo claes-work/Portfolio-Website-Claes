@@ -14,6 +14,11 @@ onMounted(async () => {
 })
 
 // Ensure mockup src is never null and add url prefix to upload path
+const logoSrc = computed(() => {
+  return data.value.logo ? 'https://strapi.claes-work.de' + data.value.logo.url : ''
+})
+
+// Ensure mockup src is never null and add url prefix to upload path
 const mockupSrc = computed(() => {
   return data.value.heroMockup ? 'https://strapi.claes-work.de' + data.value.heroMockup.url : ''
 })
@@ -33,7 +38,7 @@ const markdown = computed(() => {
   <section id="rebalancing-tool">
     <div class="container">
       <div class="text-wrapper">
-        <div class="logo"></div>
+        <div class="logo" :style="{ backgroundImage: 'url('+logoSrc+')' }"></div>
         <h2 v-html="data.heading"></h2>
         <p v-html="markdown"></p>
         <div class="button-wrapper">
