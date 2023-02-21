@@ -4,12 +4,14 @@ import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
 import { useMainStore } from "@/stores/MainStore";
 
 const mainStore = useMainStore()
+
+console.log(mainStore.themeColor.background)
 </script>
 
 <template>
   <nav id="desktop-navbar">
     <div class="container">
-      <h2 ref="heading">Claes</h2>
+      <h2 ref="heading" :style="{ color: mainStore.themeColor.logo }">Claes</h2>
       <ul>
         <li>
           <div
@@ -27,7 +29,16 @@ const mainStore = useMainStore()
         </li>
         <li><RouterLink :to="{ name: 'about' }" >ABOUT ME</RouterLink></li>
         <li><RouterLink :to="{ name: 'blog' }" >BLOG</RouterLink></li>
-        <li><a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a></li>
+        <li>
+          <a
+            class="contact-btn"
+            :style="{
+              color: mainStore.themeColor.text,
+              backgroundColor: mainStore.themeColor.background
+            }"
+            href="mailto: s.claes.work@gmail.com"
+        >CONTACT</a>
+        </li>
       </ul>
     </div>
   </nav>

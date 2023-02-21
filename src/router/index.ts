@@ -40,4 +40,9 @@ router.beforeEach(() => {
   mainStore.openNavMenu = false
 })
 
+router.afterEach(() => {
+  const mainStore = useMainStore()
+  mainStore.checkNavThemeColor()
+})
+
 export default router
