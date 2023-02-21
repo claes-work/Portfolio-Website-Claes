@@ -124,39 +124,43 @@ p span {
 /* ------------------------ Vue3 Video Player -------------------------- */
 /*************************************************************************/
 .play-pause-layer .btn-control {
-  width: 45px;
-  height: 45px;
-  border-radius: unset;
-  background-image: url("data:image/svg+xml,%3Csvg width='13' height='15' viewBox='0 0 13 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 7.5L0.249999 14.8612L0.25 0.138783L13 7.5Z' fill='black'/%3E%3C/svg%3E%0A");
-  background-position: 52% 50%;
-  background-repeat: no-repeat;
-  background-size: 15px;
-  margin: 0;
-  transform: translate(-50%, -40%);
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: unset !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='15' viewBox='0 0 13 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 7.5L0.249999 14.8612L0.25 0.138783L13 7.5Z' fill='black'/%3E%3C/svg%3E%0A") !important;
+  background-position: 52% 50% !important;
+  background-repeat: no-repeat !important;
+  background-size: 15px !important;
+  margin: 0 !important;
+  transform: translate(-50%, -40%) !important;
 }
 .play-pause-layer .btn-control svg {
-  display: none;
+  display: none !important;
 }
 
 .play-pause-layer .btn-control:hover {
-  background-color: #53FDCA;
+  background-color: #53FDCA !important;
 }
 
 .play-pause-layer .btn-control::before {
-  display: none;
+  display: none !important;
 }
 
 .vcp-progress-hover .vcp-progress,
 .vcp-progress {
-  background-color: #121212;
+  background-color: #121212 !important;
 }
 
 .vcp-progress-loaded {
-  background-color: #252525;
+  background-color: #252525 !important;
 }
 
 .vcp-progress-played {
-  background-color: #53FDCA;
+  background-color: #53FDCA !important;
+}
+
+.volume-control .btn-control-panel .progress .volume-current {
+  background-color: #53FDCA !important;
 }
 
 /*************************************************************************/

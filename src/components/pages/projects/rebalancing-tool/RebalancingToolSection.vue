@@ -1,8 +1,12 @@
 <script lang="ts" setup>
-import { computed } from "vue";
+import { computed, inject } from "vue";
 import { marked } from 'marked';
-import type { PropType } from "vue";
+import type { PropType, ComputedRef } from "vue";
 import type { IRebalancingTool } from "@/models/rebalancing-tool/IRebalancingTool";
+import { getAllMediaSrcset } from "@/composables/MediaProperties";
+import type { AllMediaSrcset } from "@/models/components/media/AllMediaSrcset";
+
+const urlPrefix = inject('URL_PATH')
 
 const props = defineProps({
   data: {
@@ -12,22 +16,31 @@ const props = defineProps({
 })
 
 // Ensure mockup src is never null and add url prefix to upload path
-const logoSrc = computed(() => {
-  return props.data.logo ? 'https://strapi.claes-work.de' + props.data.logo.url : ''
+const logoSrc: ComputedRef<string> = computed(() => {
+  return props.data.logo ? urlPrefix + props.data.logo.url : ''
 })
 
 // Ensure mockup src is never null and add url prefix to upload path
-const mockupSrc = computed(() => {
-  return props.data.heroMockup ? 'https://strapi.claes-work.de' + props.data.heroMockup.url : ''
+const mockupSrcset: ComputedRef<AllMediaSrcset> = computed(() => {
+  return props.data && props.data.heroMockup
+      ? getAllMediaSrcset(props.data.heroMockup)
+      : {} as AllMediaSrcset
+})
+
+// Ensure mockup src is never null and add url prefix to upload path
+const mockupAlt: ComputedRef<string> = computed(() => {
+  return props.data && props.data.heroMockup
+      ? props.data.heroMockup.alternativeText
+      : ''
 })
 
 // Ensure video src is never null and add url prefix to upload path
-const videoSrc = computed(() => {
-  return props.data.video ? 'https://strapi.claes-work.de' + props.data.video.url : ''
+const videoSrc: ComputedRef<string> = computed(() => {
+  return props.data.video ? urlPrefix + props.data.video.url : ''
 })
 
 // Render markdown from content editor
-const markdown = computed(() => {
+const markdown: ComputedRef<string> = computed(() => {
   return (props.data.description) ? marked(props.data.description) : ''
 })
 </script>
@@ -52,12 +65,17 @@ const markdown = computed(() => {
         </div>
       </div>
       <div class="macbook-image-wrapper">
-        <img
-            v-if="mockupSrc"
-            class="macbook-image"
-            :src="mockupSrc"
-            :alt="data.heroMockup.alternativeText"
-        />
+        <picture>
+          <source media="(min-width: 768px)" :srcset="mockupSrcset.mediumSrc">
+          <source media="(min-width: 1280px)" :srcset="mockupSrcset.originalSrc">
+          <img
+              v-if="mockupSrcset"
+              class="macbook-image"
+              :src="mockupSrcset.smallSrc"
+              :alt="mockupAlt"
+          />
+        </picture>
+
         <div class="player-container" v-if="videoSrc">
           <Vue3VideoPlayer ref="player" :src="videoSrc" />
         </div>
