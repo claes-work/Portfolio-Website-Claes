@@ -28,7 +28,7 @@ console.log(mainStore.themeColor.background)
           </div>
         </li>
         <li><RouterLink :to="{ name: 'about' }" >ABOUT ME</RouterLink></li>
-        <li><RouterLink :to="{ name: 'blog' }" >BLOG</RouterLink></li>
+        <!--<li><RouterLink :to="{ name: 'blog' }" >BLOG</RouterLink></li>-->
         <li>
           <a
             class="contact-btn"
