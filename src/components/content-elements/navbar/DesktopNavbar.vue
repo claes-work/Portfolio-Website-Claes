@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import { RouterLink } from "vue-router";
-import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
+import { allLocales, setLocale } from '@/i18n'
+import { useI18n } from 'vue-i18n'
 import { useMainStore } from "@/stores/MainStore";
+import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
 
+const { t } = useI18n()
 const mainStore = useMainStore()
 
-console.log(mainStore.themeColor.background)
 </script>
 
 <template>

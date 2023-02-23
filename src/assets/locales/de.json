@@ -1,0 +1,37 @@
+{
+  "rebalancingToolSection": {
+    "heading": "Portfolio Rebalancing Tool",
+    "description": "Mit unserer App können Sie Ihre Vermögenswerte einfach und vollumfänglich abbilden. Geplant ist eine automatisierte Wiederherstellung ihrer Vermögensverteilung anhand einer selbst gewählten Strategie."
+    "buttons": {
+      "app": "Zur Live Version",
+      "github": "Zum Quellcode"
+    },
+    "insides": {
+      "tabButtons": {
+        "projectIdea": "Projekt Idee",
+        "features": "Features",
+        "techStack": "Tech Stack",
+        "files": "Dateien & Links"
+      },
+      "projectIdea": {
+        "heading": "Von Excel Tabellen zu einer vollwertigen Portfolio Rebalancing App",
+        "text": "Im Jahr 2019 fing ich mit dem investieren an. Ich stellte schnell fest, dass das Verfolgen meiner Investitionen über Excel-Tabellen nicht ausreichte. Ich wollte Zugang zu detaillierteren Aktiendaten und die Möglichkeit, alle meine Anlageklassen an einem Ort zu gruppieren. Ziel ist es Abweichungen von meiner Investmentstrategie frühzeitig zu erkennen und automatisch ausgleichen zu können. So kam ich auf die Idee eine Portfolio-Rebalancing-App zu entwicklen. Zunächst verbrachte ich über ein Jahr mit der Konzeption und dem Design. Gemeinsam mit meinem Geschäftspartner entwickelten wir den ersten Prototypen im Sommer 2022.",
+        "button": "Mehr entdecken"
+      },
+      "features": {
+        "liveData": {
+          "heading": "Echtzeit Kurse",
+          "text": "Anbindung an offizielle Schnittstellen für Aktien, Fond und Kryptowährungen."
+        },
+        "monitoring": {
+          "heading": "Vollumfängliche Erfassung",
+          "text": "Auch eigene, nicht offiziell anerkannte Vermögenswerte, können in der App verwaltet werden."
+        },
+        "organization": {
+          "heading": "Persönliche Organisation",
+          "text": "Ermöglicht die freie Erstellung von Asset Gruppierungen und das Festlegen von Soll-Verteilungen."
+        }
+      }
+    }
+  }
+}
