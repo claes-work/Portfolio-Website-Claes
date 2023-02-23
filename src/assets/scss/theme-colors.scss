@@ -1,0 +1,61 @@
+/****************************************************/
+/* ------------- All Theme Color Maps ------------ */
+/***************************************************/
+
+$logo-colors: (
+    rebalancing-tool: #53FDCA,
+    suggest-app: #FA8231,
+    pure-air: #FFFFFF,
+    diewell-website: #FFFFFF,
+    broady-pictures: #FFFFFF
+);
+
+$text-colors: (
+    rebalancing-tool: #121212,
+    suggest-app: #121212,
+    pure-air: #FFFFFF,
+    diewell-website: #FFFFFF,
+    broady-pictures: #FFFFFF
+);
+
+$background-colors: (
+    rebalancing-tool: #53FDCA,
+    suggest-app: #FA8231,
+    pure-air: #2994ff,
+    diewell-website: #0e243f,
+    broady-pictures: #383224
+);
+
+/***************************************************/
+/* ----------- All Theme Color Getters ----------- */
+/***************************************************/
+
+@mixin getLogoColor($colorName) {
+  color: map-get($logo-colors, $colorName);
+}
+
+@mixin getTextColor($colorName) {
+  color: map-get($logo-colors, $colorName);
+}
+
+@mixin getContactButtonColors($colorName) {
+  background-color: map-get($background-colors, $colorName);
+  color: map-get($text-colors, $colorName);
+}
+
+@mixin getSublinkColors($colorName) {
+  $this-color: map-get($logo-colors, $colorName);
+
+  border-bottom: 2px solid $this-color;
+  color: $this-color;
+
+  svg {
+    stroke: $this-color;
+  }
+}
+
+/***************************************************/
+/* ---------- The Selected Theme Color ----------- */
+/***************************************************/
+
+$selected-color: suggest-app;

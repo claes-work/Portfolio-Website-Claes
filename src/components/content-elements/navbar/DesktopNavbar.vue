@@ -11,7 +11,7 @@ console.log(mainStore.themeColor.background)
 <template>
   <nav id="desktop-navbar">
     <div class="container">
-      <h2 ref="heading" :style="{ color: mainStore.themeColor.logo }">Claes</h2>
+      <h2>Claes</h2>
       <ul>
         <li>
           <div
