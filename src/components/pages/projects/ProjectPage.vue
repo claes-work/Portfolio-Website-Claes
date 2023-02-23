@@ -26,7 +26,6 @@ onMounted(async () => {
   <TabSection
       :theme-color="ThemeColorClasses.PORTFOLIO_APP"
       :project-tabs="rebalancingToolInsides"
-      :data="rebalancingToolData"
   />
   <SuggestSection />
   <TabSection

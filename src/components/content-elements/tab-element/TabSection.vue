@@ -14,10 +14,6 @@ const props = defineProps({
   projectTabs: {
     type: Object as PropType<ProjectTab[]>,
     required: true
-  },
-  data: {
-    type: Object as PropType<IRebalancingTool>,
-    required: true
   }
 })
 
