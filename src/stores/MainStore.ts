@@ -1,8 +1,8 @@
+import type {Ref} from 'vue'
 import {reactive, ref} from 'vue'
-import { defineStore } from 'pinia'
-import type { Ref } from 'vue'
-import type { ThemeColorEnum as ThemeColorEnumType } from "@/models/ThemeColorEnum"
-import { ThemeColorEnum } from "@/models/ThemeColorEnum"
+import {defineStore} from 'pinia'
+import type {ThemeColorClasses as ThemeColorClassesType} from "@/models/ThemeColorClasses"
+import {ThemeColorClasses} from "@/models/ThemeColorClasses"
 import router from "@/router";
 
 
@@ -22,12 +22,8 @@ export const useMainStore = defineStore('mainStore', () => {
   /*********** Dynamic Theme Color ***********/
 
 
-  // Dynamic theme colors in nav bar
-  const themeColor = reactive({
-    logo: ThemeColorEnum.REBALANCING_TOOL_LOGO,
-    background: ThemeColorEnum.REBALANCING_TOOL_BACKGROUND,
-    text: ThemeColorEnum.REBALANCING_TOOL_TEXT
-  })
+  // Dynamic theme color class in nav bar
+  const themeClass: Ref<ThemeColorClassesType> = ref(ThemeColorClasses.REBALANCING_TOOL)
 
   // Check viewport with on resize
   window.onscroll = (): void => {
@@ -37,31 +33,21 @@ export const useMainStore = defineStore('mainStore', () => {
   function checkNavThemeOnScroll() {
     // project page theme color set
     if (router.currentRoute.value.path === '/' && window.scrollY >= 0 && window.scrollY < 1224) {
-      themeColor.background = ThemeColorEnum.REBALANCING_TOOL_LOGO
-      themeColor.text = ThemeColorEnum.REBALANCING_TOOL_TEXT
-      themeColor.logo = ThemeColorEnum.REBALANCING_TOOL_LOGO
+      themeClass.value = ThemeColorClasses.REBALANCING_TOOL
     }
     if (router.currentRoute.value.path === '/' && window.scrollY >= 1224) {
-      themeColor.background = ThemeColorEnum.SUGGEST_APP_LOGO
-      themeColor.text = ThemeColorEnum.SUGGEST_APP_TEXT
-      themeColor.logo = ThemeColorEnum.SUGGEST_APP_LOGO
+      themeClass.value = ThemeColorClasses.SUGGEST_APP
     }
 
     // websites page theme color set
     if (router.currentRoute.value.path === '/websites' && window.scrollY >= 0 && window.scrollY < 714) {
-      themeColor.background = ThemeColorEnum.PURE_AIR_BACKGROUND
-      themeColor.text = ThemeColorEnum.PURE_AIR_TEXT
-      themeColor.logo = ThemeColorEnum.PURE_AIR_LOGO
+      themeClass.value = ThemeColorClasses.PURE_AIR
     }
     if (router.currentRoute.value.path === '/websites' && window.scrollY >= 714 && window.scrollY < 1530) {
-      themeColor.background = ThemeColorEnum.DIEWELL_WEBSITE_BACKGROUND
-      themeColor.text = ThemeColorEnum.DIEWELL_WEBSITE_TEXT
-      themeColor.logo = ThemeColorEnum.DIEWELL_WEBSITE_LOGO
+      themeClass.value = ThemeColorClasses.DIEWELL_WEBSITE
     }
     if (router.currentRoute.value.path === '/websites' && window.scrollY >= 1530) {
-      themeColor.background = ThemeColorEnum.BROADY_PICTURES_BACKGROUND
-      themeColor.text = ThemeColorEnum.BROADY_PICTURES_TEXT
-      themeColor.logo = ThemeColorEnum.BROADY_PICTURES_LOGO
+      themeClass.value = ThemeColorClasses.BROADY_PICTURES
     }
   }
 
@@ -71,18 +57,14 @@ export const useMainStore = defineStore('mainStore', () => {
         router.currentRoute.value.path === '/about' ||
         router.currentRoute.value.path === '/blog'
     ) {
-      themeColor.background = ThemeColorEnum.REBALANCING_TOOL_LOGO
-      themeColor.text = ThemeColorEnum.REBALANCING_TOOL_TEXT
-      themeColor.logo = ThemeColorEnum.REBALANCING_TOOL_LOGO
+      themeClass.value = ThemeColorClasses.REBALANCING_TOOL
     }
     if (router.currentRoute.value.path === '/websites') {
-      themeColor.background = ThemeColorEnum.PURE_AIR_BACKGROUND
-      themeColor.text = ThemeColorEnum.PURE_AIR_TEXT
-      themeColor.logo = ThemeColorEnum.PURE_AIR_LOGO
+      themeClass.value = ThemeColorClasses.PURE_AIR
     }
   }
 
 
 
-  return { isDesktop, openNavMenu, themeColor, checkNavThemeColor }
+  return { isDesktop, openNavMenu, themeClass, checkNavThemeColor }
 })

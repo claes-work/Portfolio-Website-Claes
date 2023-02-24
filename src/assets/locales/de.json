@@ -1,7 +1,7 @@
 {
   "rebalancingToolSection": {
     "heading": "Portfolio Rebalancing Tool",
-    "description": "Mit unserer App können Sie Ihre Vermögenswerte einfach und vollumfänglich abbilden. Geplant ist eine automatisierte Wiederherstellung ihrer Vermögensverteilung anhand einer selbst gewählten Strategie."
+    "description": "Mit unserer App können Sie Ihre Vermögenswerte einfach und vollumfänglich abbilden. Geplant ist eine automatisierte Wiederherstellung ihrer Vermögensverteilung anhand einer selbst gewählten Strategie.",
     "buttons": {
       "app": "Zur Live Version",
       "github": "Zum Quellcode"

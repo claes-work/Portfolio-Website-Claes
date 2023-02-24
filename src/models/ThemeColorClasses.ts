@@ -1,4 +1,7 @@
 export enum ThemeColorClasses {
-    PORTFOLIO_APP = 'portfolio-app',
+    REBALANCING_TOOL = 'rebalancing-tool',
     SUGGEST_APP = 'suggest-app',
+    PURE_AIR = 'pure-air',
+    DIEWELL_WEBSITE = 'diewell-website',
+    BROADY_PICTURES = 'broady-pictures',
 }

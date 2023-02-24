@@ -1,6 +1,3 @@
-@import "@/assets/scss/theme-colors.scss";
-
-
 #desktop-navbar {
   position: fixed;
   left: 0;
@@ -83,19 +80,13 @@
       }
 
       li a:hover:not(li:last-child a:hover),
-      .sub-link:hover {
+      .sub-link:hover,
+      .router-link-exact-active {
         @include getSublinkColors($selected-color);
       }
 
       li:last-child:hover .contact-btn {
         background-color: $bc-light-1;
-      }
-
-      li a:hover:not(li:last-child a:hover),
-      .sub-link:hover,
-      .router-link-exact-active,
-      .sub-link {
-        @include getSublinkColors($selected-color);
       }
     }
   }
@@ -141,6 +132,177 @@
 
     .container {
       padding: 0;
+    }
+  }
+}
+
+
+
+#desktop-navbar.rebalancing-tool .container {
+  h2 {
+    color: #53FDCA;
+  }
+  ul {
+    li {
+      .sub-link.active {
+        color: #53FDCA;
+        border-bottom: 2px solid #53FDCA;
+
+        svg {
+          stroke: #53FDCA;
+        }
+      }
+      .contact-btn {
+        background-color: #53FDCA;
+        color: #121212;
+      }
+    }
+
+    li a:hover:not(li:last-child a:hover),
+    .sub-link:hover,
+    .router-link-exact-active {
+      color: #53FDCA;
+      border-bottom: 2px solid #53FDCA;
+
+      svg {
+        stroke: #53FDCA;
+      }
+    }
+  }
+}
+
+#desktop-navbar.suggest-app .container {
+  h2 {
+    color: #FA8231;
+  }
+  ul {
+    li {
+      .sub-link.active {
+        color: #FA8231;
+        border-bottom: 2px solid #FA8231;
+
+        svg {
+          stroke: #FA8231;
+        }
+      }
+      .contact-btn {
+        background-color: #FA8231;
+        color: #121212;
+      }
+    }
+
+    li a:hover:not(li:last-child a:hover),
+    .sub-link:hover,
+    .router-link-exact-active {
+      color: #FA8231;
+      border-bottom: 2px solid #FA8231;
+
+      svg {
+        stroke: #FA8231;
+      }
+    }
+  }
+}
+
+#desktop-navbar.pure-air .container {
+  h2 {
+    color: #FFFFFF;
+  }
+  ul {
+    li {
+      .sub-link.active {
+        color: #59aeff;
+        border-bottom: 2px solid #59aeff;
+
+        svg {
+          stroke: #59aeff;
+        }
+      }
+      .contact-btn {
+        background-color: #2994ff;
+        color: #FFFFFF;
+      }
+    }
+
+    li a:hover:not(li:last-child a:hover),
+    .sub-link:hover,
+    .router-link-exact-active {
+      color: #59aeff;
+      border-bottom: 2px solid #59aeff;
+
+      svg {
+        stroke: #59aeff;
+      }
+    }
+
+    li:last-child a:hover {
+      color: #121212
+    }
+  }
+}
+
+#desktop-navbar.diewell-website .container {
+  h2 {
+    color: #FFFFFF;
+  }
+  ul {
+    li {
+
+      .sub-link.active {
+        color: #7094C1;
+        border-bottom: 2px solid #526E91;
+
+        svg {
+          stroke: #7094C1;
+        }
+      }
+      .contact-btn {
+        background-color: #0e243f;
+        color: #FFFFFF;
+      }
+    }
+
+    li a:hover:not(li:last-child a:hover),
+    .sub-link:hover,
+    .router-link-exact-active {
+      color: #7094C1;
+      border-bottom: 2px solid #526E91;
+
+      svg {
+        stroke: #7094C1;
+      }
+    }
+
+    li:last-child a:hover {
+      color: #121212
+    }
+  }
+}
+
+
+#desktop-navbar.broady-pictures .container {
+  h2 {
+    @include getLogoColor(broady-pictures);
+  }
+  ul {
+    li {
+      .sub-link.active {
+        @include getSublinkColors(broady-pictures);
+      }
+      .contact-btn {
+        @include getContactButtonColors(broady-pictures);
+      }
+    }
+
+    li a:hover:not(li:last-child a:hover),
+    .sub-link:hover,
+    .router-link-exact-active {
+      @include getSublinkColors(broady-pictures);
+    }
+
+    li:last-child a:hover {
+      background-color: #C7AA8B;
+      color: #121212
     }
   }
 }

@@ -1,9 +1,9 @@
-/* Error: Can't find stylesheet to import.
+/* Error: Undefined variable.
  *   ,
- * 1 | @import "@/assets/scss/theme-colors.scss";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ * 7 |   border-bottom: $nav-border-val;
+ *   |                  ^^^^^^^^^^^^^^^
  *   '
- *   desktop-navbar.scss 1:9  root stylesheet */
+ *   desktop-navbar.scss 7:18  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"@/assets/scss/theme-colors.scss\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   desktop-navbar.scss 1:9  root stylesheet";
+  content: "Error: Undefined variable.\a   \2577 \a 7 \2502    border-bottom: $nav-border-val;\d\a   \2502                   ^^^^^^^^^^^^^^^\a   \2575 \a   desktop-navbar.scss 7:18  root stylesheet";
 }

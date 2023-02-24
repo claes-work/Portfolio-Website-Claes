@@ -11,7 +11,7 @@ const mainStore = useMainStore()
 </script>
 
 <template>
-  <nav id="desktop-navbar">
+  <nav id="desktop-navbar" :class="mainStore.themeClass">
     <div class="container">
       <h2>Claes</h2>
       <ul>
@@ -32,22 +32,13 @@ const mainStore = useMainStore()
         <li><RouterLink :to="{ name: 'about' }" >ABOUT ME</RouterLink></li>
         <!--<li><RouterLink :to="{ name: 'blog' }" >BLOG</RouterLink></li>-->
         <li>
-          <a
-            class="contact-btn"
-            :style="{
-              color: mainStore.themeColor.text,
-              backgroundColor: mainStore.themeColor.background
-            }"
-            href="mailto: s.claes.work@gmail.com"
-        >CONTACT</a>
+          <a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a>
         </li>
       </ul>
     </div>
   </nav>
 </template>
 
-
 <style lang="scss">
 @import "@/assets/scss/content-elements/navbar/desktop-navbar.scss";
-
 </style>
