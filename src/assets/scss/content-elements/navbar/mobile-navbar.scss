@@ -20,7 +20,6 @@
       font-size: 15px;
       font-weight: 900;
       font-family: Varino, sans-serif;
-      color: $main-color;
     }
 
     .ham {
@@ -81,7 +80,6 @@
         a, .sub-link {
           display: flex;
           justify-content: space-between;
-          font-family: 'Space Mono',sans-serif;
           letter-spacing: 1px;
           font-size: 14px;
           font-weight: 500;
@@ -174,5 +172,156 @@
 
   .mobile-nav-menu.active {
     top: 63px;
+  }
+}
+
+#mobile-navbar.rebalancing-tool .container {
+  h2 {
+    color: $main-color;
+  }
+
+  .mobile-nav-menu ul {
+    li.open .sub-link {
+      color: $main-color;
+      border-color: #6b6a6a;
+
+      svg {
+        stroke: $main-color;
+      }
+    }
+
+    .router-link-exact-active,
+    .sub-link:hover,
+    li a:hover:not(li:last-child a:hover){
+      color: $main-color;
+    }
+
+    li .contact-btn {
+      background-color: $main-color;
+    }
+  }
+}
+
+#mobile-navbar.suggest-app {
+  h2 {
+    color: #FA8231;
+  }
+
+  .mobile-nav-menu ul {
+    li.open .sub-link {
+      color: #FA8231;
+      border-color: #6b6a6a;
+
+      svg {
+        stroke: #FA8231;
+      }
+    }
+
+    .router-link-exact-active,
+    .sub-link:hover,
+    li a:hover:not(li:last-child a:hover){
+      color: #FA8231;
+    }
+
+    li .contact-btn {
+      background-color: #FA8231;
+    }
+  }
+}
+
+#mobile-navbar.pure-air {
+  h2 {
+    color: #FFFFFF;
+  }
+
+  .mobile-nav-menu ul {
+    li.open .sub-link {
+      color: #59aeff;
+      border-color: #59aeff;
+
+      svg {
+        stroke: #59aeff;
+      }
+    }
+
+    .router-link-exact-active,
+    .sub-link:hover,
+    li a:hover:not(li:last-child a:hover){
+      color: #59aeff;
+    }
+
+    li .contact-btn {
+      background-color: #59aeff;
+      color: #FFFFFF;
+    }
+
+    li .contact-btn:hover {
+      color: #121212;
+    }
+  }
+}
+
+#mobile-navbar.diewell-website {
+  h2 {
+    color: #FFFFFF;
+  }
+
+  .mobile-nav-menu ul {
+    li.open .sub-link {
+      color: #7094C1;
+      border-color: #526E91;
+
+      svg {
+        stroke: #7094C1;
+      }
+    }
+
+    .router-link-exact-active,
+    .sub-link:hover,
+    li a:hover:not(li:last-child a:hover){
+      color: #7094C1;
+    }
+
+    li .contact-btn {
+      background-color: #0e243f;
+      color: #FFFFFF;
+    }
+
+    li .contact-btn:hover {
+      color: #121212;
+    }
+  }
+}
+
+#mobile-navbar.broady-pictures {
+  h2 {
+    color: #FFFFFF;
+  }
+
+  .mobile-nav-menu ul {
+    li.open .sub-link {
+      color: #C7AA8B;
+      border-color: #C7AA8B;
+
+      svg {
+        stroke: #C7AA8B;
+      }
+    }
+
+    .router-link-exact-active,
+    .sub-link:hover,
+    li a:hover:not(li:last-child a:hover){
+      color: #C7AA8B;
+    }
+
+    li .contact-btn {
+      background-color: #383224;
+      color: #FFFFFF;
+    }
+
+    li .contact-btn:hover {
+      background-color: #C7AA8B;
+      color: #121212;
+    }
   }
 }

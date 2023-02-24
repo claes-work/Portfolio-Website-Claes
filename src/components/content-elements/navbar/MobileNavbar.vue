@@ -9,7 +9,7 @@ const activeSubNav: Ref<boolean> = ref(false)
 </script>
 
 <template>
-  <nav id="mobile-navbar">
+  <nav id="mobile-navbar" :class="mainStore.themeClass">
     <div class="container">
       <h2>Claes</h2>
 

@@ -1,9 +1,10 @@
-import type {Ref} from 'vue'
+import type { Ref } from 'vue'
 import {reactive, ref} from 'vue'
-import {defineStore} from 'pinia'
-import type {ThemeColorClasses as ThemeColorClassesType} from "@/models/ThemeColorClasses"
-import {ThemeColorClasses} from "@/models/ThemeColorClasses"
-import router from "@/router";
+import { defineStore } from 'pinia'
+import type { ThemeColorClasses as ThemeColorClassesType} from "@/models/ThemeColorClasses"
+import { ThemeColorClasses } from "@/models/ThemeColorClasses"
+import { checkNavThemeOnScroll } from "@/composables/ThemeHandler";
+import type {SectionOffsets} from "@/models/SectionOffsets";
 
 
 export const useMainStore = defineStore('mainStore', () => {
@@ -21,50 +22,27 @@ export const useMainStore = defineStore('mainStore', () => {
 
   /*********** Dynamic Theme Color ***********/
 
-
   // Dynamic theme color class in nav bar
   const themeClass: Ref<ThemeColorClassesType> = ref(ThemeColorClasses.REBALANCING_TOOL)
 
+  // Section offsets
+  const offsets: SectionOffsets = reactive({
+    rebalancingTool: 0,
+    suggestApp: 0,
+    pureAir: 0,
+    diewellWebsite: 0,
+    broadyPrictures: 0
+  })
+
   // Check viewport with on resize
   window.onscroll = (): void => {
-    checkNavThemeOnScroll()
+    checkNavThemeOnScroll(themeClass, offsets)
   }
 
-  function checkNavThemeOnScroll() {
-    // project page theme color set
-    if (router.currentRoute.value.path === '/' && window.scrollY >= 0 && window.scrollY < 1224) {
-      themeClass.value = ThemeColorClasses.REBALANCING_TOOL
-    }
-    if (router.currentRoute.value.path === '/' && window.scrollY >= 1224) {
-      themeClass.value = ThemeColorClasses.SUGGEST_APP
-    }
-
-    // websites page theme color set
-    if (router.currentRoute.value.path === '/websites' && window.scrollY >= 0 && window.scrollY < 714) {
-      themeClass.value = ThemeColorClasses.PURE_AIR
-    }
-    if (router.currentRoute.value.path === '/websites' && window.scrollY >= 714 && window.scrollY < 1530) {
-      themeClass.value = ThemeColorClasses.DIEWELL_WEBSITE
-    }
-    if (router.currentRoute.value.path === '/websites' && window.scrollY >= 1530) {
-      themeClass.value = ThemeColorClasses.BROADY_PICTURES
-    }
+  return {
+    isDesktop,
+    openNavMenu,
+    themeClass,
+    offsets
   }
-
-  function checkNavThemeColor() {
-    if (
-        router.currentRoute.value.path === '/' ||
-        router.currentRoute.value.path === '/about' ||
-        router.currentRoute.value.path === '/blog'
-    ) {
-      themeClass.value = ThemeColorClasses.REBALANCING_TOOL
-    }
-    if (router.currentRoute.value.path === '/websites') {
-      themeClass.value = ThemeColorClasses.PURE_AIR
-    }
-  }
-
-
-
-  return { isDesktop, openNavMenu, themeClass, checkNavThemeColor }
 })

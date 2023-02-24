@@ -4,6 +4,7 @@ import WebsitesPage from '@/components/pages/websites/WebsitesPage.vue'
 import AboutPage from '@/components/pages/about/AboutPage.vue'
 import BlogPage from "@/components/pages/blog/BlogPage.vue";
 import {useMainStore} from "@/stores/MainStore";
+import {checkNavThemeColor} from "@/composables/ThemeHandler";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,14 +36,13 @@ const router = createRouter({
   },
 })
 
+// Always close the navbar by resetting the store variable
 router.beforeEach(() => {
   const mainStore = useMainStore()
   mainStore.openNavMenu = false
 })
 
-router.afterEach(() => {
-  const mainStore = useMainStore()
-  mainStore.checkNavThemeColor()
-})
+// Always check what page navbar theme color should be applied
+router.afterEach(() => checkNavThemeColor())
 
 export default router

@@ -4,7 +4,6 @@ import type { PropType } from "vue";
 import type { ThemeColorClasses } from "@/models/ThemeColorClasses";
 import TabButton from "@/components/content-elements/tab-element/TabButton.vue";
 import type { ProjectTab } from "@/models/ProjectTab";
-import type { IRebalancingTool } from "@/models/rebalancing-tool/IRebalancingTool";
 
 const props = defineProps({
   themeColor: {
