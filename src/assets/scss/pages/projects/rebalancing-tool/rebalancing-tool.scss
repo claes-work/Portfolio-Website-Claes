@@ -152,14 +152,27 @@
 
         .player-container {
           position: absolute;
-          left: 52%;
-          top: 14%;
+          left: 53.5%;
+          top: unset;
+          bottom: 10.5%;
           z-index: 10;
           width: 550px;
           height: 355px;
         }
       }
     }
+  }
+}
+
+@media only screen and (min-width: 1040px) {
+  #rebalancing-tool .container .macbook-image-wrapper .player-container {
+    left: 52.5%;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  #rebalancing-tool .container .macbook-image-wrapper .player-container {
+    left: 51.8%;
   }
 }
 
@@ -180,7 +193,8 @@
         .player-container {
           position: absolute;
           left: 52%;
-          top: 14%;
+          top: unset;
+          bottom: 3%;
           z-index: 10;
           width: 608px;
           height: 395px;
