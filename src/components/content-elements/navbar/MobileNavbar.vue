@@ -3,9 +3,19 @@ import { ref } from "vue";
 import type { Ref } from "vue";
 import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
 import { useMainStore } from "@/stores/MainStore";
+import {useStrapiDataStore} from "@/stores/StrapiDataStore";
+import { AllLocales } from "@/models/AllLocales";
+import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
 
 const mainStore = useMainStore();
+const strapiStore = useStrapiDataStore()
+
 const activeSubNav: Ref<boolean> = ref(false)
+
+function checkLocale(locale: AllLocalesType) {
+  return locale === strapiStore.activeLocale
+}
+
 </script>
 
 <template>
@@ -41,6 +51,10 @@ const activeSubNav: Ref<boolean> = ref(false)
         <li><RouterLink :to="{ name: 'about' }" >ABOUT ME</RouterLink></li>
     <!--<li><RouterLink :to="{ name: 'blog' }" >BLOG</RouterLink></li>-->
         <li><a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a></li>
+        <li class="flag-wrapper">
+          <div :class="{ active : checkLocale(AllLocales.EN)}" class="flag en" @click="strapiStore.changeLocale(AllLocales.EN)"></div>
+          <div :class="{ active :  checkLocale(AllLocales.DE)}" class="flag de" @click="strapiStore.changeLocale(AllLocales.DE)"></div>
+        </li>
       </ul>
     </div>
   </nav>
