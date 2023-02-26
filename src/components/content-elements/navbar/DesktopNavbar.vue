@@ -1,10 +1,8 @@
 <script lang="ts" setup>
 import { RouterLink } from "vue-router";
-import { useI18n } from 'vue-i18n'
 import { useMainStore } from "@/stores/MainStore";
 import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
 
-const { t } = useI18n()
 const mainStore = useMainStore()
 
 </script>

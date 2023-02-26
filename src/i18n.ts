@@ -2,17 +2,15 @@
 import { createI18n } from 'vue-i18n'
 import en from '@/assets/locales/en.json'
 import de from '@/assets/locales/de.json'
-
-// Array that includes all locales
-export const allLocales: string[] = ['de', 'en']
-type Locales = 'de' | 'en'
+import { AllLocales } from "@/models/AllLocales";
+import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
 
 // Create Vue I18n instance.
 export const i18n = createI18n({
   legacy: false,
   globalInjection: true,
-  locale: 'en',
-  fallbackLocale: 'en',
+  locale: AllLocales.DE,
+  fallbackLocale: AllLocales.DE,
   messages: {
     en: en,
     de: de,
@@ -24,7 +22,7 @@ export const i18n = createI18n({
  *
  * @param locale
  */
-export async function setLocale(locale: Locales) {
+export async function setLocale(locale: AllLocalesType) {
   // Load locale if not available yet.
   // @ts-ignore
   if (!i18n.global.availableLocales.includes(locale)) {
@@ -44,7 +42,8 @@ export async function setLocale(locale: Locales) {
  *
  * @param locale Locales
  */
-function loadLocale(locale: Locales) {
+function loadLocale(locale: AllLocalesType) {
+  console.log('load')
   return fetch(`./locales/${locale}.json`)
       .then((response) => {
         if (response.ok) {
