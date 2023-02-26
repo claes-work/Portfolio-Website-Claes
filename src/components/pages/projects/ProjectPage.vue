@@ -10,20 +10,18 @@ import RebalancingToolSection from "@/components/pages/projects/rebalancing-tool
 import SuggestSection from "@/components/pages/projects/suggest-app/SuggestSection.vue";
 import TabSection from "@/components/content-elements/tab-element/TabSection.vue";
 import { useMainStore } from "@/stores/MainStore";
+import { useStrapiDataStore } from "@/stores/StrapiDataStore";
 
 const mainStore = useMainStore()
+const strapiStore = useStrapiDataStore()
 
 // section references
 const rebalancingToolSection = ref(null)
 const suggestAppSection = ref(null)
 
-
-// Typed data from strapi api
-const rebalancingToolData: Ref<IRebalancingTool> = ref({} as IRebalancingTool)
-
 // Fetch strapi data on mounted
 onMounted(async () => {
-  rebalancingToolData.value = await FetchAppSections.fetchRebalancingToolSection()
+  strapiStore.projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection()
 
   // Set the section offsets after page load
   mainStore.offsets.rebalancingTool = rebalancingToolSection.value.$el.offsetTop
@@ -35,7 +33,7 @@ onMounted(async () => {
 <template>
   <RebalancingToolSection
       ref="rebalancingToolSection"
-      :data="rebalancingToolData"
+      :data="strapiStore.projectData.rebalancingTool"
   />
   <TabSection
       :theme-color="ThemeColorClasses.REBALANCING_TOOL"

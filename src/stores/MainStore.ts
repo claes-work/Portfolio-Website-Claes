@@ -5,9 +5,15 @@ import type { ThemeColorClasses as ThemeColorClassesType} from "@/models/ThemeCo
 import { ThemeColorClasses } from "@/models/ThemeColorClasses"
 import { checkNavThemeOnScroll } from "@/composables/ThemeHandler";
 import type {SectionOffsets} from "@/models/SectionOffsets";
+import router from "@/router";
+import {useStrapiDataStore} from "@/stores/StrapiDataStore";
+import { AllLocales } from "@/models/AllLocales";
+import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
 
 
 export const useMainStore = defineStore('mainStore', () => {
+
+  /*************** Window Sizes ***************/
 
   // Flag that indicates if the viewport with is at least 768px
   const isDesktop: Ref<boolean> = ref(window.innerWidth >= 991)
@@ -39,10 +45,31 @@ export const useMainStore = defineStore('mainStore', () => {
     checkNavThemeOnScroll(themeClass, offsets)
   }
 
+  /************** Localization **************/
+
+  const strapiStore = useStrapiDataStore()
+  const activeLocale: Ref<string> = ref(AllLocales.DE)
+
+  function changeLocale(newLocale: AllLocalesType) {
+    activeLocale.value = newLocale
+  }
+
+  function loadLocale() {
+    // TODO: iterate all project setions
+  }
+
+
   return {
+    // Window Sizes
     isDesktop,
     openNavMenu,
+
+    // Dynamic Theme Color
     themeClass,
-    offsets
+    offsets,
+
+    // Localization
+    activeLocale,
+    changeLocale
   }
 })

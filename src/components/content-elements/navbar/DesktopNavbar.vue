@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { RouterLink } from "vue-router";
-import { allLocales, setLocale } from '@/i18n'
 import { useI18n } from 'vue-i18n'
 import { useMainStore } from "@/stores/MainStore";
 import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
@@ -34,6 +33,8 @@ const mainStore = useMainStore()
         <li>
           <a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a>
         </li>
+        <li @click="mainStore.changeLocale('en')">en</li>
+        <li @click="mainStore.changeLocale('de')">de</li>
       </ul>
     </div>
   </nav>
