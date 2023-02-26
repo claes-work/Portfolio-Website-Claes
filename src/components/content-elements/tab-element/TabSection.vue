@@ -4,6 +4,11 @@ import type { PropType } from "vue";
 import type { ThemeColorClasses } from "@/models/ThemeColorClasses";
 import TabButton from "@/components/content-elements/tab-element/TabButton.vue";
 import type { ProjectTab } from "@/models/ProjectTab";
+import type { IProjectTab } from "@/models/tabs/IProjectTab";
+import type { IProjectIdeaTab } from "@/models/tabs/IProjectIdeaTab";
+import type { IFeaturesTab } from "@/models/tabs/IFeaturesTab";
+import type { ITechStackTab } from "@/models/tabs/ITechStackTab";
+import type { IFileTab } from "@/models/tabs/IFileTab";
 
 const props = defineProps({
   themeColor: {
@@ -12,6 +17,10 @@ const props = defineProps({
   },
   projectTabs: {
     type: Object as PropType<ProjectTab[]>,
+    required: true
+  },
+  projectTabData: {
+    type: Object as PropType<IProjectTab[]>,
     required: true
   }
 })
@@ -24,7 +33,10 @@ const filterArray = (property: string, value: any) => {
 const getComponent = computed(() => {
   let component = filterArray('isActive', true)
   if (component) {
-    return toRaw(component).component
+    return {
+      rawComponent: toRaw(component).component,
+      reference: component.strapiReference
+    }
   }
 })
 
@@ -46,6 +58,26 @@ const changeComponent = (componentName: any) => {
 
 const activeComponent = ref(getComponent)
 
+// Get strapi data of the active component
+function getTabData(reference: string) {
+  if (props.projectTabData) {
+    const tabData = props.projectTabData.filter((el: any) => el['__component'] === reference)[0]
+    if (tabData) {
+      console.log(tabData.__component)
+      switch (tabData.__component) {
+        case 'project-insides.project-idea':
+          return tabData as IProjectIdeaTab
+        case 'project-insides.features-tab':
+          return tabData as IFeaturesTab
+        case 'project-insides.tech-stack-tab':
+          return tabData as ITechStackTab
+        case 'project-insides.file-tab':
+          return tabData as IFileTab
+      }
+    }
+  }
+  return ''
+}
 </script>
 
 <template>
@@ -66,7 +98,7 @@ const activeComponent = ref(getComponent)
         </TabButton>
       </div>
 
-      <component :is="activeComponent" @change-tab="changeComponent"></component>
+      <component :is="activeComponent.rawComponent" @change-tab="changeComponent" :data="getTabData(activeComponent.reference)"></component>
     </div>
   </section>
 </template>

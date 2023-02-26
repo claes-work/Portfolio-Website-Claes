@@ -1,22 +1,62 @@
 <script lang="ts" setup>
 const emit = defineEmits(['change-tab'])
+
+import type { ComputedRef, PropType, Ref } from "vue";
+import type { IProjectIdeaTab } from "@/models/tabs/IProjectIdeaTab";
+import { ref, computed } from "vue";
+import type {IMedia} from "@/models/components/media/IMedia";
+import type {IButton} from "@/models/components/IButton";
+
+const props = defineProps({
+  data: {
+    type: Object as PropType<IProjectIdeaTab>,
+    required: true
+  }
+})
+
+const heading: Ref<string> = ref((props.data && props.data.heading)
+    ? props.data.heading
+    : ''
+)
+
+const text: Ref<string> = ref((props.data && props.data.text)
+    ? props.data.text
+    : ''
+)
+
+const image: ComputedRef<IMedia> = computed(() => {
+  return (props.data && props.data.image)
+      ? props.data.image
+      : {} as IMedia
+})
+
+const button: ComputedRef<IButton> = computed(() => {
+  return (props.data && props.data.button)
+      ? props.data.button
+      : {} as IButton
+})
+
 </script>
 
 <template>
-  <div id="project-idea">
-    <h2 class="heading">From <span>Excel Sheets</span> to a Custom <span>Portfolio Rebalancing</span> App</h2>
+  <div class="project-idea">
+    <h2 class="heading" v-html="props.data.heading"></h2>
 
     <img
         class="wireframes-bc"
-        src="@/assets/images/Portfolio_Rebalancing_Tool_Wireframes.png"
-        alt="Portfolio Rebalancing Tool Wireframes"
+        :src="'https://strapi.claes-work.de' + image.url"
+        :alt="image.alternativeText"
     />
 
-    <p>
-      In 2019, I started investing and quickly realized that tracking my investments through excel sheets was not enough to fulfill my needs. I wanted access to more detailed stock data and the ability to group all my asset classes in one place. This is when I had the idea of creating a portfolio rebalancing app. I spent over a year developing the concept and design and initially started writing the backend in PHP, as it was the only backend language I knew. I used Vuejs for the frontend. As I continued working on the project, I decided to bring it to the next level and teamed up with a business partner. He improve the backend, which was re-written in Java. This allowed me to focus more on my strengths in design and frontend development.
-    </p>
+    <p>{{ props.data.text }}</p>
 
-    <div class="button" @click="$emit('change-tab', 'Features')">Explore more</div>
+    <div
+        class="button"
+        @click="$emit('change-tab', 'Features')"
+        :title="button.titleAttr">
+      {{ button.text }}
+    </div>
+
   </div>
 </template>
 
@@ -24,7 +64,7 @@ const emit = defineEmits(['change-tab'])
 @import "@/assets/scss/pages/projects/rebalancing-tool/project-insides/project-idea.scss";
 
 @media only screen and (min-width: 768px) {
-  #project-idea .wireframes-bc {
+  .project-idea .wireframes-bc {
     shape-outside: url('@/assets/images/Rebalancing_Tool_Text_Shape.png');
     margin-right: -240px;
     margin-top: 80px;
@@ -34,7 +74,7 @@ const emit = defineEmits(['change-tab'])
 }
 
 @media only screen and (min-width: 840px) {
-  #project-idea .wireframes-bc {
+  .project-idea .wireframes-bc {
     margin-right: -280px;
     margin-top: 0;
     margin-bottom: -190px;
@@ -42,14 +82,14 @@ const emit = defineEmits(['change-tab'])
 }
 
 @media only screen and (min-width: 900px) {
-  #project-idea .wireframes-bc {
+  .project-idea .wireframes-bc {
     margin-right: -232px;
   }
 }
 
 
 @media only screen and (min-width: 991px) {
-  #project-idea {
+  .project-idea {
     padding: 40px;
 
     .wireframes-bc {
@@ -61,14 +101,14 @@ const emit = defineEmits(['change-tab'])
 }
 
 @media only screen and (min-width: 1100px) {
-  #project-idea .wireframes-bc {
+  .project-idea .wireframes-bc {
     shape-margin: 80px;
     margin-top: -60px;
   }
 }
 
 @media only screen and (min-width: 1280px) {
-  #project-idea {
+  .project-idea {
     background-color: unset;
     border: unset;
     max-width: unset;

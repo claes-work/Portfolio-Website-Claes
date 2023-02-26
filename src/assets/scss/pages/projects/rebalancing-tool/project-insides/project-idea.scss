@@ -8,7 +8,7 @@
   }
 }
 
-#project-idea {
+.project-idea {
   position: relative; //
   overflow: hidden; //
   width: 100%;
@@ -82,14 +82,14 @@
 
 
 @media only screen and (min-width: 480px) {
-  #project-idea .heading {
+  .project-idea .heading {
     font-size: 30px;
   }
 }
 
 
 @media only screen and (min-width: 500px) {
-  #project-idea {
+  .project-idea {
     .button {
       width: 240px;
     }
@@ -97,7 +97,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  #project-idea {
+  .project-idea {
     .heading {
       line-height: 1.25;
     }
@@ -115,7 +115,7 @@
 }
 
 @media only screen and (min-width: 991px) {
-  #project-idea .heading {
+  .project-idea .heading {
     font-size: 36px;
   }
 }

@@ -5,7 +5,7 @@
   background-color: #FB893D;
 }
 
-#project-idea {
+.project-idea {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -16,17 +16,17 @@
   background-color: #252525;
   border: 1px solid #3B3B3B;
 }
-#project-idea .heading {
+.project-idea .heading {
   font-size: 24px;
   text-align: left;
   margin-bottom: 20px;
   max-width: 580px;
 }
-#project-idea p {
+.project-idea p {
   text-align: left;
   margin-bottom: 20px;
 }
-#project-idea .button {
+.project-idea .button {
   position: relative;
   height: 58px;
   width: 100%;
@@ -44,10 +44,10 @@
   color: #FFFFFF;
   z-index: 10;
 }
-#project-idea .wireframes-bc {
+.project-idea .wireframes-bc {
   display: none;
 }
-#project-idea .button {
+.project-idea .button {
   position: relative;
   height: 58px;
   width: 100%;
@@ -65,36 +65,36 @@
   color: #FFFFFF;
   z-index: 10;
 }
-#project-idea .button:hover {
+.project-idea .button:hover {
   background-color: #53FDCA;
   color: #121212;
 }
 
 @media only screen and (min-width: 480px) {
-  #project-idea .heading {
+  .project-idea .heading {
     font-size: 30px;
   }
 }
 @media only screen and (min-width: 500px) {
-  #project-idea .button {
+  .project-idea .button {
     width: 240px;
   }
 }
 @media only screen and (min-width: 768px) {
-  #project-idea .heading {
+  .project-idea .heading {
     line-height: 1.25;
   }
-  #project-idea p {
+  .project-idea p {
     text-align: justify;
   }
-  #project-idea .wireframes-bc {
+  .project-idea .wireframes-bc {
     display: block;
     width: 100%;
     float: right;
   }
 }
 @media only screen and (min-width: 991px) {
-  #project-idea .heading {
+  .project-idea .heading {
     font-size: 36px;
   }
 }

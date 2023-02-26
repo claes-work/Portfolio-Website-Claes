@@ -13,24 +13,28 @@ import ProjectFiles from "@/components/pages/projects/rebalancing-tool/project-i
 export const rebalancingToolInsides :Ref<ProjectTab[]>  = ref([
     {
         componentName: 'Project Idea',
+        strapiReference: "project-insides.project-idea",
         icon: ProjectIdeaIcon,
         isActive: true,
         component: ProjectIdea
     },
     {
         componentName: 'Features',
+        strapiReference: "project-insides.features-tab",
         icon: FeaturesIcon,
         isActive: false,
         component: ProjectFeatures
     },
     {
         componentName: 'Tech Stack',
+        strapiReference: "project-insides.tech-stack-tab",
         icon: TechStackIcon,
         isActive: false,
         component: TechStack
     },
     {
         componentName: 'Files & Links',
+        strapiReference: "project-insides.file-ta",
         icon: FileIcon,
         isActive: false,
         component: ProjectFiles

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import {ref, onMounted, computed} from "vue";
 import type { Ref } from "vue";
 import type { IRebalancingTool } from "@/models/rebalancing-tool/IRebalancingTool";
 import { ThemeColorClasses } from "@/models/ThemeColorClasses";
@@ -24,7 +24,9 @@ onMounted(async () => {
   strapiStore.projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection()
 
   // Set the section offsets after page load
+  //@ts-ignore
   mainStore.offsets.rebalancingTool = rebalancingToolSection.value.$el.offsetTop
+  //@ts-ignore
   mainStore.offsets.suggestApp = suggestAppSection.value.$el.offsetTop
 })
 
@@ -38,10 +40,12 @@ onMounted(async () => {
   <TabSection
       :theme-color="ThemeColorClasses.REBALANCING_TOOL"
       :project-tabs="rebalancingToolInsides"
+      :project-tab-data="strapiStore.projectData.rebalancingTool.projectInsides"
   />
   <SuggestSection ref="suggestAppSection" />
   <TabSection
       :theme-color="ThemeColorClasses.SUGGEST_APP"
       :project-tabs="suggestAppInsides"
+      :project-tab-data="strapiStore.projectData.rebalancingTool.projectInsides"
   />
 </template>

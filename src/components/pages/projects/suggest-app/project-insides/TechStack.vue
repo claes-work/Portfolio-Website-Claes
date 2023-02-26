@@ -12,7 +12,7 @@ const mainStore = useMainStore()
 </script>
 
 <template>
-  <div id="project-tech-stack">
+  <div class="project-tech-stack">
     <TableHeader />
     <Swiper
         v-if="!mainStore.isDesktop"

@@ -1,6 +1,7 @@
 import type { BaseEntity } from "@/models/BaseEntity";
 import type { IButton } from "@/models/components/IButton";
 import type { IMedia } from "@/models/components/media/IMedia";
+import type { IProjectTab } from "@/models/tabs/IProjectTab";
 
 export interface IRebalancingTool extends BaseEntity {
     id: number
@@ -10,4 +11,5 @@ export interface IRebalancingTool extends BaseEntity {
     logo: IMedia
     video: IMedia
     heroMockup: IMedia
+    projectInsides: IProjectTab[]
 }

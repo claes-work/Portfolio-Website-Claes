@@ -1,4 +1,4 @@
-#tab-section.suggest-app #project-files .file-wrapper ul li {
+#tab-section.suggest-app .project-files .file-wrapper ul li {
   a:hover {
     color: #FB893D;
   }
@@ -12,7 +12,7 @@
   }
 }
 
-#project-files {
+.project-files {
   position: relative;
   width: 100%;
   height: 100%;
@@ -89,7 +89,7 @@
 }
 
 @media only screen and (min-width: 500px) {
-  #project-files {
+  .project-files {
     padding: 40px 18px;
     justify-content: space-between;
     row-gap: 40px;
@@ -108,13 +108,13 @@
 }
 
 @media only screen and (min-width: 525px) {
-  #project-files {
+  .project-files {
     justify-content: center;
   }
 }
 
 @media only screen and (min-width: 991px) {
-  #project-files {
+  .project-files {
     background-color: unset;
     border: unset;
     column-gap: 18px;
@@ -130,7 +130,7 @@
 }
 
 @media only screen and (min-width: 1280px) {
-  #project-files {
+  .project-files {
     margin: 25px auto;
     column-gap: 25px;
 

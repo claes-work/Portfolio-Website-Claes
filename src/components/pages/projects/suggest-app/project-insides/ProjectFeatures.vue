@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div id="project-features">
+  <div class="project-features">
     <div class="feature-wrapper">
       <img src="@/assets/images/Live_Stock_Data_Feature_Image.png" alt="Live Stock Data Feature Image" />
       <h2>Live Stock Data</h2>

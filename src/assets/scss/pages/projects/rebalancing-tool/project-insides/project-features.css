@@ -1,4 +1,4 @@
-#project-features {
+.project-features {
   position: relative;
   width: 100%;
   height: 100%;
@@ -10,60 +10,60 @@
   margin: 0 auto;
   column-gap: 35px;
 }
-#project-features .feature-wrapper {
+.project-features .feature-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
 }
-#project-features .feature-wrapper img {
+.project-features .feature-wrapper img {
   margin-bottom: 5px;
 }
-#project-features .feature-wrapper h2 {
+.project-features .feature-wrapper h2 {
   font-size: 19px;
   text-align: center;
   margin-bottom: 15px;
 }
-#project-features .feature-wrapper p {
+.project-features .feature-wrapper p {
   max-width: 320px;
   text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
-  #project-features {
+  .project-features {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
   }
 }
 @media only screen and (min-width: 991px) {
-  #project-features {
+  .project-features {
     padding: 0 0 20px;
     background-color: unset;
     border: unset;
     column-gap: 15px;
   }
-  #project-features img {
+  .project-features img {
     margin-bottom: 20px;
   }
-  #project-features .feature-wrapper p {
+  .project-features .feature-wrapper p {
     max-width: 305px;
   }
 }
 @media only screen and (min-width: 1024px) {
-  #project-features {
+  .project-features {
     column-gap: 25px;
   }
-  #project-features .feature-wrapper img {
+  .project-features .feature-wrapper img {
     margin-bottom: 12px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  #project-features {
+  .project-features {
     column-gap: 35px;
     margin: 85px auto 25px;
   }
-  #project-features .feature-wrapper p {
+  .project-features .feature-wrapper p {
     max-width: 370px;
   }
 }

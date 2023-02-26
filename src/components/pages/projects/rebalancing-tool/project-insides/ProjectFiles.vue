@@ -4,7 +4,7 @@ import LinkBoxIcon from "@/components/icons/LinkBoxIcon.vue";
 </script>
 
 <template>
-  <div id="project-files">
+  <div class="project-files">
     <div class="file-wrapper">
       <div class="header">
         <div class="logo figma"></div>
