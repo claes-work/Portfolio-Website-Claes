@@ -45,20 +45,6 @@ export const useMainStore = defineStore('mainStore', () => {
     checkNavThemeOnScroll(themeClass, offsets)
   }
 
-  /************** Localization **************/
-
-  const strapiStore = useStrapiDataStore()
-  const activeLocale: Ref<string> = ref(AllLocales.DE)
-
-  function changeLocale(newLocale: AllLocalesType) {
-    activeLocale.value = newLocale
-  }
-
-  function loadLocale() {
-    // TODO: iterate all project setions
-  }
-
-
   return {
     // Window Sizes
     isDesktop,
@@ -66,10 +52,6 @@ export const useMainStore = defineStore('mainStore', () => {
 
     // Dynamic Theme Color
     themeClass,
-    offsets,
-
-    // Localization
-    activeLocale,
-    changeLocale
+    offsets
   }
 })

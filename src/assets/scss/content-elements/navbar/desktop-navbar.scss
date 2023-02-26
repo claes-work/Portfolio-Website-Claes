@@ -78,6 +78,32 @@
       li:last-child:hover .contact-btn {
         background-color: $bc-light-1;
       }
+
+      .flag-wrapper {
+        display: flex;
+        column-gap: 12px;
+
+        .flag {
+          width: 24px;
+          height: 63px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          border-bottom: 2px solid transparent;
+        }
+
+        .flag.en {
+          background-image: url("@/assets/images/United_States_Flag_Icon.png");
+        }
+
+        .flag.de {
+          background-image: url("@/assets/images/Deutschland_Flagge_Icon.png");
+        }
+
+        .flag.active {
+          border-bottom: 2px solid #53FDCA;
+        }
+      }
     }
   }
 

@@ -1,9 +1,17 @@
 <script lang="ts" setup>
 import { RouterLink } from "vue-router";
-import { useMainStore } from "@/stores/MainStore";
 import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
+import { useStrapiDataStore } from "@/stores/StrapiDataStore";
+import { AllLocales } from "@/models/AllLocales";
+import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
+import { useMainStore } from "@/stores/MainStore";
 
 const mainStore = useMainStore()
+const strapiStore = useStrapiDataStore()
+
+function checkLocale(locale: AllLocalesType) {
+  return locale === strapiStore.activeLocale
+}
 
 </script>
 
@@ -12,6 +20,10 @@ const mainStore = useMainStore()
     <div class="container">
       <h2>Claes</h2>
       <ul>
+        <li class="flag-wrapper">
+          <div :class="{ active : checkLocale(AllLocales.EN)}" class="flag en" @click="strapiStore.changeLocale(AllLocales.EN)"></div>
+          <div :class="{ active :  checkLocale(AllLocales.DE)}" class="flag de" @click="strapiStore.changeLocale(AllLocales.DE)"></div>
+        </li>
         <li>
           <div
               :class="{active : mainStore.openNavMenu}"
@@ -31,8 +43,6 @@ const mainStore = useMainStore()
         <li>
           <a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a>
         </li>
-        <li @click="mainStore.changeLocale('en')">en</li>
-        <li @click="mainStore.changeLocale('de')">de</li>
       </ul>
     </div>
   </nav>
