@@ -34,6 +34,7 @@ footer {
 
       p {
         font-size: 14px;
+        max-width: 310px;
       }
 
       ul {
@@ -47,6 +48,9 @@ footer {
           line-height: 1.6;
           font-weight: 400;
           letter-spacing: .4px;
+          display: flex;
+          align-items: center;
+          column-gap: 12px;
 
           a {
             text-decoration: none;
@@ -60,6 +64,11 @@ footer {
 
           a:hover {
             color: $main-color;
+          }
+
+          .link-icon {
+            width: 18px;
+            height: 18px;
           }
         }
       }

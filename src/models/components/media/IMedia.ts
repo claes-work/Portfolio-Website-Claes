@@ -1,4 +1,4 @@
-import type { BaseMedia } from "@/models/BaseMedia";
+import type { BaseMedia } from "@/models/components/media/BaseMedia";
 import type { IFormats } from "@/models/components/media/IFormats";
 
 export interface IMedia extends BaseMedia {

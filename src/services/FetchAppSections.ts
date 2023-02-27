@@ -6,15 +6,27 @@ import { AllLocales } from "@/models/AllLocales";
 import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
 import type { ISuggestApp } from "@/models/suggest-app/ISuggestApp";
 import type { INavbar } from "@/models/components/navbar/INavbar";
+import type { IFooter } from "@/models/components/footer/IFooter";
 
 export default {
 
     /**
-     * Get all Rebalancing Tool Section data
+     * Get all Navbar data
      */
     async fetchNavbarData(locale: AllLocalesType = AllLocales.DE): Promise<INavbar> {
         return axios.get(
             `https://strapi.claes-work.de/navbar?_locale=${locale}`
+        )
+            .then((response: AxiosResponse) => response.data)
+            .catch(error => console.log(error))
+    },
+
+    /**
+     * Get all Footer data
+     */
+    async fetchFooterData(locale: AllLocalesType = AllLocales.DE): Promise<IFooter> {
+        return axios.get(
+            `https://strapi.claes-work.de/footer?_locale=${locale}`
         )
             .then((response: AxiosResponse) => response.data)
             .catch(error => console.log(error))

@@ -9,11 +9,13 @@ import { AllLocales } from "@/models/AllLocales";
 import type { AllLocales as AllLocalesType} from "@/models/AllLocales";
 import type { INavbar } from "@/models/components/navbar/INavbar";
 import router from "@/router";
+import type {IFooter} from "@/models/components/footer/IFooter";
 
 export const useStrapiDataStore = defineStore('strapiDataStore', () => {
 
-  // navbar data from strapi api
+  // navbar and footer data from strapi api
   const navBarData: Ref<INavbar> = ref({} as INavbar)
+  const footerData: Ref<IFooter> = ref({} as IFooter)
 
   // project data from strapi api
   const projectData: IProjectData = reactive({
@@ -37,8 +39,9 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
     const routerPath = router.currentRoute.value.path
     activeLocale.value = newLocale
 
-    // Always fetch navbar data
+    // Always fetch navbar and footer data
     navBarData.value = await FetchAppSections.fetchNavbarData(newLocale)
+    footerData.value = await FetchAppSections.fetchFooterData(newLocale)
 
     // Fetch project data if route is projects page
     if (routerPath === '/') {
@@ -52,5 +55,5 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
     }
   }
 
-  return { navBarData, projectData, activeLocale, changeLocale }
+  return { navBarData, footerData, projectData, activeLocale, changeLocale }
 })
