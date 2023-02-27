@@ -5,11 +5,6 @@ import type { ThemeColorClasses as ThemeColorClassesType} from "@/models/ThemeCo
 import { ThemeColorClasses } from "@/models/ThemeColorClasses"
 import { checkNavThemeOnScroll } from "@/composables/ThemeHandler";
 import type {SectionOffsets} from "@/models/SectionOffsets";
-import router from "@/router";
-import {useStrapiDataStore} from "@/stores/StrapiDataStore";
-import { AllLocales } from "@/models/AllLocales";
-import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
-
 
 export const useMainStore = defineStore('mainStore', () => {
 

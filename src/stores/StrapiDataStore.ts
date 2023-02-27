@@ -7,8 +7,13 @@ import type { IProjectData } from "@/models/IProjectData";
 import FetchAppSections from "@/services/FetchAppSections";
 import { AllLocales } from "@/models/AllLocales";
 import type { AllLocales as AllLocalesType} from "@/models/AllLocales";
+import type { INavbar } from "@/models/components/navbar/INavbar";
+import router from "@/router";
 
 export const useStrapiDataStore = defineStore('strapiDataStore', () => {
+
+  // navbar data from strapi api
+  const navBarData: Ref<INavbar> = ref({} as INavbar)
 
   // project data from strapi api
   const projectData: IProjectData = reactive({
@@ -20,10 +25,32 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
 
   const activeLocale: Ref<AllLocalesType> = ref(AllLocales.DE)
 
-  async function changeLocale(newLocale: AllLocalesType) {
+  /**
+   * Change locale and fetch sections data again
+   *
+   * @param newLocale
+   *
+   * @return Promise<void>
+   */
+  async function changeLocale(newLocale: AllLocalesType): Promise<void> {
+
+    const routerPath = router.currentRoute.value.path
     activeLocale.value = newLocale
-    projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection(newLocale)
+
+    // Always fetch navbar data
+    navBarData.value = await FetchAppSections.fetchNavbarData(newLocale)
+
+    // Fetch project data if route is projects page
+    if (routerPath === '/') {
+      projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection(newLocale)
+      projectData.suggestApp = await FetchAppSections.fetchSuggestAppSection(newLocale)
+    }
+
+    // Fetch website data if route is websites page
+    if (routerPath === '/websites') {
+
+    }
   }
 
-  return { projectData, activeLocale, changeLocale }
+  return { navBarData, projectData, activeLocale, changeLocale }
 })

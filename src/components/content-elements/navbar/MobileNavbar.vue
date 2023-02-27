@@ -1,21 +1,27 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+import {onMounted, ref} from "vue";
 import type { Ref } from "vue";
 import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
 import { useMainStore } from "@/stores/MainStore";
 import {useStrapiDataStore} from "@/stores/StrapiDataStore";
 import { AllLocales } from "@/models/AllLocales";
 import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
+import FetchAppSections from "@/services/FetchAppSections";
 
 const mainStore = useMainStore();
 const strapiStore = useStrapiDataStore()
 
 const activeSubNav: Ref<boolean> = ref(false)
 
+// Bool to check if active class should be rendered
 function checkLocale(locale: AllLocalesType) {
   return locale === strapiStore.activeLocale
 }
 
+// Fetch strapi data on mounted
+onMounted(async () => {
+  strapiStore.navBarData = await FetchAppSections.fetchNavbarData()
+})
 </script>
 
 <template>
@@ -38,19 +44,57 @@ function checkLocale(locale: AllLocalesType) {
 
     <div class="mobile-nav-menu" :class="{ active: mainStore.openNavMenu }">
       <ul>
-        <li :class="{ open : activeSubNav }">
-          <div class="sub-link" @click="activeSubNav = !activeSubNav">
-            <span>PROJECTS</span>
+
+
+
+
+        <li
+            v-for="link in strapiStore.navBarData.navLinks"
+            :key="link.id"
+            v-show="!link.reference"
+            :class="{ open : activeSubNav }"
+        >
+          <div
+              class="sub-link"
+              @click="activeSubNav = !activeSubNav"
+          >
+            <span>{{ link.title }}</span>
             <ArrowDownIcon />
           </div>
-          <div class="sub-link-content">
-            <RouterLink :to="{ name: 'projects' }">APPS</RouterLink>
-            <RouterLink :to="{ name: 'websites' }">WEBSITES</RouterLink>
+          <div class="sub-link-content" v-show="mainStore.openNavMenu">
+            <RouterLink
+                v-for="sublink in link.subLink"
+                :key="sublink.id"
+                class="nested-link"
+                :to="{ name: sublink.reference }"
+            >
+              {{ sublink.subLink }}
+            </RouterLink>
           </div>
         </li>
-        <li><RouterLink :to="{ name: 'about' }" >ABOUT ME</RouterLink></li>
-    <!--<li><RouterLink :to="{ name: 'blog' }" >BLOG</RouterLink></li>-->
-        <li><a class="contact-btn" href="mailto: s.claes.work@gmail.com">CONTACT</a></li>
+
+
+
+
+        <li
+            v-for="link in strapiStore.navBarData.navLinks"
+            :key="link.id"
+            v-show="link.reference"
+        >
+          <RouterLink :to="{ name: link.reference }" >{{ link.title }}</RouterLink>
+        </li>
+
+        <li>
+          <a
+              v-for="button in strapiStore.navBarData.button"
+              :key="button.id"
+              class="contact-btn"
+              :href="button.link"
+              :title="button.titleAttr"
+              :target="button.openInNewTab ? '_blank' : ''"
+          >{{ button.text }}</a>
+        </li>
+
         <li class="flag-wrapper">
           <div :class="{ active : checkLocale(AllLocales.EN)}" class="flag en" @click="strapiStore.changeLocale(AllLocales.EN)"></div>
           <div :class="{ active :  checkLocale(AllLocales.DE)}" class="flag de" @click="strapiStore.changeLocale(AllLocales.DE)"></div>

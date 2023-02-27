@@ -5,8 +5,20 @@ import type { IPureAir } from "@/models/pure-air/IPureAir";
 import { AllLocales } from "@/models/AllLocales";
 import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
 import type { ISuggestApp } from "@/models/suggest-app/ISuggestApp";
+import type { INavbar } from "@/models/components/navbar/INavbar";
 
 export default {
+
+    /**
+     * Get all Rebalancing Tool Section data
+     */
+    async fetchNavbarData(locale: AllLocalesType = AllLocales.DE): Promise<INavbar> {
+        return axios.get(
+            `https://strapi.claes-work.de/navbar?_locale=${locale}`
+        )
+            .then((response: AxiosResponse) => response.data)
+            .catch(error => console.log(error))
+    },
 
     /**
      * Get all Rebalancing Tool Section data
