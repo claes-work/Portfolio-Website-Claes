@@ -9,6 +9,7 @@ import type { IProjectIdeaTab } from "@/models/tabs/IProjectIdeaTab";
 import type { IFeaturesTab } from "@/models/tabs/IFeaturesTab";
 import type { ITechStackTab } from "@/models/tabs/ITechStackTab";
 import type { IFileTab } from "@/models/tabs/IFileTab";
+import { ProjectTabReferences } from "@/models/tabs/enums/ProjectTabReferences";
 
 const props = defineProps({
   themeColor: {
@@ -64,14 +65,13 @@ function getTabData(reference: string) {
     const tabData = props.projectTabData.filter((el: any) => el['__component'] === reference)[0]
     if (tabData) {
       switch (tabData.__component) {
-        case 'project-insides.project-idea':
+        case ProjectTabReferences.IDEA:
           return tabData as IProjectIdeaTab
-        case 'project-insides.features-tab':
+        case ProjectTabReferences.FEATURES:
           return tabData as IFeaturesTab
-        case 'project-insides.tech-stack-tab':
+        case ProjectTabReferences.TECH_STACK:
           return tabData as ITechStackTab
-        case 'project-insides.file-tab':
-          console.log(tabData)
+        case ProjectTabReferences.FILES:
           return tabData as IFileTab
       }
     }

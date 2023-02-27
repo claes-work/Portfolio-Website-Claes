@@ -5,5 +5,7 @@ export interface ILink {
     text: string
     link: string
     titleTag: string
+    openNewTab: boolean
     icon: IMedia
+    file: IMedia
 }

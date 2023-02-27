@@ -36,16 +36,8 @@
       .logo {
         width: 26px;
         height: 26px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+        object-fit: contain;
       }
-
-      .logo.figma   { background-image: url("@/assets/images/tech-icons/figma_logo.png"); }
-      .logo.github  { background-image: url("@/assets/images/Github.png"); }
-      .logo.webapp  { background-image: url("@/assets/images/Portfolio_Rebalancing_Tool_Logo.png"); }
-      .logo.members { background-image: url("@/assets/images/Members.png"); }
-
 
       span {
         font-size: 18px;
@@ -135,7 +127,7 @@
     column-gap: 25px;
 
       .file-wrapper {
-        width: calc(25% - 75px);
+        width: 20%;
         padding: 30px 18px;
     }
   }

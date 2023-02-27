@@ -30,11 +30,23 @@ const linkBoxes: Ref<ILinkBox[]> = ref((props.data && props.data.linkBox)
       </div>
       <ul>
         <li
-          v-for="link in linkBox"
+          v-for="link in linkBox.link"
           :key="link.id"
         >
-          <img :src="link.icon.url" :alt="link.icon.alternativeText">
-          <a :href="link.link" :title="link.titleTag">{{ link.text }}</a>
+          <img :src="'https://strapi.claes-work.de' + link.icon.url" :alt="link.icon.alternativeText">
+          <a
+              v-if="link.file && link.file.url"
+              :href="'https://strapi.claes-work.de' + link.file.url"
+              :title="link.titleTag"
+              download
+          >{{ link.text }}</a>
+
+          <a
+              v-if="!link.file || !link.file.url"
+              :href="link.link"
+              :title="link.titleTag"
+              :target="link.openNewTab ? '_blank' : ''"
+          >{{ link.text }}</a>
         </li>
       </ul>
     </div>
