@@ -1,8 +1,8 @@
-#tab-section.suggest-app h2 span {
-  color: #FB893D;
+.tab-section.suggest-app .container .project-idea .heading span {
+  color: #FB893D !important;
 }
-#tab-section.suggest-app .button:hover {
-  background-color: #FB893D;
+.tab-section.suggest-app .container .project-idea .button:hover {
+  background-color: #FB893D !important;
 }
 
 .project-idea {

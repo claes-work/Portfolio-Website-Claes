@@ -22,6 +22,7 @@ const suggestAppSection = ref(null)
 // Fetch strapi data on mounted
 onMounted(async () => {
   strapiStore.projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection()
+  strapiStore.projectData.suggestApp = await FetchAppSections.fetchSuggestAppSection()
 
   // Set the section offsets after page load
   //@ts-ignore
@@ -42,10 +43,13 @@ onMounted(async () => {
       :project-tabs="rebalancingToolInsides"
       :project-tab-data="strapiStore.projectData.rebalancingTool.projectInsides"
   />
-  <SuggestSection ref="suggestAppSection" />
+  <SuggestSection
+      ref="suggestAppSection"
+      :data="strapiStore.projectData.suggestApp"
+  />
   <TabSection
       :theme-color="ThemeColorClasses.SUGGEST_APP"
       :project-tabs="suggestAppInsides"
-      :project-tab-data="strapiStore.projectData.rebalancingTool.projectInsides"
+      :project-tab-data="strapiStore.projectData.suggestApp.projectInsides"
   />
 </template>

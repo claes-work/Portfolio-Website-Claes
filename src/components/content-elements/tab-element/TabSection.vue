@@ -81,7 +81,7 @@ function getTabData(reference: string) {
 </script>
 
 <template>
-  <section id="tab-section" :class="themeColor">
+  <section class="tab-section" :class="themeColor">
     <div class="container">
     <!--<h3>Project insides</h3>-->
 

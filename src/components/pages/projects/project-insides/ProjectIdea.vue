@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const emit = defineEmits(['change-tab'])
+
 import type { ComputedRef, PropType, Ref } from "vue";
 import type { IProjectIdeaTab } from "@/models/tabs/IProjectIdeaTab";
 import { ref, computed } from "vue";
@@ -13,8 +15,8 @@ const props = defineProps({
 })
 
 const heading: Ref<string> = ref((props.data && props.data.heading)
-  ? props.data.heading
-  : ''
+    ? props.data.heading
+    : ''
 )
 
 const text: Ref<string> = ref((props.data && props.data.text)
@@ -33,7 +35,6 @@ const button: ComputedRef<IButton> = computed(() => {
       ? props.data.button
       : {} as IButton
 })
-
 
 </script>
 
@@ -60,39 +61,41 @@ const button: ComputedRef<IButton> = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/pages/projects/rebalancing-tool/project-insides/project-idea.scss";
+@import "@/assets/scss/pages/projects/project-insides/project-idea.scss";
 
 @media only screen and (min-width: 768px) {
   .project-idea .wireframes-bc {
-    shape-outside: url('@/assets/images/Suggest_Idea_Text_Shape.png');
-    margin-right: -270px;
-    margin-top: -40px;
-    margin-bottom: -130px;
+    shape-outside: url('@/assets/images/Rebalancing_Tool_Text_Shape.png');
+    margin-right: -240px;
+    margin-top: 80px;
+    margin-bottom: -160px;
     shape-margin: 60px;
   }
 }
 
 @media only screen and (min-width: 840px) {
   .project-idea .wireframes-bc {
-    margin-top: -55px;
-    margin-bottom: -188px;
+    margin-right: -280px;
+    margin-top: 0;
+    margin-bottom: -190px;
   }
 }
 
 @media only screen and (min-width: 900px) {
   .project-idea .wireframes-bc {
-    margin-top: -55px;
-    margin-bottom: -290px;
-    margin-right: -220px;
+    margin-right: -232px;
   }
 }
+
 
 @media only screen and (min-width: 991px) {
   .project-idea {
     padding: 40px;
 
     .wireframes-bc {
-      margin-right: -250px;
+      margin-top: -20px;
+      margin-right: -280px;
+      margin-bottom: -220px;
     }
   }
 }
@@ -100,7 +103,7 @@ const button: ComputedRef<IButton> = computed(() => {
 @media only screen and (min-width: 1100px) {
   .project-idea .wireframes-bc {
     shape-margin: 80px;
-    margin-top: -100px;
+    margin-top: -60px;
   }
 }
 
@@ -115,8 +118,8 @@ const button: ComputedRef<IButton> = computed(() => {
     margin-bottom: -45px;
 
     .wireframes-bc {
-      margin-bottom: -410px;
-      margin-top: -165px;
+      margin-bottom: -320px;
+      margin-top: -110px;
     }
   }
 }

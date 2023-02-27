@@ -34,5 +34,5 @@ const featureData = computed(() => {
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/pages/projects/rebalancing-tool/project-insides/project-features.scss";
+@import "@/assets/scss/pages/projects/project-insides/project-features.scss";
 </style>

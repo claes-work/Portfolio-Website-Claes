@@ -54,5 +54,5 @@ const linkBoxes: Ref<ILinkBox[]> = ref((props.data && props.data.linkBox)
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/pages/projects/rebalancing-tool/project-insides/project-files.scss";
+@import "@/assets/scss/pages/projects/project-insides/project-files.scss";
 </style>

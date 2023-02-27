@@ -1,8 +1,8 @@
-#tab-section.suggest-app .container .tab-header .tab-button.active {
+.tab-section.suggest-app .container .tab-header .tab-button.active {
   background-color: #FB893D;
 }
 
-#tab-section {
+.tab-section {
   width: 100%;
   background-color: $bc-dark-5;
 
@@ -72,7 +72,7 @@
 
 
 @media only screen and (min-width: 768px) {
-  #tab-section .container {
+  .tab-section .container {
     h3 {
       margin-bottom: 35px;
     }
@@ -90,14 +90,14 @@
 }
 
 @media only screen and (min-width: 991px) {
-  #tab-section .container {
+  .tab-section .container {
     padding: 45px 20px;
   }
 }
 
 
 @media only screen and (min-width: 1280px) {
-  #tab-section {
+  .tab-section {
     padding: 45px 20px;
   }
 }

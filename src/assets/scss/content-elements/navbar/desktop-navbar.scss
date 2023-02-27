@@ -99,10 +99,6 @@
         .flag.de {
           background-image: url("@/assets/images/Deutschland_Flagge_Icon.png");
         }
-
-        .flag.active {
-          border-bottom: 2px solid #53FDCA;
-        }
       }
     }
   }
@@ -184,6 +180,10 @@
         stroke: #53FDCA;
       }
     }
+
+    .flag-wrapper .flag.active {
+      border-bottom: 2px solid #53FDCA;
+    }
   }
 }
 
@@ -216,6 +216,10 @@
       svg {
         stroke: #FA8231;
       }
+    }
+
+    .flag-wrapper .flag.active {
+      border-bottom: 2px solid #FA8231;
     }
   }
 }
@@ -254,6 +258,10 @@
     li:last-child a:hover {
       color: #121212
     }
+
+    .flag-wrapper .flag.active {
+      border-bottom: 2px solid #59aeff;
+    }
   }
 }
 
@@ -290,6 +298,10 @@
 
     li:last-child a:hover {
       color: #121212
+    }
+
+    .flag-wrapper .flag.active {
+      border-bottom: 2px solid #526E91;
     }
   }
 }
@@ -328,6 +340,10 @@
     li:last-child a:hover {
       background-color: #C7AA8B;
       color: #121212
+    }
+
+    .flag-wrapper .flag.active {
+      border-bottom: 2px solid #C7AA8B;
     }
   }
 }

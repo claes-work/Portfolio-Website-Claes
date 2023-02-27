@@ -2,6 +2,7 @@ import { reactive, ref } from 'vue'
 import type { Ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { IRebalancingTool } from "@/models/rebalancing-tool/IRebalancingTool";
+import type { ISuggestApp } from "@/models/suggest-app/ISuggestApp";
 import type { IProjectData } from "@/models/IProjectData";
 import FetchAppSections from "@/services/FetchAppSections";
 import { AllLocales } from "@/models/AllLocales";
@@ -11,7 +12,8 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
 
   // project data from strapi api
   const projectData: IProjectData = reactive({
-    rebalancingTool: {} as IRebalancingTool
+    rebalancingTool: {} as IRebalancingTool,
+    suggestApp: {} as ISuggestApp
   })
 
   /************** Localization **************/

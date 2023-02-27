@@ -55,6 +55,16 @@ h1, h2, h3 {
   }
 }
 
+.tab-section.suggest-app {
+  h2 span {
+    color: #FB893D !important;
+  }
+
+  .button:hover {
+    background-color: #FB893D !important;
+  }
+}
+
 h1, h2 {
   font-size: 36px;
 }

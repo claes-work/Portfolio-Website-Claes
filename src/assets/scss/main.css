@@ -52,6 +52,13 @@ h1 span, h2 span, h3 span {
   font-family: "Red Hat Display 700", sans-serif;
 }
 
+.tab-section.suggest-app h2 span {
+  color: #FB893D !important;
+}
+.tab-section.suggest-app .button:hover {
+  background-color: #FB893D !important;
+}
+
 h1, h2 {
   font-size: 36px;
 }

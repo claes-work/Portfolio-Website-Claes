@@ -192,7 +192,7 @@
         }
 
         .flag.active {
-          border-bottom: 4px solid #53FDCA;
+          border-bottom: 4px solid $main-color;
         }
       }
     }
@@ -227,6 +227,10 @@
     li .contact-btn {
       background-color: $main-color;
     }
+
+    .flag-wrapper .flag.active {
+      border-bottom: 4px solid $main-color;
+    }
   }
 }
 
@@ -253,6 +257,10 @@
 
     li .contact-btn {
       background-color: #FA8231;
+    }
+
+    .flag-wrapper .flag.active {
+      border-bottom: 4px solid #FA8231;
     }
   }
 }
@@ -286,6 +294,10 @@
     li .contact-btn:hover {
       color: #121212;
     }
+
+    .flag-wrapper .flag.active {
+      border-bottom: 4px solid #59aeff;
+    }
   }
 }
 
@@ -317,6 +329,10 @@
 
     li .contact-btn:hover {
       color: #121212;
+    }
+
+    .flag-wrapper .flag.active {
+      border-bottom: 4px solid #526E91;
     }
   }
 }
@@ -350,6 +366,10 @@
     li .contact-btn:hover {
       background-color: #C7AA8B;
       color: #121212;
+    }
+
+    .flag-wrapper .flag.active {
+      border-bottom: 4px solid #C7AA8B;
     }
   }
 }
