@@ -1,51 +1,41 @@
 <script lang="ts" setup>
-import DownloadBoxIcon from "@/components/icons/DownloadBoxIcon.vue";
-import LinkBoxIcon from "@/components/icons/LinkBoxIcon.vue";
+import type { PropType, Ref } from "vue";
+import { ref } from "vue";
+import type { IFileTab } from "@/models/tabs/IFileTab";
+import type { ILinkBox } from "@/models/tabs/ILinkBox";
+
+const props = defineProps({
+  data: {
+    type: Object as PropType<IFileTab>,
+    required: true
+  }
+})
+
+const linkBoxes: Ref<ILinkBox[]> = ref((props.data && props.data.linkBox)
+    ? props.data.linkBox
+    : {} as ILinkBox[]
+)
 </script>
 
 <template>
   <div class="project-files">
-    <div class="file-wrapper">
+    <div
+        v-for="linkBox in linkBoxes"
+        :key="linkBox.id"
+        class="file-wrapper"
+    >
       <div class="header">
-        <div class="logo figma"></div>
-        <span>Figma</span>
+        <img class="logo" :src="'https://strapi.claes-work.de' + linkBox.icon.url" :alt="linkBox.icon.alternativeText" />
+        <span>{{ linkBox.heading }}</span>
       </div>
       <ul>
-        <li><DownloadBoxIcon /><a href="#" title="#">Wireframes</a></li>
-        <li><DownloadBoxIcon /><a href="#" title="#">Full Design</a></li>
-        <li><DownloadBoxIcon /><a href="#" title="#">Graphics</a></li>
-      </ul>
-    </div>
-
-    <div class="file-wrapper">
-      <div class="header">
-        <div class="logo github"></div>
-        <span>GitHub</span>
-      </div>
-      <ul>
-        <li><LinkBoxIcon /><a href="#" title="#">Frontend Repository</a></li>
-        <li><LinkBoxIcon /><a href="#" title="#">Backend Repository</a></li>
-      </ul>
-    </div>
-
-    <div class="file-wrapper">
-      <div class="header">
-        <div class="logo webapp"></div>
-        <span>Web-App</span>
-      </div>
-      <ul>
-        <li><LinkBoxIcon /><a href="#" title="#">Sign Up Here</a></li>
-      </ul>
-    </div>
-
-    <div class="file-wrapper">
-      <div class="header">
-        <div class="logo members"></div>
-        <span>Members</span>
-      </div>
-      <ul>
-        <li><LinkBoxIcon /><a href="#" title="#">Sebastian Claes</a></li>
-        <li><LinkBoxIcon /><a href="#" title="#">Tobias Hübner</a></li>
+        <li
+          v-for="link in linkBox"
+          :key="link.id"
+        >
+          <img :src="link.icon.url" :alt="link.icon.alternativeText">
+          <a :href="link.link" :title="link.titleTag">{{ link.text }}</a>
+        </li>
       </ul>
     </div>
   </div>

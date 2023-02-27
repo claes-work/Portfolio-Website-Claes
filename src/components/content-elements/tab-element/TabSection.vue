@@ -63,7 +63,6 @@ function getTabData(reference: string) {
   if (props.projectTabData) {
     const tabData = props.projectTabData.filter((el: any) => el['__component'] === reference)[0]
     if (tabData) {
-      console.log(tabData.__component)
       switch (tabData.__component) {
         case 'project-insides.project-idea':
           return tabData as IProjectIdeaTab
@@ -72,6 +71,7 @@ function getTabData(reference: string) {
         case 'project-insides.tech-stack-tab':
           return tabData as ITechStackTab
         case 'project-insides.file-tab':
+          console.log(tabData)
           return tabData as IFileTab
       }
     }

@@ -7,8 +7,26 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { techStackData } from "@/data/rebalancing-tool/TechStackData"
 import { useMainStore } from "@/stores/MainStore";
+import type { PropType } from "vue";
+import type { ITechStackTab } from "@/models/tabs/ITechStackTab";
+import { ref } from "vue";
+import type{ Ref } from "vue";
+import type { ITechStackRow } from "@/models/tabs/ITechStackRow";
 
 const mainStore = useMainStore()
+
+const props = defineProps({
+  data: {
+    type: Object as PropType<ITechStackTab>,
+    required: true
+  }
+})
+
+const techStackRows: Ref<ITechStackRow[]> = ref((props.data && props.data.techStackRow)
+    ? props.data.techStackRow
+    : {} as ITechStackRow[]
+)
+
 </script>
 
 <template>
@@ -25,27 +43,29 @@ const mainStore = useMainStore()
         virtual
     >
       <SwiperSlide
-          v-for="(slide, index) in techStackData"
+          v-for="(slide, index) in techStackRows"
           :key="index"
           :virtualIndex="index"
       >
         <TableRow >
           <template #technology>
-            <div class="logo" :style="{ backgroundImage: slide.icon }" ></div>
-            <span>{{ slide.title }}</span>
+            <img class="logo" :src="'https://strapi.claes-work.de' + slide.techIcon.url" :alt="slide.techIcon.alternativeText" />
+            <span>{{ slide.techTitle }}</span>
           </template>
           <template #usage>
-            <li v-for="(li, index) in slide.usageList" :key="index" v-html="li"></li>
+            <li v-for="usage in slide.usageList" :key="usage.id" v-html="usage.li"></li>
           </template>
           <template #description>
             <p>{{ slide.description }}</p>
           </template>
           <template #implemented-by>
-            <div
+            <img
                 class="profile-image"
-            ></div>
+                :src="'https://strapi.claes-work.de' + slide.implementedBy.profileImage.url"
+                :alt="slide.implementedBy.profileImage.alternativeText"
+            />
             <div class="name-wrapper">
-              <div class="github">{{ slide.implementedBy.tag }}</div>
+              <div class="github">{{ slide.implementedBy.shortTag }}</div>
               <div class="name">{{ slide.implementedBy.fullName }}</div>
             </div>
           </template>
@@ -55,25 +75,27 @@ const mainStore = useMainStore()
 
     <TableRow
         v-if="mainStore.isDesktop"
-        v-for="(row, index) in techStackData"
+        v-for="(row, index) in techStackRows"
         :key="index"
     >
       <template #technology>
-        <div class="logo" :style="{ backgroundImage: row.icon }" ></div>
-        <span>{{ row.title }}</span>
+        <img class="logo" :src="'https://strapi.claes-work.de' + row.techIcon.url" :alt="row.techIcon.alternativeText" />
+        <span>{{ row.techTitle }}</span>
       </template>
       <template #usage>
-        <li v-for="(li, index) in row.usageList" :key="index" v-html="li"></li>
+        <li v-for="usage in row.usageList" :key="usage.id" v-html="usage.li"></li>
       </template>
       <template #description>
         <p>{{ row.description }}</p>
       </template>
       <template #implemented-by>
-        <div
+        <img
             class="profile-image"
-        ></div>
+            :src="'https://strapi.claes-work.de' + row.implementedBy.profileImage.url"
+            :alt="row.implementedBy.profileImage.alternativeText"
+        />
         <div class="name-wrapper">
-          <div class="github">{{ row.implementedBy.tag }}</div>
+          <div class="github">{{ row.implementedBy.shortTag }}</div>
           <div class="name">{{ row.implementedBy.fullName }}</div>
         </div>
       </template>
