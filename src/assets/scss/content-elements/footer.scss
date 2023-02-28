@@ -149,7 +149,7 @@ footer {
     flex-wrap: unset;
     justify-content: space-between;
     column-gap: 70px;
-    padding: 30px 0;
+    padding: 30px 20px;
 
     .column {
       width: auto;
@@ -161,6 +161,6 @@ footer {
     }
   }
   footer .copyright-wrapper .container {
-    padding: 30px 0;
+    padding: 30px 20px;
   }
 }
