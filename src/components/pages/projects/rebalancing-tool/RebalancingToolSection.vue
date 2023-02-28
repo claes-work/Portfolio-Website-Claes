@@ -12,7 +12,7 @@ const props = defineProps({
   data: {
     type: Object as PropType<IRebalancingTool>,
     required: true
-  },
+  }
 })
 
 // Ensure mockup src is never null and add url prefix to upload path
@@ -41,7 +41,9 @@ const videoSrc: ComputedRef<string> = computed(() => {
 
 // Render markdown from content editor
 const markdown: ComputedRef<string> = computed(() => {
-  return (props.data.description) ? marked(props.data.description) : ''
+  return (props.data && props.data.description)
+      ? marked(props.data.description)
+      : ''
 })
 </script>
 

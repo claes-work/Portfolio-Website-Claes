@@ -1,82 +1,116 @@
 <script lang="ts" setup>
-import { computed, ref, toRaw } from "vue";
-import type { PropType } from "vue";
+import {computed, inject, ref, toRaw} from "vue";
+import type { Ref, ComputedRef, PropType } from "vue";
 import type { ThemeColorClasses } from "@/models/ThemeColorClasses";
 import TabButton from "@/components/content-elements/tab-element/TabButton.vue";
-import type { ProjectTab } from "@/models/ProjectTab";
-import type { IProjectTab } from "@/models/tabs/IProjectTab";
 import type { IProjectIdeaTab } from "@/models/tabs/IProjectIdeaTab";
 import type { IFeaturesTab } from "@/models/tabs/IFeaturesTab";
 import type { ITechStackTab } from "@/models/tabs/ITechStackTab";
 import type { IFileTab } from "@/models/tabs/IFileTab";
 import { ProjectTabReferences } from "@/models/tabs/enums/ProjectTabReferences";
+import type { ProjectTabReferences as TabReferencesType } from "@/models/tabs/enums/ProjectTabReferences";
+import type {IRebalancingTool} from "@/models/rebalancing-tool/IRebalancingTool";
+import type {ISuggestApp} from "@/models/suggest-app/ISuggestApp";
+import type { ITabButton } from "@/models/tabs/ITabButton";
+import ProjectIdea from "@/components/pages/projects/project-insides/ProjectIdea.vue";
+import ProjectFeatures from "@/components/pages/projects/project-insides/ProjectFeatures.vue";
+import TechStack from "@/components/pages/projects/project-insides/TechStack.vue";
+import ProjectFiles from "@/components/pages/projects/project-insides/ProjectFiles.vue";
+
+
+const urlPrefix = inject('URL_PATH')
 
 const props = defineProps({
   themeColor: {
     type: Object as PropType<ThemeColorClasses>,
     required: true
   },
-  projectTabs: {
-    type: Object as PropType<ProjectTab[]>,
-    required: true
-  },
-  projectTabData: {
-    type: Object as PropType<IProjectTab[]>,
+  data: {
+    type: Object as PropType<IRebalancingTool | ISuggestApp>,
     required: true
   }
 })
 
-const filterArray = (property: string, value: any) => {
-  return props.projectTabs.filter((el: any) => el[property] === value)[0]
-}
+// The currently rendered tab component
+const renderedComponent: Ref = ref(ProjectIdea)
+// The reference for the currently rendered tab component
+const reference: Ref<TabReferencesType> = ref(ProjectTabReferences.IDEA)
 
-// Get the active component
-const getComponent = computed(() => {
-  let component = filterArray('isActive', true)
-  if (component) {
-    return {
-      rawComponent: toRaw(component).component,
-      reference: component.strapiReference
-    }
+// The data of the  currently rendered tab component
+const componentData: ComputedRef = computed(() => {
+  if (props.data && props.data.projectInsides) {
+    // Filter and return the active tab component
+    return props.data.projectInsides.filter(
+        (el: any) => el['__component'] === reference.value
+    )[0]
   }
+  // Default return if props not defined
+  return {} as IProjectIdeaTab
 })
 
-// Change isActive property in oder to render the clicked component
-const changeComponent = (componentName: any) => {
+/**
+ * Change the rendered tab component
+ *
+ * @param tabReference TabReferencesType
+ *
+ * @return void
+ */
+const changeComponent = (tabReference: TabReferencesType): void => {
+  // Set the reference of the clicked tab
+  reference.value = tabReference
+  // Change the active class of the related tab button
+  changeActiveClass(tabReference)
 
-  // get active record
-  let oldComponent = filterArray('isActive', true)
-  if(oldComponent) {
-    oldComponent.isActive = false
-  }
-
-  // Get record that matches the component name
-  let newComponent = filterArray('componentName', componentName)
-  if (newComponent) {
-    newComponent.isActive = true
+  // Find the tab component by its reference
+  switch (tabReference) {
+    default:
+    case ProjectTabReferences.IDEA:
+      renderedComponent.value = ProjectIdea
+      break;
+    case ProjectTabReferences.FEATURES:
+      renderedComponent.value = ProjectFeatures
+      break;
+    case ProjectTabReferences.TECH_STACK:
+      renderedComponent.value = TechStack
+      break;
+    case ProjectTabReferences.FILES:
+      renderedComponent.value = ProjectFiles
+      break;
   }
 }
 
-const activeComponent = ref(getComponent)
+/**
+ * Change the active class of the related tab button
+ *
+ * @param reference
+ *
+ * @return void
+ */
+const changeActiveClass = (reference: TabReferencesType): void => {
+  // Reset the current active tab button
+  let activeButton: ITabButton = getTabButton('isActive', true)
+  if (activeButton) activeButton.isActive = false
 
-// Get strapi data of the active component
-function getTabData(reference: string) {
-  if (props.projectTabData) {
-    const tabData = props.projectTabData.filter((el: any) => el['__component'] === reference)[0]
-    if (tabData) {
-      switch (tabData.__component) {
-        case ProjectTabReferences.IDEA:
-          return tabData as IProjectIdeaTab
-        case ProjectTabReferences.FEATURES:
-          return tabData as IFeaturesTab
-        case ProjectTabReferences.TECH_STACK:
-          return tabData as ITechStackTab
-        case ProjectTabReferences.FILES:
-          return tabData as IFileTab
-      }
-    }
+  // Set the isActive property of the clicked tab button
+  let clickedButton: ITabButton = getTabButton('strapiReference', reference)
+  if (clickedButton) clickedButton.isActive = true
+}
+
+/**
+ * Filter and return a tab button by a property and value
+ *
+ * @param property
+ * @param value
+ *
+ * @return ITabButton
+ */
+const getTabButton = (property: string, value: any): ITabButton => {
+  if (props.data && props.data.tabButtons) {
+    return props.data.tabButtons.filter(
+        (el: any) => el[property] === value
+    )[0]
   }
-  return ''
+  return {} as ITabButton
 }
 </script>
 
@@ -87,18 +121,26 @@ function getTabData(reference: string) {
 
       <div class="tab-header">
         <TabButton
-            v-for="tab in projectTabs"
+            v-for="tab in data.tabButtons"
             :tab-name="tab.componentName"
             :class="{ active : tab.isActive }"
-            @click="changeComponent(tab.componentName)"
+            @click="changeComponent(tab.strapiReference)"
         >
           <template #tab-icon>
-            <component :is="tab.icon"></component>
+            <img
+                v-if="tab.icon"
+                :src="urlPrefix + tab.icon.url"
+                :alt="tab.icon.alternativeText"
+            />
           </template>
         </TabButton>
       </div>
 
-      <component :is="activeComponent.rawComponent" @change-tab="changeComponent" :data="getTabData(activeComponent.reference)"></component>
+      <component
+          :is="renderedComponent"
+          :data="componentData"
+          @change-tab="changeComponent"
+      ></component>
     </div>
   </section>
 </template>

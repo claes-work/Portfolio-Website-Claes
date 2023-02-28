@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { ProjectTabReferences } from "@/models/tabs/enums/ProjectTabReferences";
+
 const emit = defineEmits(['change-tab'])
 
 import type { ComputedRef, PropType, Ref } from "vue";
@@ -52,7 +54,7 @@ const button: ComputedRef<IButton> = computed(() => {
 
     <div
         class="button"
-        @click="$emit('change-tab', 'Features')"
+        @click="$emit('change-tab', ProjectTabReferences.FEATURES)"
         :title="button.titleAttr">
       {{ button.text }}
     </div>

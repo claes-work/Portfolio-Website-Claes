@@ -40,8 +40,8 @@ onMounted(async () => {
   />
   <TabSection
       :theme-color="ThemeColorClasses.REBALANCING_TOOL"
-      :project-tabs="rebalancingToolInsides"
-      :project-tab-data="strapiStore.projectData.rebalancingTool.projectInsides"
+      :data="strapiStore.projectData.rebalancingTool"
+
   />
   <SuggestSection
       ref="suggestAppSection"
@@ -49,7 +49,6 @@ onMounted(async () => {
   />
   <TabSection
       :theme-color="ThemeColorClasses.SUGGEST_APP"
-      :project-tabs="suggestAppInsides"
-      :project-tab-data="strapiStore.projectData.suggestApp.projectInsides"
+      :data="strapiStore.projectData.suggestApp"
   />
 </template>
