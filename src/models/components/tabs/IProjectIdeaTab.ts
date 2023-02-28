@@ -1,4 +1,4 @@
-import type { IButton } from "@/models/components/IButton";
+import type { IButton } from "@/models/components/buttons/IButton";
 import type { IMedia } from "@/models/components/media/IMedia";
 
 

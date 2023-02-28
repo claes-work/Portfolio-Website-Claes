@@ -1,5 +1,5 @@
 import type { IMedia } from "@/models/components/media/IMedia";
-import type { ILink } from "@/models/tabs/ILink";
+import type { ILink } from "@/models/components/tabs/ILink";
 
 export interface ILinkBox {
     id: number

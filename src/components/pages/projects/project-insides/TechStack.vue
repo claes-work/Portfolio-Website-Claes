@@ -7,10 +7,10 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { useMainStore } from "@/stores/MainStore";
 import type { PropType } from "vue";
-import type { ITechStackTab } from "@/models/tabs/ITechStackTab";
+import type { ITechStackTab } from "@/models/components/tabs/ITechStackTab";
 import { ref } from "vue";
 import type{ Ref } from "vue";
-import type { ITechStackRow } from "@/models/tabs/ITechStackRow";
+import type { ITechStackRow } from "@/models/components/tabs/ITechStackRow";
 
 const mainStore = useMainStore()
 

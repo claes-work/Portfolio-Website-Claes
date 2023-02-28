@@ -2,7 +2,7 @@
 import { computed, inject } from "vue";
 import { marked } from 'marked';
 import type { PropType, ComputedRef } from "vue";
-import type { IRebalancingTool } from "@/models/rebalancing-tool/IRebalancingTool";
+import type { IRebalancingTool } from "@/models/projects/rebalancing-tool/IRebalancingTool";
 import { getAllMediaSrcset } from "@/composables/MediaProperties";
 import type { AllMediaSrcset } from "@/models/components/media/AllMediaSrcset";
 

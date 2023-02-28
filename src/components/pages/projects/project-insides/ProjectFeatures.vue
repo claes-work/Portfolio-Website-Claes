@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { PropType } from "vue";
-import type { IFeature } from "@/models/tabs/IFeature";
-import type { IFeaturesTab } from "@/models/tabs/IFeaturesTab";
+import type { IFeature } from "@/models/components/tabs/IFeature";
+import type { IFeaturesTab } from "@/models/components/tabs/IFeaturesTab";
 import {computed} from "vue";
 
 const props = defineProps({

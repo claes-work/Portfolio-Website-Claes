@@ -1,12 +1,14 @@
 import axios from "axios";
 import type { AxiosResponse } from "axios";
-import type { IRebalancingTool } from "@/models/rebalancing-tool/IRebalancingTool";
-import type { IPureAir } from "@/models/pure-air/IPureAir";
+import type { IRebalancingTool } from "@/models/projects/rebalancing-tool/IRebalancingTool";
+import type { IPureAir } from "@/models/websites/pure-air/IPureAir";
 import { AllLocales } from "@/models/AllLocales";
 import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
-import type { ISuggestApp } from "@/models/suggest-app/ISuggestApp";
+import type { ISuggestApp } from "@/models/projects/suggest-app/ISuggestApp";
 import type { INavbar } from "@/models/components/navbar/INavbar";
 import type { IFooter } from "@/models/components/footer/IFooter";
+import type {IDiewellWebsite} from "@/models/websites/diewell-website/IDiewellWebsite";
+import type {IBroadyPictures} from "@/models/websites/broady-pictures/IBroadyPictures";
 
 export default {
 
@@ -63,6 +65,28 @@ export default {
         )
         .then((response: AxiosResponse) => response.data)
         .catch(error => console.log(error))
+    },
+
+    /**
+     * Get all Diewell Website Section data
+     */
+    async fetchDiewellWebsiteSection(locale: AllLocalesType = AllLocales.DE): Promise<IDiewellWebsite> {
+        return axios.get(
+            `https://strapi.claes-work.de/diewell-website-section?_locale=${locale}`
+        )
+            .then((response: AxiosResponse) => response.data)
+            .catch(error => console.log(error))
+    },
+
+    /**
+     * Get all Broady Pictures Section data
+     */
+    async fetchBroadyPicturesSection(locale: AllLocalesType = AllLocales.DE): Promise<IBroadyPictures> {
+        return axios.get(
+            `https://strapi.claes-work.de/broady-pictures-section?_locale=${locale}`
+        )
+            .then((response: AxiosResponse) => response.data)
+            .catch(error => console.log(error))
     },
 
     /**

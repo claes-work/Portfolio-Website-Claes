@@ -7,7 +7,7 @@ import { AllLocales } from "@/models/AllLocales";
 import { useMainStore } from "@/stores/MainStore";
 import {computed, onMounted} from "vue";
 import FetchAppSections from "@/services/FetchAppSections";
-import type {ILink} from "@/models/tabs/ILink";
+import type {ILink} from "@/models/components/tabs/ILink";
 import type {INavLink} from "@/models/components/navbar/INavLink";
 
 const mainStore = useMainStore()

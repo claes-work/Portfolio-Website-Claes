@@ -1,5 +1,5 @@
 import type { IMedia } from "@/models/components/media/IMedia";
-import type { ProjectTabReferences } from "@/models/tabs/enums/ProjectTabReferences";
+import type { ProjectTabReferences } from "@/models/components/tabs/enums/ProjectTabReferences";
 
 export interface ITabButton {
     id: number

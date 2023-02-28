@@ -1,15 +1,19 @@
 import { reactive, ref } from 'vue'
 import type { Ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { IRebalancingTool } from "@/models/rebalancing-tool/IRebalancingTool";
-import type { ISuggestApp } from "@/models/suggest-app/ISuggestApp";
+import type { IRebalancingTool } from "@/models/projects/rebalancing-tool/IRebalancingTool";
+import type { ISuggestApp } from "@/models/projects/suggest-app/ISuggestApp";
 import type { IProjectData } from "@/models/IProjectData";
 import FetchAppSections from "@/services/FetchAppSections";
 import { AllLocales } from "@/models/AllLocales";
 import type { AllLocales as AllLocalesType} from "@/models/AllLocales";
 import type { INavbar } from "@/models/components/navbar/INavbar";
 import router from "@/router";
-import type {IFooter} from "@/models/components/footer/IFooter";
+import type { IFooter } from "@/models/components/footer/IFooter";
+import type { IPureAir } from "@/models/websites/pure-air/IPureAir";
+import type { IDiewellWebsite } from "@/models/websites/diewell-website/IDiewellWebsite";
+import type { IBroadyPictures } from "@/models/websites/broady-pictures/IBroadyPictures";
+import type { IWebsiteData } from "@/models/IWebsiteData";
 
 export const useStrapiDataStore = defineStore('strapiDataStore', () => {
 
@@ -21,6 +25,13 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
   const projectData: IProjectData = reactive({
     rebalancingTool: {} as IRebalancingTool,
     suggestApp: {} as ISuggestApp
+  })
+
+  // website data from strapi api
+  const websiteData: IWebsiteData = reactive({
+    pureAir: {} as IPureAir,
+    diewellWebsite: {} as IDiewellWebsite,
+    broadyPictures: {} as IBroadyPictures
   })
 
   /************** Localization **************/
@@ -55,5 +66,5 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
     }
   }
 
-  return { navBarData, footerData, projectData, activeLocale, changeLocale }
+  return { navBarData, footerData, projectData, websiteData, activeLocale, changeLocale }
 })

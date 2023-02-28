@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { PropType, Ref } from "vue";
 import { ref } from "vue";
-import type { IFileTab } from "@/models/tabs/IFileTab";
-import type { ILinkBox } from "@/models/tabs/ILinkBox";
+import type { IFileTab } from "@/models/components/tabs/IFileTab";
+import type { ILinkBox } from "@/models/components/tabs/ILinkBox";
 
 const props = defineProps({
   data: {

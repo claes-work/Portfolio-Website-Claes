@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import {ref, onMounted, computed} from "vue";
-import type { Ref } from "vue";
-import type { IRebalancingTool } from "@/models/rebalancing-tool/IRebalancingTool";
 import { ThemeColorClasses } from "@/models/ThemeColorClasses";
-import { rebalancingToolInsides } from "@/data/rebalancing-tool/RebalancingToolInsides"
-import { suggestAppInsides } from "@/data/suggest-app/SuggestAppInsides"
 import FetchAppSections from "@/services/FetchAppSections";
 import RebalancingToolSection from "@/components/pages/projects/rebalancing-tool/RebalancingToolSection.vue";
 import SuggestSection from "@/components/pages/projects/suggest-app/SuggestSection.vue";

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { ProjectTabReferences } from "@/models/tabs/enums/ProjectTabReferences";
+import { ProjectTabReferences } from "@/models/components/tabs/enums/ProjectTabReferences";
 
 const emit = defineEmits(['change-tab'])
 
 import type { ComputedRef, PropType, Ref } from "vue";
-import type { IProjectIdeaTab } from "@/models/tabs/IProjectIdeaTab";
+import type { IProjectIdeaTab } from "@/models/components/tabs/IProjectIdeaTab";
 import { ref, computed } from "vue";
 import type {IMedia} from "@/models/components/media/IMedia";
-import type {IButton} from "@/models/components/IButton";
+import type {IButton} from "@/models/components/buttons/IButton";
 
 const props = defineProps({
   data: {
