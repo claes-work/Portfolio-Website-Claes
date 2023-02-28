@@ -57,12 +57,14 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
     // Fetch project data if route is projects page
     if (routerPath === '/') {
       projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection(newLocale)
-      projectData.suggestApp = await FetchAppSections.fetchSuggestAppSection(newLocale)
+      projectData.suggestApp      = await FetchAppSections.fetchSuggestAppSection(newLocale)
     }
 
     // Fetch website data if route is websites page
     if (routerPath === '/websites') {
-
+      websiteData.pureAir        = await FetchAppSections.fetchPureAirSection(newLocale)
+      websiteData.diewellWebsite = await FetchAppSections.fetchDiewellWebsiteSection(newLocale)
+      websiteData.broadyPictures = await FetchAppSections.fetchBroadyPicturesSection(newLocale)
     }
   }
 

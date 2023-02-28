@@ -14,7 +14,7 @@ const strapiStore = useStrapiDataStore()
 // Fetch strapi data on mounted
 onMounted(async () => {
   strapiStore.projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection()
-  strapiStore.projectData.suggestApp = await FetchAppSections.fetchSuggestAppSection()
+  strapiStore.projectData.suggestApp      = await FetchAppSections.fetchSuggestAppSection()
 })
 </script>
 
