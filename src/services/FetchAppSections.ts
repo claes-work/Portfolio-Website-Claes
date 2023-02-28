@@ -63,6 +63,17 @@ export default {
         )
         .then((response: AxiosResponse) => response.data)
         .catch(error => console.log(error))
-    }
+    },
+
+    /**
+     * Get all about page data
+     */
+    async fetchAboutPage(locale: AllLocalesType = AllLocales.DE): Promise<IRebalancingTool> {
+        return axios.get(
+            `https://strapi.claes-work.de/about-section?_locale=${locale}`
+        )
+            .then((response: AxiosResponse) => response.data)
+            .catch(error => console.log(error))
+    },
 
 }
