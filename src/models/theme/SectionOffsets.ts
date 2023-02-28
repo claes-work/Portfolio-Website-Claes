@@ -3,5 +3,5 @@ export interface SectionOffsets {
     suggestApp: number
     pureAir: number
     diewellWebsite: number
-    broadyPrictures: number
+    broadyPictures: number
 }

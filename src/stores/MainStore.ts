@@ -32,8 +32,14 @@ export const useMainStore = defineStore('mainStore', () => {
     suggestApp: 0,
     pureAir: 0,
     diewellWebsite: 0,
-    broadyPrictures: 0
+    broadyPictures: 0
   })
+
+  // Set the section offset for each section that is passed
+  function setSectionOffset(el: any, section: string) {
+      // @ts-ignore
+      offsets[section] = el.$el.offsetTop
+  }
 
   // Check viewport with on resize
   window.onscroll = (): void => {
@@ -47,6 +53,7 @@ export const useMainStore = defineStore('mainStore', () => {
 
     // Dynamic Theme Color
     themeClass,
-    offsets
+    offsets,
+    setSectionOffset
   }
 })
