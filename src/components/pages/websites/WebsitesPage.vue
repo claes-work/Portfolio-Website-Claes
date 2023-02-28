@@ -11,13 +11,6 @@ import { useMainStore } from "@/stores/MainStore";
 
 const mainStore = useMainStore()
 
-// section references
-const refs = {
-  pureAir: ref(null),
-  diewellWebsite: ref(null),
-  broadyPictures: ref(null)
-}
-
 // Typed data from strapi api
 const pureAirData: Ref<IPureAir> = ref({} as IPureAir)
 
