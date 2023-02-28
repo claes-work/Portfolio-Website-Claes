@@ -1,9 +1,9 @@
 import router from "@/router";
-import { ThemeColorClasses } from "@/models/ThemeColorClasses";
-import type { ThemeColorClasses as ThemeColorClassesType } from "@/models/ThemeColorClasses";
+import { ThemeColorClasses } from "@/models/theme/ThemeColorClasses";
+import type { ThemeColorClasses as ThemeColorClassesType } from "@/models/theme/ThemeColorClasses";
 import type { Ref } from "vue";
 import { useMainStore } from "@/stores/MainStore";
-import type { SectionOffsets } from "@/models/SectionOffsets";
+import type { SectionOffsets } from "@/models/theme/SectionOffsets";
 
 
 /**

@@ -2,7 +2,7 @@
 import HeroSection from "@/components/pages/about/hero-section/HeroSection.vue";
 import TimeLine from "@/components/pages/about/time-line-section/TimelineSection.vue";
 import PersonalTechStackSection from "@/components/pages/about/personal-tech-stack-section/PersonalTechStackSection.vue";
-import type { TimelineRow } from "@/models/TimelineRow";
+import type { TimelineRow } from "@/models/about-page/TimelineRow";
 import TransitionBanner from "@/components/content-elements/QuoteBanner.vue";
 
 const timelineData: TimelineRow[] = [

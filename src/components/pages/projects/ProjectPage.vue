@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref, onMounted, computed} from "vue";
-import { ThemeColorClasses } from "@/models/ThemeColorClasses";
+import { ThemeColorClasses } from "@/models/theme/ThemeColorClasses";
 import FetchAppSections from "@/services/FetchAppSections";
 import RebalancingToolSection from "@/components/pages/projects/rebalancing-tool/RebalancingToolSection.vue";
 import SuggestSection from "@/components/pages/projects/suggest-app/SuggestSection.vue";

@@ -1,10 +1,10 @@
 import type { Ref } from 'vue'
 import {reactive, ref} from 'vue'
 import { defineStore } from 'pinia'
-import type { ThemeColorClasses as ThemeColorClassesType} from "@/models/ThemeColorClasses"
-import { ThemeColorClasses } from "@/models/ThemeColorClasses"
+import type { ThemeColorClasses as ThemeColorClassesType} from "@/models/theme/ThemeColorClasses"
+import { ThemeColorClasses } from "@/models/theme/ThemeColorClasses"
 import { checkNavThemeOnScroll } from "@/composables/ThemeHandler";
-import type {SectionOffsets} from "@/models/SectionOffsets";
+import type {SectionOffsets} from "@/models/theme/SectionOffsets";
 
 export const useMainStore = defineStore('mainStore', () => {
 

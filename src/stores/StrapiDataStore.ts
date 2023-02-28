@@ -3,7 +3,7 @@ import type { Ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { IRebalancingTool } from "@/models/projects/rebalancing-tool/IRebalancingTool";
 import type { ISuggestApp } from "@/models/projects/suggest-app/ISuggestApp";
-import type { IProjectData } from "@/models/IProjectData";
+import type { IProjectData } from "@/models/projects/IProjectData";
 import FetchAppSections from "@/services/FetchAppSections";
 import { AllLocales } from "@/models/AllLocales";
 import type { AllLocales as AllLocalesType} from "@/models/AllLocales";
@@ -13,7 +13,7 @@ import type { IFooter } from "@/models/components/footer/IFooter";
 import type { IPureAir } from "@/models/websites/pure-air/IPureAir";
 import type { IDiewellWebsite } from "@/models/websites/diewell-website/IDiewellWebsite";
 import type { IBroadyPictures } from "@/models/websites/broady-pictures/IBroadyPictures";
-import type { IWebsiteData } from "@/models/IWebsiteData";
+import type { IWebsiteData } from "@/models/projects/IWebsiteData";
 
 export const useStrapiDataStore = defineStore('strapiDataStore', () => {
 

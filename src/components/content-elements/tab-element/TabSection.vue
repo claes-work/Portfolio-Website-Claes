@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import {computed, inject, ref, toRaw} from "vue";
 import type { Ref, ComputedRef, PropType } from "vue";
-import type { ThemeColorClasses } from "@/models/ThemeColorClasses";
+import type { ThemeColorClasses } from "@/models/theme/ThemeColorClasses";
 import TabButton from "@/components/content-elements/tab-element/TabButton.vue";
 import type { IProjectIdeaTab } from "@/models/components/tabs/IProjectIdeaTab";
 import type { IFeaturesTab } from "@/models/components/tabs/IFeaturesTab";

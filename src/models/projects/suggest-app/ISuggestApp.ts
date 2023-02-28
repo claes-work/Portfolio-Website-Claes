@@ -1,7 +1,7 @@
 import type { BaseEntity } from "@/models/BaseEntity";
 import type { IButton } from "@/models/components/buttons/IButton";
 import type { IMedia } from "@/models/components/media/IMedia";
-import type { IProjectInsides } from "@/models/IProjectInsides";
+import type { IProjectInsides } from "@/models/components/tabs/IProjectInsides";
 
 export interface ISuggestApp extends BaseEntity, IProjectInsides {
     id: number
