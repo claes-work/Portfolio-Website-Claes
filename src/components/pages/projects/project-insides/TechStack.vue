@@ -11,6 +11,7 @@ import type { ITechStackTab } from "@/models/components/tabs/ITechStackTab";
 import { ref } from "vue";
 import type{ Ref } from "vue";
 import type { ITechStackRow } from "@/models/components/tabs/ITechStackRow";
+import type {ILabel} from "@/models/components/tabs/ILabel";
 
 const mainStore = useMainStore()
 
@@ -21,16 +22,22 @@ const props = defineProps({
   }
 })
 
+// tech Stack Table labels
+const labels: Ref<ILabel[]> = ref((props.data && props.data.labels)
+    ? props.data.labels
+    : {} as ILabel[]
+)
+
+// Tech Stack Rows
 const techStackRows: Ref<ITechStackRow[]> = ref((props.data && props.data.techStackRow)
     ? props.data.techStackRow
     : {} as ITechStackRow[]
 )
-
 </script>
 
 <template>
   <div class="project-tech-stack">
-    <TableHeader />
+    <TableHeader :labels="labels" />
     <Swiper
         v-if="!mainStore.isDesktop"
         :slides-per-view="1"

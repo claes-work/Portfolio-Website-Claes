@@ -1,11 +1,22 @@
 <script lang="ts" setup>
+import type { PropType } from "vue";
+import type { ILabel } from "@/models/components/tabs/ILabel";
+
+const props = defineProps({
+  labels: {
+    type: Object as PropType<ILabel[]>,
+    required: true
+  }
+})
 </script>
 
 <template>
   <div id="table-header">
-    <div class="th technology">Technology</div>
-    <div class="th usage">Usage</div>
-    <div class="th description">Description</div>
-    <div class="th implemented-by">Implemented By</div>
+    <div
+        v-for="label in labels"
+        :key="label.id"
+        class="th"
+        :class="label.cssClass ? label.cssClass : ''"
+    >{{ label.label }}</div>
   </div>
 </template>
