@@ -6,7 +6,7 @@ export interface IPureAir {
     id: number
     heading: string
     description: string
-    button: IButton
+    buttons: IButton[]
     threeGridBanner: IThreeGridBanner
     label: IMedia
     image: IMedia[]
