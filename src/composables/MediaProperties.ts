@@ -17,9 +17,17 @@ export function getAllMediaSrcset(image: IMedia): AllMediaSrcset {
 
     const urlPrefix = inject('URL_PATH')
     return {
-        originalSrc:  urlPrefix + image.url,
-        mediumSrc:    urlPrefix + image.formats.medium.url,
-        smallSrc:     urlPrefix + image.formats.small.url,
-        thumbnailSrc: urlPrefix + image.formats.thumbnail.url
+        originalSrc: (image.url)
+            ? urlPrefix + image.url
+            : '',
+        mediumSrc: (image.formats && image.formats.medium && image.formats.medium.url)
+            ? urlPrefix + image.formats.medium.url
+            : urlPrefix + image.url,
+        smallSrc: (image.formats && image.formats.small && image.formats.small.url)
+            ? urlPrefix + image.formats.small.url
+            : urlPrefix + image.url,
+        thumbnailSrc: (image.formats && image.formats.thumbnail && image.formats.thumbnail.url)
+            ? urlPrefix + image.formats.thumbnail.url
+            : urlPrefix + image.url,
     }
 }
