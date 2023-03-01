@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { useStrapiDataStore } from "@/stores/StrapiDataStore";
-import type { ComputedRef } from "vue";
+import type { PropType, ComputedRef } from "vue";
 import type { IPureAir } from "@/models/websites/pure-air/IPureAir";
 import { computed, inject } from "vue";
 import { marked } from "marked";
@@ -9,10 +8,15 @@ import { getAllMediaSrcset } from "@/composables/MediaProperties";
 
 const urlPrefix = inject('URL_PATH')
 
-const strapiStore = useStrapiDataStore()
+const props = defineProps({
+  data: {
+    type: Object as PropType<IPureAir>,
+    required: true
+  }
+})
 
 const pureAirData: ComputedRef<IPureAir> = computed(() => {
-  return strapiStore.websiteData.pureAir
+  return props.data
 })
 
 // Render markdown from content editor

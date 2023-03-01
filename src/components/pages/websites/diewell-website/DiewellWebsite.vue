@@ -1,4 +1,55 @@
 <script lang="ts" setup>
+import type { ComputedRef, PropType } from "vue";
+import type { IDiewellWebsite } from "@/models/websites/diewell-website/IDiewellWebsite";
+import { computed, inject} from "vue";
+import { marked } from "marked";
+import type { AllMediaSrcset } from "@/models/components/media/AllMediaSrcset";
+import { getAllMediaSrcset } from "@/composables/MediaProperties";
+
+const urlPrefix = inject('URL_PATH')
+
+const props = defineProps({
+  data: {
+    type: Object as PropType<IDiewellWebsite>,
+    required: true
+  }
+})
+
+const diewellData: ComputedRef<IDiewellWebsite> = computed(() => {
+  return props.data
+})
+
+// Render markdown from content editor
+const markdown: ComputedRef<string> = computed(() => {
+  return (diewellData.value.description)
+      ? marked(diewellData.value.description)
+      : ''
+})
+
+// Ensure label src is never null and add url prefix to upload path
+const labelSrc: ComputedRef<string> = computed(() => {
+  return diewellData.value.label ? urlPrefix + diewellData.value.label.url : ''
+})
+
+// Ensure mockup src is never null and add url prefix to upload path
+const labelAlt: ComputedRef<string> = computed(() => {
+  return diewellData.value.label ? diewellData.value.label.alternativeText : ''
+})
+
+
+// Ensure mockup src is never null and add url prefix to upload path
+const mockupSrcset: ComputedRef<AllMediaSrcset> = computed(() => {
+  return diewellData.value.image && diewellData.value.image
+      ? getAllMediaSrcset(diewellData.value.image)
+      : {} as AllMediaSrcset
+})
+
+// Ensure mockup src is never null and add url prefix to upload path
+const mockupAlt: ComputedRef<string> = computed(() => {
+  return diewellData.value.image && diewellData.value.image
+      ? diewellData.value.image.alternativeText
+      : ''
+})
 </script>
 
 <template>
@@ -7,32 +58,33 @@
       <div class="text-wrapper">
         <img
             class="website-label"
-            src="@/assets/images/WordPress_Diewell_Website_Label_Logo.png"
-            alt="WordPress Diewell Website Label Logo"
+            :src="labelSrc"
+            :alt="labelAlt"
         />
-        <div class="logo"></div>
-        <h2>Design <span>Relaunch</span><br>diewell.de</h2>
-        <p>This App simplifies the process of asset rebalancing. With a user-friendly interface, investors can easily track and manage their portfolio.</p>
+        <h2 v-html="diewellData.heading"></h2>
+        <p v-html="markdown"></p>
         <div class="button-wrapper">
           <a
-              class="button primary"
-              href="https://portfolio-rebalancer.com/"
-              title="portfolio-rebalancer.com"
-              target="_blank"
-          >Visit Website</a>
-          <a
-              class="button secondary"
-              href="https://github.com/Asset-Rebalancing-Tool/AssetRebalancingTool"
-              title="github.com/Asset-Rebalancing-Tool"
-              target="_blank"
-          >Browse Code</a>
+              v-for="(button, index) in diewellData.buttons"
+              :key="button.id"
+              class="button"
+              :class="index === 0 ? 'primary' : 'secondary'"
+              :href="button.link"
+              :title="button.titleAttr"
+              :target="button.openInNewTab ? '_blank' : ''"
+          >{{ button.text }}</a>
         </div>
       </div>
-      <img
-          class="diewell-website-image"
-          src="@/assets/images/Ralf_Diewell_Website_Tablet_Mockup.png"
-          alt="Pure Air Antiviral UV Website Mockup"
-      />
+      <picture>
+        <source media="(min-width: 768px)" :srcset="mockupSrcset.mediumSrc">
+        <source media="(min-width: 1280px)" :srcset="mockupSrcset.originalSrc">
+        <img
+            v-if="mockupSrcset"
+            class="diewell-website-image"
+            :src="mockupSrcset.smallSrc"
+            :alt="mockupAlt"
+        />
+      </picture>
     </div>
   </section>
 </template>

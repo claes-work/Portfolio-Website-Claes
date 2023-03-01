@@ -6,7 +6,7 @@ export interface IDiewellWebsite {
     id: number
     heading: string
     description: string
-    button: IButton
+    buttons: IButton[]
     label: IMedia
-    image: IMedia[]
+    image: IMedia
 }

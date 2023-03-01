@@ -24,10 +24,19 @@ onMounted(async () => {
 </script>
 
 <template>
-  <PureAir :ref="(el) => mainStore.setSectionOffset(el, 'pureAir')" />
+  <PureAir
+      :ref="(el) => mainStore.setSectionOffset(el, 'pureAir')"
+      :data="strapiStore.websiteData.pureAir"
+  />
   <AchievementsBanner :style="{ backgroundColor: '#1E90FF' }"/>
-  <DiewellWebsite :ref="(el) => mainStore.setSectionOffset(el, 'diewellWebsite')" />
+  <DiewellWebsite
+      :ref="(el) => mainStore.setSectionOffset(el, 'diewellWebsite')"
+      :data="strapiStore.websiteData.diewellWebsite"
+  />
   <AchievementsBanner :style="{ backgroundColor: '#0E243F' }"/>
-  <BroadyPictures :ref="(el) => mainStore.setSectionOffset(el, 'broadyPictures')" />
+  <BroadyPictures
+      :ref="(el) => mainStore.setSectionOffset(el, 'broadyPictures')"
+      :data="strapiStore.websiteData.broadyPictures"
+  />
   <AchievementsBanner :style="{ backgroundColor: '#383224' }"/>
 </template>

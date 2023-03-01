@@ -6,7 +6,7 @@ export interface IBroadyPictures {
     id: number
     heading: string
     description: string
-    button: IButton
+    buttons: IButton[]
     label: IMedia
-    image: IMedia[]
+    image: IMedia
 }
