@@ -1,17 +1,16 @@
 <script lang="ts" setup>
-import {computed, inject, ref, toRaw} from "vue";
-import type { Ref, ComputedRef, PropType } from "vue";
-import type { ThemeColorClasses } from "@/models/theme/ThemeColorClasses";
+// DO NOT REMOVE even if import is currently unused
+import type {IProjectIdeaTab} from "@/models/components/tabs/IProjectIdeaTab";
+
+import type {ComputedRef, PropType, Ref} from "vue";
+import {computed, inject, ref, watch} from "vue";
+import type {ThemeColorClasses} from "@/models/theme/ThemeColorClasses";
 import TabButton from "@/components/content-elements/tab-element/TabButton.vue";
-import type { IProjectIdeaTab } from "@/models/components/tabs/IProjectIdeaTab";
-import type { IFeaturesTab } from "@/models/components/tabs/IFeaturesTab";
-import type { ITechStackTab } from "@/models/components/tabs/ITechStackTab";
-import type { IFileTab } from "@/models/components/tabs/IFileTab";
-import { ProjectTabReferences } from "@/models/components/tabs/enums/ProjectTabReferences";
-import type { ProjectTabReferences as TabReferencesType } from "@/models/components/tabs/enums/ProjectTabReferences";
+import type {ProjectTabReferences as TabReferencesType} from "@/models/components/tabs/enums/ProjectTabReferences";
+import {ProjectTabReferences} from "@/models/components/tabs/enums/ProjectTabReferences";
 import type {IRebalancingTool} from "@/models/projects/rebalancing-tool/IRebalancingTool";
 import type {ISuggestApp} from "@/models/projects/suggest-app/ISuggestApp";
-import type { ITabButton } from "@/models/components/tabs/ITabButton";
+import type {ITabButton} from "@/models/components/tabs/ITabButton";
 import ProjectIdea from "@/components/pages/projects/project-insides/ProjectIdea.vue";
 import ProjectFeatures from "@/components/pages/projects/project-insides/ProjectFeatures.vue";
 import TechStack from "@/components/pages/projects/project-insides/TechStack.vue";
@@ -112,6 +111,13 @@ const getTabButton = (property: string, value: any): ITabButton => {
   }
   return {} as ITabButton
 }
+
+
+// Detect if locale is getting changed in order to rerender component
+watch(
+    () => props.data,
+    () => changeComponent(ProjectTabReferences.IDEA)
+)
 </script>
 
 <template>
