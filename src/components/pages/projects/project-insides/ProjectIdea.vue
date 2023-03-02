@@ -114,14 +114,16 @@ const button: ComputedRef<IButton> = computed(() => {
     background-color: unset;
     border: unset;
     max-width: unset;
-    padding: 0 50px 50px;
     width: calc(100% + 40px);
     margin-left: -20px;
     margin-bottom: -45px;
+    margin-top: -50px;
+    padding: 50px;
 
     .wireframes-bc {
-      margin-bottom: -320px;
-      margin-top: -110px;
+      width: 92%;
+      margin-bottom: -380px;
+      margin-top: -165px;
     }
   }
 }

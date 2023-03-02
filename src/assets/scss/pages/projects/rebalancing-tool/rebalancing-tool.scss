@@ -165,8 +165,15 @@
 }
 
 @media only screen and (min-width: 1040px) {
-  #rebalancing-tool .container .macbook-image-wrapper .player-container {
-    left: 52.5%;
+  #rebalancing-tool .container {
+    .text-wrapper {
+      max-width: 500px;
+      width: 500px;
+    }
+
+    .macbook-image-wrapper .player-container {
+      left: 52.5%;
+    }
   }
 }
 

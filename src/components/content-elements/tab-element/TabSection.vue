@@ -15,9 +15,12 @@ import ProjectIdea from "@/components/pages/projects/project-insides/ProjectIdea
 import ProjectFeatures from "@/components/pages/projects/project-insides/ProjectFeatures.vue";
 import TechStack from "@/components/pages/projects/project-insides/TechStack.vue";
 import ProjectFiles from "@/components/pages/projects/project-insides/ProjectFiles.vue";
+import { useStrapiDataStore } from "@/stores/StrapiDataStore";
+import {AllLocales} from "@/models/AllLocales";
 
 
 const urlPrefix = inject('URL_PATH')
+const strapiStore = useStrapiDataStore()
 
 const props = defineProps({
   themeColor: {
@@ -112,6 +115,15 @@ const getTabButton = (property: string, value: any): ITabButton => {
   return {} as ITabButton
 }
 
+const projectInsidesHeading: ComputedRef<string> = computed(() => {
+  switch (strapiStore.activeLocale) {
+    case AllLocales.DE:
+      return 'Projekt Einblicke'
+    case AllLocales.EN:
+      return 'Project insides'
+  }
+})
+
 
 // Detect if locale is getting changed in order to rerender component
 watch(
@@ -123,7 +135,7 @@ watch(
 <template>
   <section class="tab-section" :class="themeColor">
     <div class="container">
-    <!--<h3>Project insides</h3>-->
+    <h3 class="insides-heading">{{ projectInsidesHeading }}</h3>
 
       <div class="tab-header">
         <TabButton
