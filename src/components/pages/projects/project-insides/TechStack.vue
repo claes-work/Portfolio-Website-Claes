@@ -8,10 +8,11 @@ import 'swiper/css/pagination'
 import { useMainStore } from "@/stores/MainStore";
 import type { PropType } from "vue";
 import type { ITechStackTab } from "@/models/components/tabs/ITechStackTab";
-import { ref } from "vue";
+import {ref} from "vue";
 import type{ Ref } from "vue";
 import type { ITechStackRow } from "@/models/components/tabs/ITechStackRow";
 import type {ILabel} from "@/models/components/tabs/ILabel";
+import {marked} from "marked";
 
 const mainStore = useMainStore()
 
@@ -33,6 +34,13 @@ const techStackRows: Ref<ITechStackRow[]> = ref((props.data && props.data.techSt
     ? props.data.techStackRow
     : {} as ITechStackRow[]
 )
+
+// Render description markdown from content editor
+const markdown = (data: ITechStackRow) => {
+  return (data.description)
+      ? marked(data.description)
+      : ''
+}
 </script>
 
 <template>
@@ -62,7 +70,7 @@ const techStackRows: Ref<ITechStackRow[]> = ref((props.data && props.data.techSt
             <li v-for="usage in slide.usageList" :key="usage.id" v-html="usage.li"></li>
           </template>
           <template #description>
-            <p>{{ slide.description }}</p>
+            <p  v-html="markdown(slide)"></p>
           </template>
           <template #implemented-by>
             <img
@@ -92,7 +100,7 @@ const techStackRows: Ref<ITechStackRow[]> = ref((props.data && props.data.techSt
         <li v-for="usage in row.usageList" :key="usage.id" v-html="usage.li"></li>
       </template>
       <template #description>
-        <p>{{ row.description }}</p>
+        <p v-html="markdown(row)"></p>
       </template>
       <template #implemented-by>
         <img
