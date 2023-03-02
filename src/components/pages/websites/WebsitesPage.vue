@@ -30,7 +30,7 @@ onMounted(async () => {
   />
   <DiewellWebsite
       :ref="(el) => mainStore.setSectionOffset(el, 'diewellWebsite')"
-      :data="strapiStore.websiteData.diewellWebsite"
+      :data="strapiStore.websiteData.pureAir"
   />
   <ThreeGridBanner
       :style="{ backgroundColor: '#0E243F' }"
@@ -38,7 +38,7 @@ onMounted(async () => {
   />
   <BroadyPictures
       :ref="(el) => mainStore.setSectionOffset(el, 'broadyPictures')"
-      :data="strapiStore.websiteData.broadyPictures"
+      :data="strapiStore.websiteData.pureAir"
   />
   <ThreeGridBanner
       :style="{ backgroundColor: '#383224' }"
