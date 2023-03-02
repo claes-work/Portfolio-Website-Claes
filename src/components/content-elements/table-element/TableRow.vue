@@ -3,13 +3,23 @@ import { computed, ref } from "vue"
 import type { ComputedRef, Ref } from "vue"
 import { useMainStore } from "@/stores/MainStore";
 import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
+import {useStrapiDataStore} from "@/stores/StrapiDataStore";
+import {AllLocales} from "@/models/AllLocales";
 
 const mainStore = useMainStore()
+const strapiStore = useStrapiDataStore()
 const fullColumnHeight: Ref<boolean> = ref(false)
 
 const btnText: ComputedRef<string> = computed((): string => {
-  return (fullColumnHeight.value) ? 'show less' : 'show more'
+  switch (strapiStore.activeLocale) {
+    default:
+    case AllLocales.DE:
+      return (fullColumnHeight.value) ? 'weniger anzeigen' : 'mehr anzeigen'
+    case AllLocales.EN:
+      return (fullColumnHeight.value) ? 'show less' : 'show more'
+  }
 })
+
 </script>
 
 <template>
