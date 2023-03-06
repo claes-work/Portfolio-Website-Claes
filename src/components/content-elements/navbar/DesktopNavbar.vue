@@ -9,6 +9,7 @@ import {computed, onMounted} from "vue";
 import FetchAppSections from "@/services/FetchAppSections";
 import type {ILink} from "@/models/components/tabs/ILink";
 import type {INavLink} from "@/models/components/navbar/INavLink";
+import IconLanguage from "@/components/icons/IconLanguage.vue";
 
 const mainStore = useMainStore()
 const strapiStore = useStrapiDataStore()
@@ -29,9 +30,10 @@ onMounted(async () => {
     <div class="container">
       <h2>Claes</h2>
       <ul>
-        <li class="flag-wrapper">
-          <div :class="{ active : checkLocale(AllLocales.EN)}" class="flag en" @click="strapiStore.changeLocale(AllLocales.EN)"></div>
-          <div :class="{ active :  checkLocale(AllLocales.DE)}" class="flag de" @click="strapiStore.changeLocale(AllLocales.DE)"></div>
+        <li class="locale-wrapper">
+          <IconLanguage />
+          <div :class="{ active : checkLocale(AllLocales.EN)}" class="locale" @click="strapiStore.changeLocale(AllLocales.EN)">EN</div>
+          <div :class="{ active :  checkLocale(AllLocales.DE)}" class="locale" @click="strapiStore.changeLocale(AllLocales.DE)">DE</div>
         </li>
 
         <li

@@ -80,25 +80,22 @@
         background-color: $bc-light-1;
       }
 
-      .flag-wrapper {
+      .locale-wrapper {
         display: flex;
+        align-items: center;
         column-gap: 12px;
 
-        .flag {
-          width: 24px;
-          height: 63px;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          border-bottom: 2px solid transparent;
+        .locale {
+          color: $default-text-color;
+          text-transform: uppercase;
         }
 
-        .flag.en {
-          background-image: url("@/assets/images/United_States_Flag_Icon.png");
+        .locale.active {
+          text-decoration: underline;
         }
 
-        .flag.de {
-          background-image: url("@/assets/images/Deutschland_Flagge_Icon.png");
+        svg {
+          margin-top: 2px;
         }
       }
     }
@@ -182,8 +179,8 @@
       }
     }
 
-    .flag-wrapper .flag.active {
-      border-bottom: 2px solid #53FDCA;
+    .locale-wrapper .locale.active {
+      color: #53FDCA;
     }
   }
 }
@@ -219,8 +216,8 @@
       }
     }
 
-    .flag-wrapper .flag.active {
-      border-bottom: 2px solid #FA8231;
+    .locale-wrapper .locale.active {
+      color: #FA8231;
     }
   }
 }
@@ -260,8 +257,8 @@
       color: #121212
     }
 
-    .flag-wrapper .flag.active {
-      border-bottom: 2px solid #59aeff;
+    .locale-wrapper .locale.active {
+      color: #59aeff;
     }
   }
 }
@@ -301,8 +298,8 @@
       color: #121212
     }
 
-    .flag-wrapper .flag.active {
-      border-bottom: 2px solid #526E91;
+    .locale-wrapper .locale.active {
+      color: #7094C1;
     }
   }
 }
@@ -343,8 +340,8 @@
       color: #121212
     }
 
-    .flag-wrapper .flag.active {
-      border-bottom: 2px solid #C7AA8B;
+    .locale-wrapper .locale.active {
+      color: #C7AA8B;
     }
   }
 }
