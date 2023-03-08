@@ -124,25 +124,40 @@ $pure-air-main-color: #1E90FF;
 @media only screen and (min-width: 768px) {
   #pure-air {
     padding: 63px 25px 25px;
-    .container .text-wrapper {
-      max-width: unset;
+    .container {
+      flex-direction: row-reverse;
+      column-gap: 50px;
+
+      .text-wrapper {
+
+        max-width: 450px;
+        margin-bottom: 40px;
+      }
+
+      .pure-air-image {
+        top: 50%;
+        transform: translateY(-45%);
+        bottom: unset;
+        width: 65%;
+        right: 68%;
+        z-index: 15;
+      }
     }
   }
 }
 
 @media only screen and (min-width: 991px) {
   #pure-air {
-    padding: 108px 0 168px;
+    padding: 120px 0 260px;
 
     .container {
-      padding: 40px;
-      flex-direction: row-reverse;
-      column-gap: 50px;
+      padding: 45px 50px 0 0;
+
       z-index: 0;
 
       .text-wrapper {
         max-width: 500px;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
         z-index: 10;
 
         .website-label {
@@ -158,15 +173,9 @@ $pure-air-main-color: #1E90FF;
         top: 50%;
         transform: translateY(-50%);
         width: 45%;
-        right: 56%;
+        right: 60%;
         z-index: 15;
       }
-    }
-
-    .container::before {
-      width: calc(100% - 2px);
-      height: 92%;
-      right: 20px;
     }
   }
 
@@ -175,7 +184,7 @@ $pure-air-main-color: #1E90FF;
     position: absolute;
     width: 80%;
     right: 20px;
-    height: 90%;
+    height: 100%;
     top: 0;
     background-color: $bc-light-1;
     z-index: 5;
@@ -183,17 +192,21 @@ $pure-air-main-color: #1E90FF;
 }
 
 @media only screen and (min-width: 1120px) {
-  #pure-air .container {
-    padding: 45px 70px 45px 0;
+  #pure-air {
+    padding: 120px 0 250px;
+
+    .container {
+      padding: 45px 70px 0 0;
+    }
   }
 }
 
 @media only screen and (min-width: 1280px) {
   #pure-air {
-    padding: 110px 0 180px;
+    padding: 130px 0 225px;
 
     .container {
-      padding: 45px 85px 80px 0;
+      padding: 70px 85px 45px 0;
 
       .text-wrapper {
         max-width: 500px;
@@ -214,7 +227,7 @@ $pure-air-main-color: #1E90FF;
     }
 
     .container::before {
-      height: 95%;
+      height: 100%;
       right: 0;
     }
   }
