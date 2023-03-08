@@ -71,6 +71,10 @@ $pure-air-main-color: #1E90FF;
       }
     }
 
+    picture {
+      width: 100%;
+    }
+
     .pure-air-image {
       position: absolute;
       bottom: 0;
@@ -106,6 +110,7 @@ $pure-air-main-color: #1E90FF;
       }
     }
 
+    picture,
     .pure-air-image {
       max-width: 500px;
     }
@@ -114,75 +119,31 @@ $pure-air-main-color: #1E90FF;
 
 @media only screen and (min-width: 768px) {
   #pure-air {
-    padding: 63px 25px 0;
-
-    .container {
-      position: relative;
-      flex-direction: row-reverse;
-      column-gap: 50px;
-
-      .website-label {
-        width: 150px;
-      }
-
-      .text-wrapper {
-        max-width: 400px;
-        margin-bottom: 40px;
-      }
-
-      .pure-air-image {
-        position: absolute;
-        right: 62%;
-        top: 15px;
-        width: 400px;
-      }
+    padding: 63px 25px 25px;
+    .container .text-wrapper {
+      max-width: unset;
     }
   }
 }
 
 @media only screen and (min-width: 991px) {
   #pure-air {
-    padding: 150px 25px 198px;
-
-    .container {
-      flex-direction: row-reverse;
-      column-gap: 50px;
-
-      .text-wrapper {
-        margin-bottom: 60px;
-
-        .website-label {
-          position: absolute;
-          width: 150px;
-          top: -88px;
-          right: 246px;
-          margin-right: unset;
-        }
-      }
-
-      .pure-air-image {
-        width: 55%;
-        top: 50%;
-        right: 52%;
-        transform: translateY(-54%);
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  #pure-air {
     padding: 108px 0 168px;
 
     .container {
       padding: 40px;
+      flex-direction: row-reverse;
+      column-gap: 50px;
       z-index: 0;
 
       .text-wrapper {
         max-width: 500px;
+        margin-bottom: 60px;
         z-index: 10;
 
         .website-label {
+          position: absolute;
+          width: 150px;
           right: 40px;
           top: -6px;
           margin-right: unset;
@@ -217,14 +178,21 @@ $pure-air-main-color: #1E90FF;
   }
 }
 
+@media only screen and (min-width: 1120px) {
+  #pure-air .container {
+    padding: 45px 70px 45px 0;
+  }
+}
+
 @media only screen and (min-width: 1280px) {
   #pure-air {
-    padding: 108px 0 192px;
+    padding: 110px 0 180px;
 
     .container {
-      padding: 100px 100px 100px 0;
+      padding: 45px 85px 80px 0;
 
       .text-wrapper {
+        max-width: 545px;
         margin: 0;
 
         .website-label {
@@ -234,7 +202,8 @@ $pure-air-main-color: #1E90FF;
       }
 
       .pure-air-image {
-        max-width: 540px;
+        max-width: 585px;
+        top: 52%;
         left: 0;
       }
     }
