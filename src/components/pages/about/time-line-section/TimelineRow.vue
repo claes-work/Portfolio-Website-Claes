@@ -16,7 +16,7 @@ const props = defineProps({
       <h2>{{ props.rowData.date }}</h2>
     </div>
     <div class="text-column">
-      <h3>{{ props.rowData.heading }}</h3>
+      <h3 v-html="props.rowData.heading"></h3>
       <p>{{ props.rowData.text }}</p>
     </div>
     <div class="timeline-point">

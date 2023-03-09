@@ -12,7 +12,7 @@
       color: $main-text-color;
       padding: 4px 7px;
       font-size: 12px;
-      font-family: 'Space Mono',sans-serif;
+      font-family: 'Space Mono 400',sans-serif;
       font-weight: 400;
       margin-bottom: 10px;
       text-align: center;
@@ -92,6 +92,10 @@
       text-align: center;
     }
 
+    .button {
+      margin-bottom: -28px;
+    }
+
     .personal-tech-stack-image {
       width: 100%;
       margin-left: unset;
@@ -102,12 +106,17 @@
 
 @media only screen and (min-width: 991px) {
   #personal-tech-stack-section .container {
+
+    p {
+      margin-bottom: 35px;
+    }
+
     h2 {
       margin-bottom: 20px;
     }
 
     .button {
-      margin-bottom: -30px;
+      margin-bottom: -50px;
     }
   }
 }
@@ -116,8 +125,15 @@
   #personal-tech-stack-section {
     padding-top: 30px;
 
-    .container .button {
-      margin-bottom: -50px;
+    .container {
+
+      p {
+        margin-bottom: 50px;
+      }
+
+      .button {
+        margin-bottom: -85px;
+      }
     }
   }
 }

@@ -158,6 +158,15 @@
 @media only screen and (min-width: 1280px) {
   #timeline-section {
     padding: 45px 20px;
+
+    .container .timeline-row:nth-child(even) .text-column h3 {
+      width: 110%;
+      margin-left: -10%;
+    }
+
+    .container .timeline-row:nth-child(odd) .text-column h3 {
+      width: 110%;
+    }
   }
 }
 
