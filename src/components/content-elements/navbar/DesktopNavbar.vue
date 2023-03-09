@@ -5,11 +5,10 @@ import { useStrapiDataStore } from "@/stores/StrapiDataStore";
 import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
 import { AllLocales } from "@/models/AllLocales";
 import { useMainStore } from "@/stores/MainStore";
-import {computed, onMounted} from "vue";
+import { onMounted} from "vue";
 import FetchAppSections from "@/services/FetchAppSections";
-import type {ILink} from "@/models/components/tabs/ILink";
-import type {INavLink} from "@/models/components/navbar/INavLink";
 import IconLanguage from "@/components/icons/IconLanguage.vue";
+import router from "@/router";
 
 const mainStore = useMainStore()
 const strapiStore = useStrapiDataStore()
@@ -28,7 +27,7 @@ onMounted(async () => {
 <template>
   <nav id="desktop-navbar" :class="mainStore.themeClass">
     <div class="container">
-      <h2>Claes</h2>
+      <h2 @click="router.push('/')">Claes</h2>
       <ul>
         <li class="locale-wrapper">
           <IconLanguage />

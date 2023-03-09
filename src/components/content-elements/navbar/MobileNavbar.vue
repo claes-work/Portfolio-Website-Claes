@@ -8,6 +8,7 @@ import { AllLocales } from "@/models/AllLocales";
 import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
 import FetchAppSections from "@/services/FetchAppSections";
 import IconLanguage from "@/components/icons/IconLanguage.vue";
+import router from "@/router";
 
 const mainStore = useMainStore();
 const strapiStore = useStrapiDataStore()
@@ -28,7 +29,7 @@ onMounted(async () => {
 <template>
   <nav id="mobile-navbar" :class="mainStore.themeClass">
     <div class="container">
-      <h2>Claes</h2>
+      <h2 @click="router.push('/')">Claes</h2>
 
       <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80" :class="{ active: mainStore.openNavMenu }" @click="mainStore.openNavMenu = !mainStore.openNavMenu">
         <path
