@@ -144,7 +144,10 @@
 
       li:last-child {
         border: none;
-        margin-top: 24px;
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-48%);
       }
 
       li a:hover:not(li:last-child a:hover),
@@ -169,31 +172,25 @@
         }
       }
 
-      .flag-wrapper {
+      .locale-wrapper {
+        width: 95px;
+        margin: 105px auto 0;
         display: flex;
-        justify-content: center;
-        column-gap: 12px;
-        margin: 0 auto;
+        align-items: center;
+        column-gap: 15px;
 
-        .flag {
-          width: 50px;
-          height: 52px;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          border-bottom: 4px solid transparent;
+        .locale {
+          color: $default-text-color;
+          text-transform: uppercase;
+          font-size: 18px;
         }
 
-        .flag.en {
-          background-image: url("@/assets/images/United_States_Flag_Icon.png");
+        .locale.active {
+          text-decoration: underline;
         }
 
-        .flag.de {
-          background-image: url("@/assets/images/Deutschland_Flagge_Icon.png");
-        }
-
-        .flag.active {
-          border-bottom: 4px solid $main-color;
+        svg {
+          margin-top: 1px;
         }
       }
     }
@@ -229,8 +226,8 @@
       background-color: $main-color;
     }
 
-    .flag-wrapper .flag.active {
-      border-bottom: 4px solid $main-color;
+    .locale-wrapper .locale.active {
+      color: $main-color;
     }
   }
 }
@@ -260,8 +257,8 @@
       background-color: #FA8231;
     }
 
-    .flag-wrapper .flag.active {
-      border-bottom: 4px solid #FA8231;
+    .locale-wrapper .locale.active {
+      color: #FA8231;
     }
   }
 }
@@ -296,8 +293,8 @@
       color: #121212;
     }
 
-    .flag-wrapper .flag.active {
-      border-bottom: 4px solid #59aeff;
+    .locale-wrapper .locale.active {
+      color: #59aeff;
     }
   }
 }
@@ -332,8 +329,8 @@
       color: #121212;
     }
 
-    .flag-wrapper .flag.active {
-      border-bottom: 4px solid #526E91;
+    .locale-wrapper .locale.active {
+      color: #526E91;
     }
   }
 }
@@ -369,8 +366,8 @@
       color: #121212;
     }
 
-    .flag-wrapper .flag.active {
-      border-bottom: 4px solid #C7AA8B;
+    .locale-wrapper .locale.active {
+      color: #C7AA8B;
     }
   }
 }

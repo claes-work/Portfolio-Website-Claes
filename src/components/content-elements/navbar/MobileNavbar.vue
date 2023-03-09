@@ -7,6 +7,7 @@ import {useStrapiDataStore} from "@/stores/StrapiDataStore";
 import { AllLocales } from "@/models/AllLocales";
 import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
 import FetchAppSections from "@/services/FetchAppSections";
+import IconLanguage from "@/components/icons/IconLanguage.vue";
 
 const mainStore = useMainStore();
 const strapiStore = useStrapiDataStore()
@@ -44,10 +45,6 @@ onMounted(async () => {
 
     <div class="mobile-nav-menu" :class="{ active: mainStore.openNavMenu }">
       <ul>
-
-
-
-
         <li
             v-for="link in strapiStore.navBarData.navLinks"
             :key="link.id"
@@ -72,10 +69,6 @@ onMounted(async () => {
             </RouterLink>
           </div>
         </li>
-
-
-
-
         <li
             v-for="link in strapiStore.navBarData.navLinks"
             :key="link.id"
@@ -95,9 +88,10 @@ onMounted(async () => {
           >{{ button.text }}</a>
         </li>
 
-        <li class="flag-wrapper">
-          <div :class="{ active : checkLocale(AllLocales.EN)}" class="flag en" @click="strapiStore.changeLocale(AllLocales.EN)"></div>
-          <div :class="{ active :  checkLocale(AllLocales.DE)}" class="flag de" @click="strapiStore.changeLocale(AllLocales.DE)"></div>
+        <li class="locale-wrapper">
+          <IconLanguage />
+          <div :class="{ active : checkLocale(AllLocales.EN)}" class="locale" @click="strapiStore.changeLocale(AllLocales.EN)">EN</div>
+          <div :class="{ active :  checkLocale(AllLocales.DE)}" class="locale" @click="strapiStore.changeLocale(AllLocales.DE)">DE</div>
         </li>
       </ul>
     </div>
