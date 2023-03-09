@@ -12,6 +12,7 @@ import type { AllMediaSrcset } from "@/models/components/media/AllMediaSrcset";
  * @return AllMediaSrcset
  */
 export function getAllMediaSrcset(image: IMedia): AllMediaSrcset {
+
     // Return empty media srcset object if image formats are not defined
     if (!image.formats) return {} as AllMediaSrcset
 

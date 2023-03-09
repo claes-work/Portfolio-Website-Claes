@@ -28,7 +28,9 @@ const markdown: ComputedRef<string> = computed(() => {
 
 // Ensure label src is never null and add url prefix to upload path
 const labelSrc: ComputedRef<string> = computed(() => {
-  return broadyData.value.label ? urlPrefix + broadyData.value.label.url : ''
+  return broadyData.value.label && broadyData.value.label[0]
+      ? urlPrefix + broadyData.value.label[0].url
+      : ''
 })
 
 // Ensure mockup src is never null and add url prefix to upload path
@@ -39,10 +41,12 @@ const labelAlt: ComputedRef<string> = computed(() => {
 
 // Ensure mockup src is never null and add url prefix to upload path
 const mockupSrcset: ComputedRef<AllMediaSrcset> = computed(() => {
-  return broadyData.value.image && broadyData.value.image
-      ? getAllMediaSrcset(broadyData.value.image)
+  return broadyData.value.image && broadyData.value.image[0]
+      ? getAllMediaSrcset(broadyData.value.image[0])
       : {} as AllMediaSrcset
 })
+
+
 
 // Ensure mockup src is never null and add url prefix to upload path
 const mockupAlt: ComputedRef<string> = computed(() => {
