@@ -23,8 +23,12 @@
       margin-bottom: 20px;
     }
 
-    .hero-image {
+    picture {
       width: 60%;
+    }
+
+    .hero-image {
+      width: 100%;
       max-width: 260px;
       margin: 25px 0;
     }
@@ -111,6 +115,15 @@
 
 @media only screen and (min-width: 1280px) {
   #hero-section .container {
+
+    .text-wrapper {
+      width: 770px;
+
+      h1 {
+        max-width: 80%;
+      }
+    }
+
     .hero-image {
       width: 320px;
       left: 58%;

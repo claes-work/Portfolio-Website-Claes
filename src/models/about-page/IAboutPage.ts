@@ -1,10 +1,12 @@
-import type {IMedia} from "@/models/components/media/IMedia";
-import type {BaseEntity} from "@/models/BaseEntity";
+import type { BaseEntity } from "@/models/BaseEntity"
+import type { IHeroSection } from "@/models/about-page/IHeroSection"
+import type { IQuoteBanner } from "@/models/components/banners/IQuoteBanner";
+import type { ITimelineRow } from "@/models/about-page/ITimelineRow";
+import type { IPersonalTechStack } from "@/models/about-page/IPersonalTechStack";
 
 export interface IAboutPage extends BaseEntity {
-    id:           number;
-    heading:      string;
-    subHeading:   string;
-    text:         string;
-    heroImage:    IMedia;
+    heroSection:       IHeroSection
+    quoteBanner:       IQuoteBanner
+    personalTechStack: IPersonalTechStack
+    timeline:          ITimelineRow[]
 }

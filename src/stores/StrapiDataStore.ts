@@ -14,25 +14,29 @@ import type { IPureAir } from "@/models/websites/pure-air/IPureAir";
 import type { IDiewellWebsite } from "@/models/websites/diewell-website/IDiewellWebsite";
 import type { IBroadyPictures } from "@/models/websites/broady-pictures/IBroadyPictures";
 import type { IWebsiteData } from "@/models/projects/IWebsiteData";
+import type { IAboutPage } from "@/models/about-page/IAboutPage";
 
 export const useStrapiDataStore = defineStore('strapiDataStore', () => {
 
-  // navbar and footer data from strapi api
+  // Navbar and footer data from strapi api
   const navBarData: Ref<INavbar> = ref({} as INavbar)
   const footerData: Ref<IFooter> = ref({} as IFooter)
 
-  // project data from strapi api
+  // Project data from strapi api
   const projectData: IProjectData = reactive({
     rebalancingTool: {} as IRebalancingTool,
     suggestApp: {} as ISuggestApp
   })
 
-  // website data from strapi api
+  // Website data from strapi api
   const websiteData: IWebsiteData = reactive({
     pureAir: {} as IPureAir,
     diewellWebsite: {} as IDiewellWebsite,
     broadyPictures: {} as IBroadyPictures
   })
+
+  // About page data from strapi api
+  const aboutData: Ref<IAboutPage> = ref({} as IAboutPage)
 
   /************** Localization **************/
 
@@ -68,5 +72,5 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
     }
   }
 
-  return { navBarData, footerData, projectData, websiteData, activeLocale, changeLocale }
+  return { navBarData, footerData, projectData, websiteData, aboutData, activeLocale, changeLocale }
 })

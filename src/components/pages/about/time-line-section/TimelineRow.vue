@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import type { PropType } from "vue";
-import type { TimelineRow } from "@/models/about-page/TimelineRow";
+import type { ITimelineRow } from "@/models/about-page/ITimelineRow";
 
 const props = defineProps({
   rowData: {
-    type: Object as PropType<TimelineRow>,
+    type: Object as PropType<ITimelineRow>,
     required: true,
   }
 })
@@ -13,10 +13,10 @@ const props = defineProps({
 <template>
   <div class="timeline-row">
     <div class="year-column">
-      <h2>{{ props.rowData.year }}</h2>
+      <h2>{{ props.rowData.date }}</h2>
     </div>
     <div class="text-column">
-      <h3>{{ props.rowData.title }}</h3>
+      <h3>{{ props.rowData.heading }}</h3>
       <p>{{ props.rowData.text }}</p>
     </div>
     <div class="timeline-point">

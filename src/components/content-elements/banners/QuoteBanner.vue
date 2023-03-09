@@ -1,18 +1,24 @@
 <script lang="ts" setup>
 import QuoteIcon from "@/components/icons/QuoteIcon.vue";
+import type { IQuoteBanner } from "@/models/components/banners/IQuoteBanner"
+import { useStrapiDataStore } from "@/stores/StrapiDataStore";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
 
-const props = defineProps({
-  htmlText: {
-    type: String,
-    required: true,
-  },
+const strapiStore = useStrapiDataStore()
+
+// Ensure that quote banner data from strapi api has been fetched
+const quoteBanner: ComputedRef<IQuoteBanner> = computed(() => {
+  return strapiStore.aboutData.quoteBanner
+      ? strapiStore.aboutData.quoteBanner
+      : {} as IQuoteBanner
 })
 </script>
 
 <template>
   <div class="quote-banner">
     <QuoteIcon />
-    <h3 v-html="props.htmlText"></h3>
+    <h3 v-html="quoteBanner.quote"></h3>
   </div>
 </template>
 
@@ -38,7 +44,7 @@ const props = defineProps({
   padding: 6px 0;
 
   h3 {
-    max-width: 760px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
     padding: 10px 8px;

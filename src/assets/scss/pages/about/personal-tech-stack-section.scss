@@ -19,7 +19,7 @@
     }
 
     h2 {
-      max-width: 750px;
+      max-width: 940px;
       color: $bc-dark-2;
       margin-bottom: 15px;
     }
@@ -44,11 +44,16 @@
       border: 1px solid $bc-dark-2;
       background-color: transparent;
       color: $bc-dark-2;
+      z-index: 15;
     }
 
     .button:hover {
       background-color: $bc-dark-2;
       color: $default-text-color;
+    }
+
+    picture {
+      width: 100%;
     }
 
     .personal-tech-stack-image {
@@ -64,7 +69,7 @@
   #personal-tech-stack-section .container .button {
     display: inline-block;
     width: unset;
-    padding: 20px 28px;
+    padding: 18px 28px;
   }
 }
 
@@ -94,3 +99,26 @@
     }
   }
 }
+
+@media only screen and (min-width: 991px) {
+  #personal-tech-stack-section .container {
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .button {
+      margin-bottom: -30px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #personal-tech-stack-section {
+    padding-top: 30px;
+
+    .container .button {
+      margin-bottom: -50px;
+    }
+  }
+}
+
