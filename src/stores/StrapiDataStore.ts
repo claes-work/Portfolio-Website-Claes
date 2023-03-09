@@ -58,6 +58,9 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
     navBarData.value = await FetchAppSections.fetchNavbarData(newLocale)
     footerData.value = await FetchAppSections.fetchFooterData(newLocale)
 
+    // Always fetch about page data
+    aboutData.value = await FetchAppSections.fetchAboutPage(newLocale)
+
     // Fetch project data if route is projects page
     if (routerPath === '/') {
       projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection(newLocale)

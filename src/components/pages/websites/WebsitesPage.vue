@@ -40,8 +40,4 @@ onMounted(async () => {
       :ref="(el) => mainStore.setSectionOffset(el, 'broadyPictures')"
       :data="strapiStore.websiteData.broadyPictures"
   />
-  <ThreeGridBanner
-      :style="{ backgroundColor: '#383224' }"
-      :data="strapiStore.websiteData.pureAir.threeGridBanner"
-  />
 </template>
