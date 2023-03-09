@@ -153,8 +153,8 @@ $pure-air-main-color: #0E243F;
 
 @media only screen and (min-width: 991px) {
   #diewell-website {
-    margin-top: -225px;
-    padding: 90px 0 212px;
+    margin-top: -282px;
+    padding: 140px 0 215px;
     background-color: #EAEAEA;
 
     .container {
@@ -210,14 +210,18 @@ $pure-air-main-color: #0E243F;
 
 
 @media only screen and (min-width: 1120px) {
-  #diewell-website .container {
-    padding: 70px 0 25px 45px;
+  #diewell-website {
+    padding: 150px 0 200px;
+
+    .container {
+      padding: 70px 0 25px 45px;
+    }
   }
 }
 
 @media only screen and (min-width: 1280px) {
   #diewell-website {
-    padding: 130px 0 225px;
+    padding: 190px 0 225px;
 
     .container {
       padding: 100px 100px 45px 95px;
