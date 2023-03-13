@@ -23,7 +23,6 @@ onMounted(() => {
     scrollTrigger: {
       trigger: row.value,
       start: 'top 150',
-      markers: true,
       toggleActions: 'play none none reverse',
     }
   });
