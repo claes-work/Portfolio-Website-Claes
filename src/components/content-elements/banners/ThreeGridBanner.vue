@@ -1,8 +1,9 @@
 <script lang="ts" setup>
+import { computed } from "vue";
 import type { PropType, ComputedRef } from "vue";
 import type { IThreeGridBanner } from "@/models/components/banners/IThreeGridBanner";
 import type { IColumn } from "@/models/components/banners/IColumn";
-import { computed } from "vue";
+import Stat from "@/components/content-elements/banners/Stat.vue";
 
 const props = defineProps({
   data: {
@@ -15,7 +16,6 @@ const bannerData: ComputedRef<IThreeGridBanner> = computed(() => {
   return props.data ? props.data : {} as IThreeGridBanner
 })
 
-// The
 const bannerColumns: ComputedRef<IColumn[]> = computed(() => {
   return bannerData.value && bannerData.value.columns ? bannerData.value.columns : {} as IColumn[]
 })
@@ -29,8 +29,8 @@ const bannerColumns: ComputedRef<IColumn[]> = computed(() => {
         :key="column.id"
         class="column"
     >
-      <div class="number-wrapper">
-        <div class="number">{{ column.stats }}</div>
+      <div class="stats-wrapper">
+        <Stat :data="column.stats" />
         <span>{{ column.numberTitle }}</span>
       </div>
       <p>{{ column.description }}</p>
