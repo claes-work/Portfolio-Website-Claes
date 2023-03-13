@@ -7,9 +7,14 @@ import { i18n } from '@/i18n'
 //@ts-ignore
 import Vue3VideoPlayer from '@cloudgeek/vue3-video-player';
 import '@cloudgeek/vue3-video-player/dist/vue3-video-player.css';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 // register Swiper custom elements
 register();
+
 
 const app = createApp(App)
 
