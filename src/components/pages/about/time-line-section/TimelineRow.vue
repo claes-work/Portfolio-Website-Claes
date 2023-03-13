@@ -11,14 +11,17 @@ const props = defineProps({
   }
 })
 
+// GSAP timeline
 let timeline = null
 
+// Element template references
 const row: Ref<HTMLElement | null> = ref(null)
 const date: Ref<HTMLElement | null> = ref(null)
 const text: Ref<HTMLElement | null> = ref(null)
 
+// Register animations on mount
 onMounted(() => {
-
+  // Timeline config itself
   timeline = gsap.timeline({
     scrollTrigger: {
       trigger: row.value,
@@ -27,19 +30,19 @@ onMounted(() => {
     }
   });
 
+  // Timeline tweens
   timeline.from(date.value, {
     x: -75,
     opacity: 0,
     duration: 0.8,
     ease: 'power1.out'
-  }, "0")
-
+  }, '0')
   timeline.from(text.value, {
     x: 75,
     opacity: 0,
     duration: 0.8,
     ease: 'power1.out'
-  }, "0")
+  }, '0')
 })
 </script>
 
