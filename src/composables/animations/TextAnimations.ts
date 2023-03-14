@@ -45,6 +45,7 @@ export function wordFloatDown(timeline: GSAPTimeline, chars: HTMLElement[]): GSA
         duration: 4,
         y: 150,
         autoAlpha: 0,
+        opacity: 0,
         ease: 'Circ.easeOut'
     }
 
