@@ -16,7 +16,6 @@ export function charFloatUp(timeline: GSAPTimeline, chars: HTMLElement[], charDu
         y: 150,
         autoAlpha: 0,
         ease: 'Circ.easeOut',
-        stagger: 1.5
     }
 
     // Calculate the duration, that should be added based on the index that is getting increased
@@ -27,6 +26,30 @@ export function charFloatUp(timeline: GSAPTimeline, chars: HTMLElement[], charDu
     chars.forEach((el: HTMLElement, index: number) => {
         let decimal: string = (index - (convertedDuration * index)).toString().replace('.', '')
         timeline.from(el, charConfig, '1.' + decimal)
+    })
+
+    return timeline
+}
+
+/**
+ * Complete word float down animation
+ *
+ * @param timeline
+ * @param chars
+ *
+ * @return GSAPTimeline
+ */
+export function wordFloatDown(timeline: GSAPTimeline, chars: HTMLElement[]): GSAPTimeline {
+    // Animation config for each char
+    const charConfig = {
+        duration: 4,
+        y: 150,
+        autoAlpha: 0,
+        ease: 'Circ.easeOut'
+    }
+
+    chars.forEach((el: HTMLElement) => {
+        timeline.to(el, charConfig, 3.5)
     })
 
     return timeline
