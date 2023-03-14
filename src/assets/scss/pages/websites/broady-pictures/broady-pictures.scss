@@ -1,4 +1,4 @@
-$pure-air-main-color: #383224;
+$broady-main-color: #383224;
 
 #broady-pictures {
   padding: 0 15px 25px;
@@ -17,11 +17,11 @@ $pure-air-main-color: #383224;
       }
 
       h2 {
-        color: $primary-text-color;
         margin-bottom: 15px;
+        color: $primary-text-color;
 
-        span {
-          color: $pure-air-main-color;
+        .wrapper:first-child span {
+          color: $broady-main-color;
         }
       }
 
@@ -50,7 +50,7 @@ $pure-air-main-color: #383224;
         }
 
         .button.primary {
-          background-color: $pure-air-main-color;
+          background-color: $broady-main-color;
           color: $default-text-color;
         }
 
@@ -65,7 +65,7 @@ $pure-air-main-color: #383224;
         }
 
         .button.secondary:hover {
-          background-color: $pure-air-main-color;
+          background-color: $broady-main-color;
           color: $default-text-color;
         }
       }

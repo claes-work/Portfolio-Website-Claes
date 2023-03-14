@@ -49,7 +49,7 @@ const headingArray: ComputedRef<string[]> = computed(() => {
 </template>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 h2 {
   margin-bottom: 15px;
   display: flex;
@@ -59,6 +59,7 @@ h2 {
     color: $primary-text-color;
     display: block;
     overflow: hidden;
+    line-height: 1.2;
   }
 
   .wrapper {

@@ -5,6 +5,7 @@ import { computed, inject } from "vue";
 import { marked } from "marked";
 import type { AllMediaSrcset } from "@/models/components/media/AllMediaSrcset";
 import { getAllMediaSrcset } from "@/composables/MediaProperties";
+import AnimatedHeading from "@/components/content-elements/AnimatedHeading.vue";
 
 const urlPrefix = inject('URL_PATH')
 
@@ -75,7 +76,7 @@ const mockupIMacAlt: ComputedRef<string> = computed(() => {
             :src="labelSrc"
             :alt="labelAlt"
         />
-        <h2 v-html="pureAirData.heading"></h2>
+        <AnimatedHeading :heading="pureAirData.heading" />
         <p v-html="markdown"></p>
         <div class="button-wrapper">
           <a
