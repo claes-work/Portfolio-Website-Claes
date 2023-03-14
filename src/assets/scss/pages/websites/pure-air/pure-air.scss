@@ -20,6 +20,10 @@ $pure-air-main-color: #1E90FF;
         margin-bottom: 15px;
         color: $primary-text-color;
 
+        .wrapper span {
+          color: $primary-text-color;
+        }
+
         .wrapper:last-child span {
           color: $pure-air-main-color;
         }

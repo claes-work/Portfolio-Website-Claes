@@ -20,6 +20,10 @@ $broady-main-color: #383224;
         margin-bottom: 15px;
         color: $primary-text-color;
 
+        .wrapper span {
+          color: $primary-text-color;
+        }
+
         .wrapper:first-child span {
           color: $broady-main-color;
         }

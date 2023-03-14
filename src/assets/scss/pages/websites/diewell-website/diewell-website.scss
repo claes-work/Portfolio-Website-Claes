@@ -20,6 +20,10 @@ $diewell-main-color: #0E243F;
         margin-bottom: 15px;
         color: $primary-text-color;
 
+        .wrapper span {
+          color: $primary-text-color;
+        }
+
         .wrapper:first-child span {
           color: $diewell-main-color;
         }
