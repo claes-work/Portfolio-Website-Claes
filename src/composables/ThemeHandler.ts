@@ -40,22 +40,22 @@ export function checkNavThemeOnScroll(themeClass: Ref<ThemeColorClassesType>, of
     if (
         routerPath === '/websites'
         && window.scrollY > offsets.pureAir
-        && window.scrollY < (offsets.diewellWebsite - 150)
+        && window.scrollY < (offsets.diewellWebsite - 130)
     ) {
         themeClass.value = ThemeColorClasses.PURE_AIR
     }
 
     if (
         routerPath === '/websites'
-        && window.scrollY > (offsets.diewellWebsite - 20)
-        && window.scrollY < (offsets.broadyPictures - 40)
+        && window.scrollY > (offsets.diewellWebsite - 130)
+        && window.scrollY < (offsets.broadyPictures - 140)
     ) {
         themeClass.value = ThemeColorClasses.DIEWELL_WEBSITE
     }
 
     if (
         routerPath === '/websites'
-        && window.scrollY > (offsets.broadyPictures - 40)
+        && window.scrollY > (offsets.broadyPictures - 140)
     ) {
         themeClass.value = ThemeColorClasses.BROADY_PICTURES
     }

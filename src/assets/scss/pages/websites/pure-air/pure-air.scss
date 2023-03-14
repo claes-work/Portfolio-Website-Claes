@@ -193,7 +193,7 @@ $pure-air-main-color: #1E90FF;
 
 @media only screen and (min-width: 1120px) {
   #pure-air {
-    padding: 120px 0 250px;
+    padding: 120px 0 176px;
 
     .container {
       padding: 45px 70px 0 0;
@@ -203,7 +203,7 @@ $pure-air-main-color: #1E90FF;
 
 @media only screen and (min-width: 1280px) {
   #pure-air {
-    padding: 130px 0 225px;
+    padding: 115px 0 220px;
 
     .container {
       padding: 70px 85px 45px 0;
@@ -227,7 +227,7 @@ $pure-air-main-color: #1E90FF;
     }
 
     .container::before {
-      height: 100%;
+      height: calc(100% + 7px);
       right: 0;
     }
   }
