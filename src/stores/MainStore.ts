@@ -5,8 +5,17 @@ import type { ThemeColorClasses as ThemeColorClassesType} from "@/models/theme/T
 import { ThemeColorClasses } from "@/models/theme/ThemeColorClasses"
 import { checkNavThemeOnScroll } from "@/composables/ThemeHandler";
 import type {SectionOffsets} from "@/models/theme/SectionOffsets";
+import gsap from "gsap";
 
 export const useMainStore = defineStore('mainStore', () => {
+
+  // DOM loaded flag
+  const hasLoaded: Ref<boolean> = ref(false)
+
+  // remove body overlay after DOM has loaded
+  window.addEventListener('DOMContentLoaded', () => {
+    hasLoaded.value = true
+  })
 
   /*************** Window Sizes ***************/
 
@@ -49,6 +58,8 @@ export const useMainStore = defineStore('mainStore', () => {
   }
 
   return {
+    hasLoaded,
+
     // Window Sizes
     isDesktop,
     openNavMenu,

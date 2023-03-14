@@ -12,7 +12,7 @@ const props = defineProps({
 })
 
 // GSAP timeline
-let timeline = null
+let timeline: GSAPTimeline | null = null
 
 // Element template references
 const row: Ref<HTMLElement | null> = ref(null)

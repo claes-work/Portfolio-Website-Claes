@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-import {computed, inject, onMounted, ref} from "vue";
+import {bcomputed, inject } from "vue";
 import { marked } from 'marked';
-import type { PropType, ComputedRef, Ref } from "vue";
+import type { PropType, ComputedRef } from "vue";
 import type { IRebalancingTool } from "@/models/projects/rebalancing-tool/IRebalancingTool";
 import { getAllMediaSrcset } from "@/composables/MediaProperties";
 import type { AllMediaSrcset } from "@/models/components/media/AllMediaSrcset";
-import gsap from "gsap";
 
 const urlPrefix = inject('URL_PATH')
 
@@ -15,6 +14,8 @@ const props = defineProps({
     required: true
   }
 })
+
+/**************************** Template Properties ****************************/
 
 // Ensure mockup src is never null and add url prefix to upload path
 const logoSrc: ComputedRef<string> = computed(() => {
@@ -46,75 +47,12 @@ const markdown: ComputedRef<string> = computed(() => {
       ? marked(props.data.description)
       : ''
 })
-
-/**************************** GSAP ****************************/
-
-// GSAP timeline
-let timeline = null
-
-// Element template references
-const section: Ref<HTMLElement | null> = ref(null)
-const text:    Ref<HTMLElement | null> = ref(null)
-const button1: Ref<HTMLElement | null> = ref(null)
-const button2: Ref<HTMLElement | null> = ref(null)
-
-// Register animations on mount
-onMounted(() => {
-  // Parallax scroll effect
-  gsap.set(text.value, { yPercent: 40});
-  gsap.to(text.value, {
-    yPercent: -28,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: section.value,
-      scrub: 1
-    },
-  });
-
-  // Timeline config itself
-  timeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: button1.value,
-      start: 'top 10%',
-      markers: true,
-      toggleActions: 'play none none reverse',
-    }
-  });
-
-  // Timeline tweens
-  timeline.from(button1.value, {
-    x: -75,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power1.out'
-  }, '0')
-  timeline.from(button2.value, {
-    x: 75,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power1.out'
-  }, '0')
-
- /* timeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: section.value,
-      start: 'top 150',
-      toggleActions: 'play none none reverse',
-    }
-  });
-  timeline.from(text.value, {
-    x: -75,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power1.out'
-  }, "0")*/
-})
 </script>
 
 <template>
-  <section id="rebalancing-tool" ref="section">
+  <section id="rebalancing-tool">
     <div class="container">
-      <div class="text-wrapper" ref="text">
+      <div class="text-wrapper">
         <div class="logo" :style="{ backgroundImage: 'url('+logoSrc+')' }"></div>
         <h2 v-html="data.heading"></h2>
         <p v-html="markdown"></p>
