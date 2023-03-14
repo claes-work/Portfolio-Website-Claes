@@ -8,6 +8,7 @@ import gsap from "gsap";
 import {charFloatUp, wordFloatDown} from "@/composables/animations/TextAnimations";
 import BlurBubble from "@/components/icons/BlurBubble.vue";
 import {blinderTransition} from "@/composables/animations/BackgroundAnimations";
+import {FloatDirection} from "@/models/animations/FloatDirection";
 
 const mainStore = useMainStore()
 const strapiStore = useStrapiDataStore()
@@ -36,7 +37,6 @@ onMounted(() => {
   timeline = wordFloatDown(timeline, charElements.value)
   timeline = blinderTransition(timeline, blinderElements.value)
 })
-
 
 </script>
 

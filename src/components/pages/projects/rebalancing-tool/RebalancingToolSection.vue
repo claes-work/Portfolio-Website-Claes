@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-import {computed, inject } from "vue";
+import { computed, inject } from "vue";
 import { marked } from 'marked';
 import type { PropType, ComputedRef } from "vue";
 import type { IRebalancingTool } from "@/models/projects/rebalancing-tool/IRebalancingTool";
 import { getAllMediaSrcset } from "@/composables/MediaProperties";
 import type { AllMediaSrcset } from "@/models/components/media/AllMediaSrcset";
+import AnimatedHeading from "@/components/content-elements/AnimatedHeading.vue";
 
 const urlPrefix = inject('URL_PATH')
 
@@ -54,7 +55,7 @@ const markdown: ComputedRef<string> = computed(() => {
     <div class="container">
       <div class="text-wrapper">
         <div class="logo" :style="{ backgroundImage: 'url('+logoSrc+')' }"></div>
-        <h2 v-html="data.heading"></h2>
+        <AnimatedHeading :heading="data.heading" />
         <p v-html="markdown"></p>
         <div class="button-wrapper">
           <a

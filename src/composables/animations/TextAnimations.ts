@@ -1,4 +1,6 @@
 import gsap from "gsap";
+import type { FloatDirection as FloatDirectionType } from "@/models/animations/FloatDirection";
+import { FloatDirection } from "@/models/animations/FloatDirection";
 
 /**
  * Char float up animation
@@ -39,19 +41,61 @@ export function charFloatUp(timeline: GSAPTimeline, chars: HTMLElement[], charDu
  *
  * @return GSAPTimeline
  */
-export function wordFloatDown(timeline: GSAPTimeline, chars: HTMLElement[]): GSAPTimeline {
+export function wordFloatDown(
+    timeline: GSAPTimeline,
+    chars: HTMLElement[]
+): GSAPTimeline {
+
     // Animation config for each char
     const charConfig = {
         duration: 4,
         y: 150,
         autoAlpha: 0,
-        opacity: 0,
+        opacity: 1,
         ease: 'Circ.easeOut'
     }
 
+    // Iterate each char and add the animation to the gsap timeline
     chars.forEach((el: HTMLElement) => {
         timeline.to(el, charConfig, 3.5)
     })
+
+    return timeline
+}
+
+
+/**
+ * Complete word float down animation
+ *
+ * @param timeline GSAPTimeline
+ * @param headingArray HTMLElement[][]
+ * @param wait time each heading line should wait
+ *
+ * @return GSAPTimeline
+ */
+export function wordFloatUp(
+    timeline: GSAPTimeline,
+    headingArray: HTMLElement[][],
+    wait: number = 0.15
+): GSAPTimeline {
+
+    // Animation config for each char
+    const charConfig = {
+        duration: 0.6,
+        y: 150,
+        autoAlpha: 0,
+        ease: 'Circ.easeOut'
+    }
+
+    // Iterate each heading line
+    headingArray.forEach((array: HTMLElement[], arrayIndex: number) => {
+        // Iterate each char and add the animation to the gsap timeline
+        array.forEach((el: HTMLElement) => {
+            timeline.from(el, charConfig, (wait * arrayIndex))
+        })
+    })
+
+
 
     return timeline
 }

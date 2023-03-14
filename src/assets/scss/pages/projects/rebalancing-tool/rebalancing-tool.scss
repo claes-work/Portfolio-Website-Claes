@@ -21,8 +21,19 @@
       }
 
       h2 {
-        color: $primary-text-color;
         margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+
+        span {
+          color: $primary-text-color;
+          display: block;
+          overflow: hidden;
+        }
+
+        .wrapper {
+          display: flex;
+        }
       }
 
       p {
