@@ -1,11 +1,12 @@
 <script lang="ts" setup>
-import { computed, inject } from "vue";
+import {computed, inject, onMounted, ref} from "vue";
 import { marked } from 'marked';
-import type { PropType, ComputedRef } from "vue";
+import type { PropType, ComputedRef, Ref } from "vue";
 import type { IRebalancingTool } from "@/models/projects/rebalancing-tool/IRebalancingTool";
 import { getAllMediaSrcset } from "@/composables/MediaProperties";
 import type { AllMediaSrcset } from "@/models/components/media/AllMediaSrcset";
 import AnimatedHeading from "@/components/content-elements/AnimatedHeading.vue";
+import gsap from "gsap";
 
 const urlPrefix = inject('URL_PATH')
 
@@ -14,6 +15,16 @@ const props = defineProps({
     type: Object as PropType<IRebalancingTool>,
     required: true
   }
+})
+
+const mockup: Ref<HTMLElement | null> = ref(null)
+
+onMounted(() => {
+  gsap.from(mockup.value, {
+    duration: 0.8,
+    x: 150,
+    ease: 'Circ.easeOut'
+  })
 })
 
 /**************************** Template Properties ****************************/
@@ -71,19 +82,20 @@ const markdown: ComputedRef<string> = computed(() => {
         </div>
       </div>
       <div class="macbook-image-wrapper">
-        <picture>
-          <source media="(min-width: 768px)" :srcset="mockupSrcset.mediumSrc">
-          <source media="(min-width: 1280px)" :srcset="mockupSrcset.originalSrc">
-          <img
-              v-if="mockupSrcset"
-              class="macbook-image"
-              :src="mockupSrcset.smallSrc"
-              :alt="mockupAlt"
-          />
-        </picture>
-
-        <div class="player-container" v-if="videoSrc">
-          <Vue3VideoPlayer ref="player" :src="videoSrc" />
+        <div ref="mockup" class="mockup-animation-wrapper">
+          <picture>
+            <source media="(min-width: 768px)" :srcset="mockupSrcset.mediumSrc">
+            <source media="(min-width: 1280px)" :srcset="mockupSrcset.originalSrc">
+            <img
+                v-if="mockupSrcset"
+                class="macbook-image"
+                :src="mockupSrcset.smallSrc"
+                :alt="mockupAlt"
+            />
+          </picture>
+          <div class="player-container" v-if="videoSrc">
+            <Vue3VideoPlayer ref="player" :src="videoSrc" />
+          </div>
         </div>
       </div>
     </div>
