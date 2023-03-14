@@ -20,14 +20,14 @@ export function checkNavThemeOnScroll(themeClass: Ref<ThemeColorClassesType>, of
     if (
         routerPath === '/'
         && window.scrollY > offsets.rebalancingTool
-        && window.scrollY < offsets.suggestApp
+        && window.scrollY < (offsets.suggestApp - 70)
     ) {
         themeClass.value = ThemeColorClasses.REBALANCING_TOOL
     }
 
     if (
         routerPath === '/'
-        && window.scrollY > offsets.suggestApp
+        && window.scrollY > (offsets.suggestApp - 70)
     ) {
         themeClass.value = ThemeColorClasses.SUGGEST_APP
     }
