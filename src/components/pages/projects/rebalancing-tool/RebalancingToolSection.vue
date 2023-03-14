@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {bcomputed, inject } from "vue";
+import {computed, inject } from "vue";
 import { marked } from 'marked';
 import type { PropType, ComputedRef } from "vue";
 import type { IRebalancingTool } from "@/models/projects/rebalancing-tool/IRebalancingTool";

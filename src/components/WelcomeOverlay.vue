@@ -31,7 +31,7 @@ onMounted(() => {
   timeline = charFloatUp(timeline, charElements.value)
   timeline.to(overlay.value, {
     opacity: 0,
-    ease: 'ease-in',
+    ease: 'ease-out',
     duration: 1
   }, '2.5')
 })

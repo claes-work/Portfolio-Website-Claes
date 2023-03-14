@@ -12,10 +12,10 @@ import gsap from "gsap";
 export function charFloatUp(timeline: GSAPTimeline, chars: HTMLElement[], charDuration: number = 0.8): GSAPTimeline {
     // Animation config for each char
     const charConfig = {
-        duration: 0.45,
+        duration: 0.55,
         y: 150,
         autoAlpha: 0,
-        ease: 'power3.out',
+        ease: 'Circ.easeOut',
         stagger: 1.5
     }
 
