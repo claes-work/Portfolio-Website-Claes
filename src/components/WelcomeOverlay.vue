@@ -66,7 +66,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 #welcome-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -75,15 +75,18 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   z-index: 10000;
+  pointer-events: none;
 
   h3 {
-    color: #FFFFFF;
-    font-size: 60px;
     z-index: 10010;
 
     span {
       display: block;
       overflow: hidden;
+      color: #FFFFFF;
+      font-size: 26px;
+      font-weight: 900;
+      font-family: Varino, sans-serif;
     }
 
     .wrapper {
@@ -109,5 +112,29 @@ onMounted(() => {
 
 #welcome-container .overlay.hide {
   display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  #welcome-container h3 span {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  #welcome-container h3 span {
+    font-size: 60px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #welcome-container h3 span {
+    font-size: 70px;
+  }
+}
+
+@media only screen and (min-width: 1360px) {
+  #welcome-container h3 span {
+    font-size: 80px;
+  }
 }
 </style>
