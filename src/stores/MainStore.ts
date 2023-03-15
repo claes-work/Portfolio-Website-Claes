@@ -46,19 +46,23 @@ export const useMainStore = defineStore('mainStore', () => {
 
   // Set the section offset for each section that is passed
   async function setSectionOffset(el: any, section: string) {
-    await new Promise(resolve => setTimeout(
+    await new Promise(() => setTimeout(
         () => {
           if (el && el.$el) {
             // @ts-ignore
             offsets[section] = el.$el.offsetTop
           }
-        }, 1600)
+        }, 700)
     );
   }
 
   // Check viewport with on resize
-  window.onscroll = (): void => {
-    checkNavThemeOnScroll(themeClass, offsets)
+  window.onscroll = async (): Promise<void> => {
+    await new Promise(() => setTimeout(
+        () => {
+          checkNavThemeOnScroll(themeClass, offsets)
+        }, 700)
+    );
   }
 
   return {
