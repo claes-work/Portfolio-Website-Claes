@@ -43,7 +43,7 @@ router.beforeResolve(async () => {
   mainStore.showPageTransition = true
 
   await new Promise(resolve => setTimeout(
-      resolve, 1600 / 2)
+      resolve, 700)
   );
 })
 
@@ -60,7 +60,7 @@ router.afterEach(() => {
 
   setTimeout(() => {
     mainStore.showPageTransition = false
-  },  1600 / 2)
+  },  680)
 })
 
 export default router

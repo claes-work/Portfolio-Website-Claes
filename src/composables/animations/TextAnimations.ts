@@ -89,7 +89,7 @@ export function wordFloatUp(
     headingArray.forEach((array: HTMLElement[], arrayIndex: number) => {
         // Iterate each char and add the animation to the gsap timeline
         array.forEach((el: HTMLElement) => {
-            timeline.from(el, charConfig, 0.6 + (wait * arrayIndex))
+            timeline.from(el, charConfig, 0.4 + (wait * arrayIndex))
         })
     })
 
