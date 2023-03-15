@@ -23,7 +23,7 @@ let timeline: GSAPTimeline | null = null
 const mockup:      Ref<HTMLElement | null> = ref(null)
 const mockupTower: Ref<HTMLElement | null> = ref(null)
 
-const button:      Ref<HTMLElement | null> = ref(null)
+
 
 onMounted( () => {
   timeline = gsap.timeline();
@@ -40,12 +40,6 @@ onMounted( () => {
     ease: 'Power1.easeOut'
   }, 0.4)
 
-
-  timeline.from(button.value, {
-    duration: 1.6,
-    x: 150,
-    ease: 'Circ.easeOut'
-  }, 0.1)
 })
 
 /**************************** Template Properties ****************************/
