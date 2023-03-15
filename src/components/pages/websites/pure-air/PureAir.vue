@@ -27,20 +27,18 @@ const button:      Ref<HTMLElement | null> = ref(null)
 
 onMounted(async () => {
   timeline = gsap.timeline();
-  if (mockup.value) {
-    timeline.from(mockup.value, {
-      duration: 1.2,
-      x: -150,
-      ease: 'Power1.easeOut'
-    }, 0.4)
-  }
-  if (mockupTower.value) {
-    timeline.from(mockupTower.value, {
-      duration: 1,
-      x: -50,
-      ease: 'Power1.easeOut'
-    }, 0.4)
-  }
+
+  timeline.from(mockup.value, {
+    duration: 1.2,
+    x: -150,
+    ease: 'Power1.easeOut'
+  }, 0.4)
+
+  timeline.from(mockupTower.value, {
+    duration: 1,
+    x: -50,
+    ease: 'Power1.easeOut'
+  }, 0.4)
 
   timeline.from(text.value, {
     duration: 1.4,
@@ -133,7 +131,28 @@ const mockupIMacAlt: ComputedRef<string> = computed(() => {
         </div>
       </div>
 
-
+      <picture>
+        <source media="(min-width: 768px)" :srcset="mockupIMacSrcset.mediumSrc">
+        <source media="(min-width: 1280px)" :srcset="mockupIMacSrcset.originalSrc">
+        <img
+            ref="mockup"
+            v-if="mockupIMacSrcset"
+            class="pure-air-image"
+            :src="mockupIMacSrcset.smallSrc"
+            :alt="mockupIMacAlt"
+        />
+      </picture>
+      <picture>
+        <source media="(min-width: 768px)" :srcset="mockupTowerSrcset.mediumSrc">
+        <source media="(min-width: 1280px)" :srcset="mockupTowerSrcset.originalSrc">
+        <img
+            ref="mockupTower"
+            v-if="mockupTowerSrcset"
+            class="pure-air-image tower"
+            :src="mockupTowerSrcset.smallSrc"
+            :alt="mockupTowerAlt"
+        />
+      </picture>
     </div>
   </section>
 </template>

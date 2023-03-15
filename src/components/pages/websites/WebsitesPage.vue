@@ -12,10 +12,7 @@ const strapiStore = useStrapiDataStore()
 
 <template>
   <div id="website-page">
-    <PureAir
-        :ref="async (el) => await  mainStore.setSectionOffset(el, 'pureAir')"
-        :data="strapiStore.websiteData.pureAir"
-    />
+
     <ThreeGridBanner
         :style="{ backgroundColor: '#1E90FF' }"
         :data="strapiStore.websiteData.pureAir.threeGridBanner"
