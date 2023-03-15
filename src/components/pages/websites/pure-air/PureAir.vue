@@ -25,10 +25,10 @@ const mockupTower: Ref<HTMLElement | null> = ref(null)
 const text:        Ref<HTMLElement | null> = ref(null)
 const button:      Ref<HTMLElement | null> = ref(null)
 
-onMounted(async () => {
+onMounted( () => {
   timeline = gsap.timeline();
 
-  /*timeline.from(mockup.value, {
+  timeline.from(mockup.value, {
     duration: 1.2,
     x: -150,
     ease: 'Power1.easeOut'
@@ -50,7 +50,7 @@ onMounted(async () => {
     duration: 1.6,
     x: 150,
     ease: 'Circ.easeOut'
-  }, 0.1)*/
+  }, 0.1)
 })
 
 /**************************** Template Properties ****************************/
