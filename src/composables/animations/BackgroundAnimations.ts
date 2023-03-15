@@ -1,7 +1,7 @@
 import gsap from "gsap";
 
 /**
- * Char float up animation
+ *  Blinder down animation
  *
  * @param timeline
  * @param blinders
