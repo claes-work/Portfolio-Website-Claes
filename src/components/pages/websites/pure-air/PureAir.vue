@@ -28,29 +28,6 @@ const button:      Ref<HTMLElement | null> = ref(null)
 onMounted( () => {
   timeline = gsap.timeline();
 
-  timeline.from(mockup.value, {
-    duration: 1.2,
-    x: -150,
-    ease: 'Power1.easeOut'
-  }, 0.4)
-
-  timeline.from(mockupTower.value, {
-    duration: 1,
-    x: -50,
-    ease: 'Power1.easeOut'
-  }, 0.4)
-
-  timeline.from(text.value, {
-    duration: 1.4,
-    x: 150,
-    ease: 'Circ.easeOut'
-  }, 0)
-
-  timeline.from(button.value, {
-    duration: 1.6,
-    x: 150,
-    ease: 'Circ.easeOut'
-  }, 0.1)
 })
 
 /**************************** Template Properties ****************************/
