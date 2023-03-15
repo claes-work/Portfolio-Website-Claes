@@ -35,13 +35,13 @@ onMounted(() => {
     x: -75,
     opacity: 0,
     duration: 0.8,
-    ease: 'power1.out'
+    ease: 'Power1.easeOut'
   }, '0')
   timeline.from(text.value, {
     x: 75,
     opacity: 0,
     duration: 0.8,
-    ease: 'power1.out'
+    ease: 'Power1.easeOut'
   }, '0')
 })
 </script>
