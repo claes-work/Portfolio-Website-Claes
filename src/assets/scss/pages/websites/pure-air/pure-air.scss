@@ -133,23 +133,20 @@ $pure-air-main-color: #1E90FF;
       column-gap: 50px;
 
       .text-wrapper {
+
         max-width: 450px;
         margin-bottom: 40px;
       }
 
       .pure-air-image {
-        bottom: 5%;
+        top: 50%;
+        transform: translateY(-45%);
+        bottom: unset;
         width: 65%;
         right: 68%;
         z-index: 15;
       }
     }
-  }
-}
-
-@media only screen and (min-width: 820px) {
-  #pure-air .container .pure-air-image {
-    bottom: 4%;
   }
 }
 
@@ -177,8 +174,8 @@ $pure-air-main-color: #1E90FF;
       }
 
       .pure-air-image {
+        top: 50%;
         transform: translateY(-50%);
-        bottom: 12%;
         width: 45%;
         right: 60%;
         z-index: 15;
@@ -204,10 +201,6 @@ $pure-air-main-color: #1E90FF;
 
     .container {
       padding: 45px 70px 0 0;
-
-      .pure-air-image {
-        bottom: 10%;
-      }
     }
   }
 }
@@ -232,8 +225,8 @@ $pure-air-main-color: #1E90FF;
       .pure-air-image {
         width: 47%;
         max-width: 600px;
+        top: 52%;
         left: 0;
-        bottom: 0;
       }
     }
 
