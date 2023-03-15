@@ -17,10 +17,38 @@ const props = defineProps({
   }
 })
 
-const mockup: Ref<HTMLElement | null> = ref(null)
+const mockup:  Ref<HTMLElement | null> = ref(null)
+const logo:    Ref<HTMLElement | null> = ref(null)
+const text:    Ref<HTMLElement | null> = ref(null)
+const button1: Ref<HTMLElement | null> = ref(null)
+const button2: Ref<HTMLElement | null> = ref(null)
 
 onMounted(() => {
   gsap.from(mockup.value, {
+    duration: 0.8,
+    x: 150,
+    ease: 'Circ.easeOut'
+  })
+
+  gsap.from(logo.value, {
+    duration: 1.2,
+    scale: 0.6,
+    rotate: -25,
+    ease: 'Power1.easeOut'
+  })
+
+  gsap.from(text.value, {
+    duration: 0.8,
+    x: -150,
+    ease: 'Circ.easeOut'
+  })
+
+  gsap.from(button1.value, {
+    duration: 0.8,
+    x: -150,
+    ease: 'Circ.easeOut'
+  })
+  gsap.from(button2.value, {
     duration: 0.8,
     x: 150,
     ease: 'Circ.easeOut'
@@ -65,9 +93,9 @@ const markdown: ComputedRef<string> = computed(() => {
   <section id="rebalancing-tool">
     <div class="container">
       <div class="text-wrapper">
-        <div class="logo" :style="{ backgroundImage: 'url('+logoSrc+')' }"></div>
+        <div class="logo" :style="{ backgroundImage: 'url('+logoSrc+')' }" ref="logo"></div>
         <AnimatedHeading :heading="data.heading" />
-        <p v-html="markdown"></p>
+        <p v-html="markdown" ref="text"></p>
         <div class="button-wrapper">
           <a
               v-for="(button, index)  in data.button"
