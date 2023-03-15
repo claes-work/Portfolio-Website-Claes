@@ -36,13 +36,17 @@ onMounted(() => {
   timeline = charFloatUp(timeline, charElements.value)
   timeline = wordFloatDown(timeline, charElements.value)
   timeline = blinderTransition(timeline, blinderElements.value)
-})
 
+  // Disable welcome container element after animation
+  timeline.to(overlay.value, {
+     opacity: 0,
+     display: 'none'
+  }, 3.5 + (blinderElements.value.length / 14))
+})
 </script>
 
 <template>
   <div id="welcome-container" ref="overlay">
-<!--    <BlurBubble />-->
     <div class="overlay" :class="{ hide : mainStore.hasLoaded }"></div>
     <h3>
       <span class="wrapper">
