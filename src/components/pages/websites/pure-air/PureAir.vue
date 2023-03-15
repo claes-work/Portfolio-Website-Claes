@@ -115,7 +115,7 @@ const mockupIMacAlt: ComputedRef<string> = computed(() => {
             :src="labelSrc"
             :alt="labelAlt"
         />
-        <AnimatedHeading :heading="pureAirData.heading" />
+
         <p v-html="markdown" ref="text"></p>
         <div class="button-wrapper">
           <a
