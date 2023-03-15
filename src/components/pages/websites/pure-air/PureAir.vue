@@ -20,9 +20,10 @@ const props = defineProps({
 // GSAP timeline
 let timeline: GSAPTimeline | null = null
 
-const mockup:      Ref<HTMLElement | null> = ref(null)
-const mockupTower: Ref<HTMLElement | null> = ref(null)
-const text:        Ref<HTMLElement | null> = ref(null)
+const mockup:        Ref<HTMLElement | null> = ref(null)
+const mockupTower:   Ref<HTMLElement | null> = ref(null)
+const text:          Ref<HTMLElement | null> = ref(null)
+const websiteButton: Ref<HTMLElement | null> = ref(null)
 
 onMounted( () => {
   timeline = gsap.timeline();
@@ -45,6 +46,11 @@ onMounted( () => {
     ease: 'Circ.easeOut'
   }, 0)
 
+  timeline.from(websiteButton.value, {
+    duration: 1.6,
+    x: 150,
+    ease: 'Circ.easeOut'
+  }, 0.1)
 })
 
 /**************************** Template Properties ****************************/
@@ -113,12 +119,12 @@ const mockupIMacAlt: ComputedRef<string> = computed(() => {
         <p v-html="markdown" ref="text"></p>
         <div class="button-wrapper">
           <a
+              ref="websiteButton"
               v-for="(button, index) in pureAirData.buttons"
               :key="button.id"
               class="button"
               :class="index === 0 ? 'primary' : 'secondary'"
               :href="button.link"
-              ref="button"
               :title="button.titleAttr"
               :target="button.openInNewTab ? '_blank' : ''"
           >{{ button.text }}</a>
