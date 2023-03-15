@@ -66,4 +66,12 @@ h2 {
     display: flex;
   }
 }
+
+#hero-section h2 .wrapper span {
+  color: #FFFFFF;
+}
+
+#hero-section h2 .wrapper:last-child span {
+  color: $main-color;
+}
 </style>

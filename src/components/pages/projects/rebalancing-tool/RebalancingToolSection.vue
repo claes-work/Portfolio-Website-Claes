@@ -50,16 +50,16 @@ onMounted(() => {
   }, 0)
 
   timeline.from(button1.value, {
-    duration: 1.4,
+    duration: 1.6,
     x: -150,
     ease: 'Circ.easeOut'
-  }, 0)
+  }, 0.1)
 
   timeline.from(button2.value, {
-    duration: 1.4,
+    duration: 1.6,
     x: 150,
     ease: 'Circ.easeOut'
-  }, 0)
+  }, 0.1)
 })
 
 /**************************** Template Properties ****************************/
