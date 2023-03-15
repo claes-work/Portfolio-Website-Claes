@@ -31,7 +31,7 @@ onMounted(async () => {
   timeline.from(mockup.value, {
     duration: 1.2,
     x: -150,
-    ease: 'Circ.easeOut'
+    ease: 'Power1.easeOut'
   }, 0.4)
 
   timeline.from(mockupTower.value, {
