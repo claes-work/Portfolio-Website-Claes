@@ -2,5 +2,5 @@ export interface IColumn {
     id: number
     numberTitle: string
     description: string
-    stats: string
+    stats: number
 }

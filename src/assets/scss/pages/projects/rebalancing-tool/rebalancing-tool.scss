@@ -21,8 +21,23 @@
       }
 
       h2 {
-        color: $primary-text-color;
         margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+
+        span {
+          color: $primary-text-color;
+          display: block;
+          overflow: hidden;
+        }
+
+        .wrapper {
+          display: flex;
+        }
+
+        .wrapper:first-child span {
+          color: #4cd9af;
+        }
       }
 
       p {
@@ -74,17 +89,24 @@
     .macbook-image-wrapper {
       position: relative;
 
-      .macbook-image, {
+      .mockup-animation-wrapper {
+        position: relative;
         width: 100%;
-      }
-
-      .player-container {
-        position: absolute;
-        top: 3%;
-        left: 11%;
-        width: 78%;
-        height: 84%;
+        height: 100%;
         z-index: 10;
+
+        .macbook-image, {
+          width: 100%;
+        }
+
+        .player-container {
+          position: absolute;
+          top: 3%;
+          left: 11%;
+          width: 78%;
+          height: 84%;
+          z-index: 10;
+        }
       }
     }
   }
@@ -142,25 +164,35 @@
       .macbook-image-wrapper {
         position: unset;
 
-        .macbook-image {
-          position: absolute;
-          left: 45.5%;
-          bottom: 0;
-          width: 700px;
-          z-index: 10;
-        }
+        .mockup-animation-wrapper {
+          bottom: -50px;
 
-        .player-container {
-          position: absolute;
-          left: 53.5%;
-          top: unset;
-          bottom: 10.5%;
-          z-index: 10;
-          width: 550px;
-          height: 355px;
+          .macbook-image {
+            position: absolute;
+            left: 45.5%;
+            bottom: 0;
+            width: 700px;
+            z-index: 10;
+          }
+
+          .player-container {
+            position: absolute;
+            left: 53.5%;
+            top: unset;
+            bottom: 55px;
+            z-index: 10;
+            width: 550px;
+            height: 355px;
+          }
         }
       }
     }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #rebalancing-tool .container .macbook-image-wrapper .mockup-animation-wrapper .player-container {
+    left: 52.8%;
   }
 }
 
@@ -171,17 +203,24 @@
       width: 500px;
     }
 
-    .macbook-image-wrapper .player-container {
-      left: 52.5%;
+    .macbook-image-wrapper .mockup-animation-wrapper .player-container {
+      left: 53%;
     }
   }
 }
 
-@media only screen and (min-width: 1140px) {
-  #rebalancing-tool .container .macbook-image-wrapper .player-container {
-    left: 51.8%;
+@media only screen and (min-width: 1120px) {
+  #rebalancing-tool .container .macbook-image-wrapper .mockup-animation-wrapper .player-container {
+    left: 52.2%;
   }
 }
+
+@media only screen and (min-width: 1160px) {
+  #rebalancing-tool .container .macbook-image-wrapper .mockup-animation-wrapper .player-container {
+    left: 51.5%;
+  }
+}
+
 
 @media only screen and (min-width: 1280px) {
   #rebalancing-tool {
@@ -190,7 +229,7 @@
     .container {
       padding: 50px;
 
-      .macbook-image-wrapper {
+      .macbook-image-wrapper .mockup-animation-wrapper {
 
         .macbook-image {
           bottom: -45px;
@@ -199,9 +238,9 @@
 
         .player-container {
           position: absolute;
-          left: 52%;
+          left: 52.48%;
           top: unset;
-          bottom: 3%;
+          bottom: 16px;
           z-index: 10;
           width: 608px;
           height: 395px;

@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-import type { PropType, ComputedRef } from "vue";
+import type { PropType, ComputedRef, Ref } from "vue";
 import type { IPureAir } from "@/models/websites/pure-air/IPureAir";
-import { computed, inject } from "vue";
+import {computed, inject, onMounted, ref} from "vue";
 import { marked } from "marked";
 import type { AllMediaSrcset } from "@/models/components/media/AllMediaSrcset";
 import { getAllMediaSrcset } from "@/composables/MediaProperties";
+import AnimatedHeading from "@/components/content-elements/AnimatedHeading.vue";
+import gsap from "gsap";
 
 const urlPrefix = inject('URL_PATH')
 
@@ -14,6 +16,44 @@ const props = defineProps({
     required: true
   }
 })
+
+// GSAP timeline
+let timeline: GSAPTimeline | null = null
+
+const mockup:      Ref<HTMLElement | null> = ref(null)
+const mockupTower: Ref<HTMLElement | null> = ref(null)
+const text:        Ref<HTMLElement | null> = ref(null)
+const button:      Ref<HTMLElement | null> = ref(null)
+
+onMounted(async () => {
+  timeline = gsap.timeline();
+
+  timeline.from(mockup.value, {
+    duration: 1.2,
+    x: -150,
+    ease: 'Power1.easeOut'
+  }, 0.4)
+
+  timeline.from(mockupTower.value, {
+    duration: 1,
+    x: -50,
+    ease: 'Power1.easeOut'
+  }, 0.4)
+
+  timeline.from(text.value, {
+    duration: 1.4,
+    x: 150,
+    ease: 'Circ.easeOut'
+  }, 0)
+
+  timeline.from(button.value, {
+    duration: 1.6,
+    x: 150,
+    ease: 'Circ.easeOut'
+  }, 0.1)
+})
+
+/**************************** Template Properties ****************************/
 
 const pureAirData: ComputedRef<IPureAir> = computed(() => {
   return props.data
@@ -75,8 +115,8 @@ const mockupIMacAlt: ComputedRef<string> = computed(() => {
             :src="labelSrc"
             :alt="labelAlt"
         />
-        <h2 v-html="pureAirData.heading"></h2>
-        <p v-html="markdown"></p>
+        <AnimatedHeading :heading="pureAirData.heading" />
+        <p v-html="markdown" ref="text"></p>
         <div class="button-wrapper">
           <a
               v-for="(button, index) in pureAirData.buttons"
@@ -84,6 +124,7 @@ const mockupIMacAlt: ComputedRef<string> = computed(() => {
               class="button"
               :class="index === 0 ? 'primary' : 'secondary'"
               :href="button.link"
+              ref="button"
               :title="button.titleAttr"
               :target="button.openInNewTab ? '_blank' : ''"
           >{{ button.text }}</a>
@@ -94,17 +135,18 @@ const mockupIMacAlt: ComputedRef<string> = computed(() => {
         <source media="(min-width: 768px)" :srcset="mockupIMacSrcset.mediumSrc">
         <source media="(min-width: 1280px)" :srcset="mockupIMacSrcset.originalSrc">
         <img
+            ref="mockup"
             v-if="mockupIMacSrcset"
             class="pure-air-image"
             :src="mockupIMacSrcset.smallSrc"
             :alt="mockupIMacAlt"
         />
       </picture>
-
       <picture>
         <source media="(min-width: 768px)" :srcset="mockupTowerSrcset.mediumSrc">
         <source media="(min-width: 1280px)" :srcset="mockupTowerSrcset.originalSrc">
         <img
+            ref="mockupTower"
             v-if="mockupTowerSrcset"
             class="pure-air-image tower"
             :src="mockupTowerSrcset.smallSrc"

@@ -17,10 +17,14 @@ $pure-air-main-color: #1E90FF;
       }
 
       h2 {
-        color: $primary-text-color;
         margin-bottom: 15px;
+        color: $primary-text-color;
 
-        span {
+        .wrapper span {
+          color: $primary-text-color;
+        }
+
+        .wrapper:last-child span {
           color: $pure-air-main-color;
         }
       }

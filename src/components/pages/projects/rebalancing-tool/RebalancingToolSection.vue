@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-import { computed, inject } from "vue";
+import {computed, inject, onMounted, ref} from "vue";
 import { marked } from 'marked';
-import type { PropType, ComputedRef } from "vue";
+import type { PropType, ComputedRef, Ref } from "vue";
 import type { IRebalancingTool } from "@/models/projects/rebalancing-tool/IRebalancingTool";
 import { getAllMediaSrcset } from "@/composables/MediaProperties";
 import type { AllMediaSrcset } from "@/models/components/media/AllMediaSrcset";
+import AnimatedHeading from "@/components/content-elements/AnimatedHeading.vue";
+import gsap from "gsap";
 
 const urlPrefix = inject('URL_PATH')
 
@@ -14,6 +16,53 @@ const props = defineProps({
     required: true
   }
 })
+
+// GSAP timeline
+let timeline: GSAPTimeline | null = null
+
+const mockup:  Ref<HTMLElement | null> = ref(null)
+const logo:    Ref<HTMLElement | null> = ref(null)
+const text:    Ref<HTMLElement | null> = ref(null)
+const button1: Ref<HTMLElement | null> = ref(null)
+const button2: Ref<HTMLElement | null> = ref(null)
+
+onMounted(() => {
+
+  timeline = gsap.timeline();
+
+  timeline.from(mockup.value, {
+    duration: 1.4,
+    x: 150,
+    ease: 'Circ.easeOut'
+  }, 0)
+
+  timeline.from(logo.value, {
+    duration: 1.4,
+    scale: 0.6,
+    rotate: -25,
+    ease: 'Power1.easeOut'
+  }, 0)
+
+  timeline.from(text.value, {
+    duration: 1.4,
+    x: -150,
+    ease: 'Circ.easeOut'
+  }, 0)
+
+  timeline.from(button1.value, {
+    duration: 1.6,
+    x: -150,
+    ease: 'Circ.easeOut'
+  }, 0.1)
+
+  timeline.from(button2.value, {
+    duration: 1.6,
+    x: 150,
+    ease: 'Circ.easeOut'
+  }, 0.1)
+})
+
+/**************************** Template Properties ****************************/
 
 // Ensure mockup src is never null and add url prefix to upload path
 const logoSrc: ComputedRef<string> = computed(() => {
@@ -51,15 +100,16 @@ const markdown: ComputedRef<string> = computed(() => {
   <section id="rebalancing-tool">
     <div class="container">
       <div class="text-wrapper">
-        <div class="logo" :style="{ backgroundImage: 'url('+logoSrc+')' }"></div>
-        <h2 v-html="data.heading"></h2>
-        <p v-html="markdown"></p>
+        <div class="logo" :style="{ backgroundImage: 'url('+logoSrc+')' }" ref="logo"></div>
+        <AnimatedHeading :heading="data.heading" />
+        <p v-html="markdown" ref="text"></p>
         <div class="button-wrapper">
           <a
               v-for="(button, index)  in data.button"
               :key="button.id"
               class="button"
               :class="index === 0 ? 'primary' : 'secondary'"
+              :ref="index === 0 ? 'button1' : 'button2'"
               :href="button.link"
               :title="button.titleAttr"
               :target="button.openInNewTab ? '_blank' : ''"
@@ -67,19 +117,20 @@ const markdown: ComputedRef<string> = computed(() => {
         </div>
       </div>
       <div class="macbook-image-wrapper">
-        <picture>
-          <source media="(min-width: 768px)" :srcset="mockupSrcset.mediumSrc">
-          <source media="(min-width: 1280px)" :srcset="mockupSrcset.originalSrc">
-          <img
-              v-if="mockupSrcset"
-              class="macbook-image"
-              :src="mockupSrcset.smallSrc"
-              :alt="mockupAlt"
-          />
-        </picture>
-
-        <div class="player-container" v-if="videoSrc">
-          <Vue3VideoPlayer ref="player" :src="videoSrc" />
+        <div ref="mockup" class="mockup-animation-wrapper">
+          <picture>
+            <source media="(min-width: 768px)" :srcset="mockupSrcset.mediumSrc">
+            <source media="(min-width: 1280px)" :srcset="mockupSrcset.originalSrc">
+            <img
+                v-if="mockupSrcset"
+                class="macbook-image"
+                :src="mockupSrcset.smallSrc"
+                :alt="mockupAlt"
+            />
+          </picture>
+          <div class="player-container" v-if="videoSrc">
+            <Vue3VideoPlayer ref="player" :src="videoSrc" />
+          </div>
         </div>
       </div>
     </div>

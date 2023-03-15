@@ -1,4 +1,4 @@
-$pure-air-main-color: #0E243F;
+$diewell-main-color: #0E243F;
 
 #diewell-website {
   padding: 0 15px 25px;
@@ -17,11 +17,15 @@ $pure-air-main-color: #0E243F;
       }
 
       h2 {
-        color: $primary-text-color;
         margin-bottom: 15px;
+        color: $primary-text-color;
 
-        span {
-          color: #122944;
+        .wrapper span {
+          color: $primary-text-color;
+        }
+
+        .wrapper:first-child span {
+          color: $diewell-main-color;
         }
       }
 
@@ -50,7 +54,7 @@ $pure-air-main-color: #0E243F;
         }
 
         .button.primary {
-          background-color: $pure-air-main-color;
+          background-color: $diewell-main-color;
           color: $default-text-color;
         }
 
@@ -65,7 +69,7 @@ $pure-air-main-color: #0E243F;
         }
 
         .button.secondary:hover {
-          background-color: $pure-air-main-color;
+          background-color: $diewell-main-color;
           color: $default-text-color;
         }
       }

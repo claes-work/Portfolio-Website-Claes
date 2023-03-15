@@ -38,6 +38,17 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
   // About page data from strapi api
   const aboutData: Ref<IAboutPage> = ref({} as IAboutPage)
 
+  async function fetchAllStrapiData() {
+    navBarData.value            = await FetchAppSections.fetchNavbarData()
+    projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection()
+    projectData.suggestApp      = await FetchAppSections.fetchSuggestAppSection()
+    websiteData.pureAir         = await FetchAppSections.fetchPureAirSection()
+    websiteData.diewellWebsite  = await FetchAppSections.fetchDiewellWebsiteSection()
+    websiteData.broadyPictures  = await FetchAppSections.fetchBroadyPicturesSection()
+    aboutData.value             = await FetchAppSections.fetchAboutPage()
+    footerData.value            = await FetchAppSections.fetchFooterData()
+  }
+
   /************** Localization **************/
 
   const activeLocale: Ref<AllLocalesType> = ref(AllLocales.DE)
@@ -75,5 +86,14 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
     }
   }
 
-  return { navBarData, footerData, projectData, websiteData, aboutData, activeLocale, changeLocale }
+  return {
+    fetchAllStrapiData,
+    navBarData,
+    footerData,
+    projectData,
+    websiteData,
+    aboutData,
+    changeLocale,
+    activeLocale
+  }
 })

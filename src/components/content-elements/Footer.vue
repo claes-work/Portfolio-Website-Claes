@@ -1,19 +1,12 @@
 <script lang="ts" setup>
-import { computed, inject, onMounted } from "vue";
+import { computed, inject } from "vue";
 import type { ComputedRef } from "vue";
-import FetchAppSections from "@/services/FetchAppSections";
 import { useStrapiDataStore } from "@/stores/StrapiDataStore";
 import type { IFooter } from "@/models/components/footer/IFooter";
-import type {IFooterLink} from "@/models/components/footer/IFooterLink";
 
 const urlPrefix = inject('URL_PATH')
 
 const strapiStore = useStrapiDataStore()
-
-// Fetch strapi data on mounted
-onMounted(async () => {
-  strapiStore.footerData = await FetchAppSections.fetchFooterData()
-})
 
 // get the footer data from the store
 const footerData:ComputedRef<IFooter> = computed(() => {
