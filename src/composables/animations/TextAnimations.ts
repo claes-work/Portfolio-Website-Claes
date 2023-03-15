@@ -1,6 +1,4 @@
 import gsap from "gsap";
-import type { FloatDirection as FloatDirectionType } from "@/models/animations/FloatDirection";
-import { FloatDirection } from "@/models/animations/FloatDirection";
 
 /**
  * Char float up animation
@@ -91,7 +89,7 @@ export function wordFloatUp(
     headingArray.forEach((array: HTMLElement[], arrayIndex: number) => {
         // Iterate each char and add the animation to the gsap timeline
         array.forEach((el: HTMLElement) => {
-            timeline.from(el, charConfig, (wait * arrayIndex))
+            timeline.from(el, charConfig, 0.6 + (wait * arrayIndex))
         })
     })
 
