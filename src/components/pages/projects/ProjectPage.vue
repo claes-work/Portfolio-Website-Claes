@@ -13,7 +13,7 @@ const strapiStore = useStrapiDataStore()
 <template>
   <div id="project-page">
     <RebalancingToolSection
-        :ref="(el) => mainStore.setSectionOffset(el, 'rebalancingTool')"
+        :ref="async (el) => await mainStore.setSectionOffset(el, 'rebalancingTool')"
         :data="strapiStore.projectData.rebalancingTool"
     />
     <TabSection
@@ -22,7 +22,7 @@ const strapiStore = useStrapiDataStore()
 
     />
     <SuggestSection
-        :ref="(el) => mainStore.setSectionOffset(el, 'suggestApp')"
+        :ref="async (el) => await mainStore.setSectionOffset(el, 'suggestApp')"
         :data="strapiStore.projectData.suggestApp"
     />
     <TabSection

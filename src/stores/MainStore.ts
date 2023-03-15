@@ -45,11 +45,15 @@ export const useMainStore = defineStore('mainStore', () => {
   })
 
   // Set the section offset for each section that is passed
-  function setSectionOffset(el: any, section: string) {
-    if (el && el.$el) {
-      // @ts-ignore
-      offsets[section] = el.$el.offsetTop
-    }
+  async function setSectionOffset(el: any, section: string) {
+    await new Promise(resolve => setTimeout(
+        () => {
+          if (el && el.$el) {
+            // @ts-ignore
+            offsets[section] = el.$el.offsetTop
+          }
+        }, 1600)
+    );
   }
 
   // Check viewport with on resize

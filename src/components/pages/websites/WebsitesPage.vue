@@ -13,7 +13,7 @@ const strapiStore = useStrapiDataStore()
 <template>
   <div id="website-page">
     <PureAir
-        :ref="(el) => mainStore.setSectionOffset(el, 'pureAir')"
+        :ref="async (el) => await  mainStore.setSectionOffset(el, 'pureAir')"
         :data="strapiStore.websiteData.pureAir"
     />
     <ThreeGridBanner
@@ -21,7 +21,7 @@ const strapiStore = useStrapiDataStore()
         :data="strapiStore.websiteData.pureAir.threeGridBanner"
     />
     <DiewellWebsite
-        :ref="(el) => mainStore.setSectionOffset(el, 'diewellWebsite')"
+        :ref="async (el) => await mainStore.setSectionOffset(el, 'diewellWebsite')"
         :data="strapiStore.websiteData.diewellWebsite"
     />
     <BroadyPictures
