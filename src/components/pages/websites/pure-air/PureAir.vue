@@ -20,6 +20,11 @@ const props = defineProps({
 // GSAP timeline
 let timeline: GSAPTimeline | null = null
 
+const mockup:      Ref<HTMLElement | null> = ref(null)
+const mockupTower: Ref<HTMLElement | null> = ref(null)
+const text:        Ref<HTMLElement | null> = ref(null)
+const button:      Ref<HTMLElement | null> = ref(null)
+
 onMounted( () => {
   timeline = gsap.timeline();
 })
