@@ -5,8 +5,6 @@ import { useStrapiDataStore } from "@/stores/StrapiDataStore";
 import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
 import { AllLocales } from "@/models/AllLocales";
 import { useMainStore } from "@/stores/MainStore";
-import { onMounted} from "vue";
-import FetchAppSections from "@/services/FetchAppSections";
 import IconLanguage from "@/components/icons/IconLanguage.vue";
 import router from "@/router";
 
@@ -17,11 +15,6 @@ const strapiStore = useStrapiDataStore()
 function checkLocale(locale: AllLocalesType) {
   return locale === strapiStore.activeLocale
 }
-
-// Fetch strapi data on mounted
-onMounted(async () => {
-  strapiStore.navBarData = await FetchAppSections.fetchNavbarData()
-})
 </script>
 
 <template>
@@ -65,7 +58,7 @@ onMounted(async () => {
           :key="link.id"
           v-show="link.reference"
          >
-           <RouterLink :to="{ name: link.reference }" >{{ link.title }}</RouterLink>
+           <RouterLink :to="{ name: link.reference }">{{ link.title }}</RouterLink>
          </li>
 
         <li>

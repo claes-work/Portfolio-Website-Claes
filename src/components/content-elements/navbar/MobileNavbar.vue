@@ -1,12 +1,11 @@
 <script lang="ts" setup>
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
 import type { Ref } from "vue";
 import ArrowDownIcon from "@/components/icons/ArrowDownIcon.vue";
 import { useMainStore } from "@/stores/MainStore";
 import {useStrapiDataStore} from "@/stores/StrapiDataStore";
 import { AllLocales } from "@/models/AllLocales";
 import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
-import FetchAppSections from "@/services/FetchAppSections";
 import IconLanguage from "@/components/icons/IconLanguage.vue";
 import router from "@/router";
 
@@ -19,11 +18,6 @@ const activeSubNav: Ref<boolean> = ref(false)
 function checkLocale(locale: AllLocalesType) {
   return locale === strapiStore.activeLocale
 }
-
-// Fetch strapi data on mounted
-onMounted(async () => {
-  strapiStore.navBarData = await FetchAppSections.fetchNavbarData()
-})
 </script>
 
 <template>
