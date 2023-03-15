@@ -22,8 +22,7 @@ let timeline: GSAPTimeline | null = null
 
 const mockup:      Ref<HTMLElement | null> = ref(null)
 const mockupTower: Ref<HTMLElement | null> = ref(null)
-
-
+const text:        Ref<HTMLElement | null> = ref(null)
 
 onMounted( () => {
   timeline = gsap.timeline();
@@ -39,6 +38,12 @@ onMounted( () => {
     x: -50,
     ease: 'Power1.easeOut'
   }, 0.4)
+
+  timeline.from(text.value, {
+    duration: 1.4,
+    x: 150,
+    ease: 'Circ.easeOut'
+  }, 0)
 
 })
 
