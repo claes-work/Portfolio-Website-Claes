@@ -20,29 +20,31 @@ const date: Ref<HTMLElement | null> = ref(null)
 const text: Ref<HTMLElement | null> = ref(null)
 
 // Register animations on mount
-onMounted(() => {
-  // Timeline config itself
-  timeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: row.value,
-      start: 'top 150',
-      toggleActions: 'play none none reverse',
-    }
-  });
+onMounted(async () => {
+  await new Promise(resolve => setTimeout(() => {
+    // Timeline config itself
+    timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: row.value,
+        start: 'top 480',
+        toggleActions: 'play none none reverse',
+      }
+    });
 
-  // Timeline tweens
-  timeline.from(date.value, {
-    x: -75,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'Power1.easeOut'
-  }, '0')
-  timeline.from(text.value, {
-    x: 75,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'Power1.easeOut'
-  }, '0')
+    // Timeline tweens
+    timeline.from(date.value, {
+      x: -75,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'Power1.easeOut'
+    }, '0')
+    timeline.from(text.value, {
+      x: 75,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'Power1.easeOut'
+    }, '0')
+  }, 700));
 })
 </script>
 
