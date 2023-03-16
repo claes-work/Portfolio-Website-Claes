@@ -29,6 +29,8 @@ const headingArray: ComputedRef<string[]> = computed(() => {
   }
   return ['']
 })
+
+let space: string = '<div style="opacity:0;width:8px;">.</div>'
 </script>
 
 
@@ -43,7 +45,8 @@ const headingArray: ComputedRef<string[]> = computed(() => {
           v-for="(char, charIndex) in headingString.split('')"
           :key="charIndex"
           :ref="(el) => charElements[arrayIndex].push(el)"
-      >{{ char }}</span>
+          v-html="(char === '#') ? space : char"
+      ></span>
     </span>
   </h2>
 </template>
