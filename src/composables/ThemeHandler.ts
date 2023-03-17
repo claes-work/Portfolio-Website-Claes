@@ -18,7 +18,7 @@ export function checkNavThemeOnScroll(themeClass: Ref<ThemeColorClassesType>, of
 
     // project page theme color set
     if (
-        routerPath === '/'
+        routerPath === '/projects'
         && window.scrollY > offsets.rebalancingTool
         && window.scrollY < (offsets.suggestApp - 200)
     ) {
@@ -26,7 +26,7 @@ export function checkNavThemeOnScroll(themeClass: Ref<ThemeColorClassesType>, of
     }
 
     if (
-        routerPath === '/'
+        routerPath === '/projects'
         && window.scrollY > (offsets.suggestApp - 200)
     ) {
         themeClass.value = ThemeColorClasses.SUGGEST_APP

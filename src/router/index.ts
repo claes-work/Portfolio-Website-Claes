@@ -5,13 +5,17 @@ import AboutPage from '@/components/pages/about/AboutPage.vue'
 import BlogPage from "@/components/pages/blog/BlogPage.vue";
 import {useMainStore} from "@/stores/MainStore";
 import {checkNavThemeColor} from "@/composables/ThemeHandler";
-import {inject} from "vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      name: 'about',
+      component: AboutPage
+    },
+    {
+      path: '/projects',
       name: 'projects',
       component: ProjectPage
     },
@@ -19,11 +23,6 @@ const router = createRouter({
       path: '/websites',
       name: 'websites',
       component: WebsitesPage
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: AboutPage
     },
     {
       path: '/blog',
