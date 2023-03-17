@@ -1,16 +1,28 @@
-.tab-section.suggest-app .project-files .file-wrapper ul li {
-  a:hover {
-    color: #FB893D;
+.tab-section.suggest-app .project-files {
+  .file-wrapper ul li {
+    a:hover {
+      color: #FB893D;
+    }
+    svg {
+      rect {
+        fill: #3b2e26;
+      }
+      path {
+        fill:  #FB893D;
+      }
+    }
   }
-  svg {
-    rect {
-      fill: #3b2e26;
-    }
-    path {
-      fill:  #FB893D;
-    }
+
+  .file-wrapper::before {
+    border: 4px solid #FB893D;
+    box-shadow:
+      inset 0 0 0.5em 0 #FB893D,
+      0 0 0.5em 0 #FB893D;
   }
 }
+
+
+
 
 .project-files {
   position: relative;
@@ -123,12 +135,30 @@
 
 @media only screen and (min-width: 1280px) {
   .project-files {
+    position: relative;
     margin: 25px auto;
-    column-gap: 25px;
+    column-gap: 45px;
+    z-index: 5;
 
-      .file-wrapper {
-        width: 20%;
-        padding: 30px 18px;
+    .file-wrapper {
+      position: relative;
+      width: 20%;
+      padding: 30px 18px;
+    }
+
+    .file-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 95%;
+      height: 95%;
+      z-index: -2;
+      border-radius: 6px;
+      border: 4px solid $main-color;
+      box-shadow:
+          inset 0 0 0.5em 0 $main-color,
+          0 0 0.5em 0 $main-color;
     }
   }
 }
