@@ -52,22 +52,10 @@ const mockupIMacAlt: ComputedRef<string> = computed(() => {
       >{{ button.text }}</a>
 
       <img
-          v-if="mockupIMacSrcset"
           class="personal-tech-stack-image"
-          src="src/assets/images/Personal_Tech_Stack.png"
+          src="@/assets/images/Personal_Tech_Stack.png"
           alt="Personal Tech Stack Image"
       />
-
-<!--      <picture>
-        <source media="(min-width: 768px)" :srcset="mockupIMacSrcset.mediumSrc">
-        <source media="(min-width: 1280px)" :srcset="mockupIMacSrcset.originalSrc">
-        <img
-            v-if="mockupIMacSrcset"
-            class="personal-tech-stack-image"
-            :src="mockupIMacSrcset.originalSrc"
-            :alt="mockupIMacAlt"
-        />
-      </picture>-->
     </div>
   </section>
 </template>
