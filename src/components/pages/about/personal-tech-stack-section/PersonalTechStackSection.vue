@@ -50,16 +50,24 @@ const mockupIMacAlt: ComputedRef<string> = computed(() => {
           :title="button.titleAttr"
           :target="button.openInNewTab ? '_blank' : ''"
       >{{ button.text }}</a>
-      <picture>
+
+      <img
+          v-if="mockupIMacSrcset"
+          class="personal-tech-stack-image"
+          src="src/assets/images/Personal_Tech_Stack.png"
+          alt="Personal Tech Stack Image"
+      />
+
+<!--      <picture>
         <source media="(min-width: 768px)" :srcset="mockupIMacSrcset.mediumSrc">
         <source media="(min-width: 1280px)" :srcset="mockupIMacSrcset.originalSrc">
         <img
             v-if="mockupIMacSrcset"
             class="personal-tech-stack-image"
-            :src="mockupIMacSrcset.smallSrc"
+            :src="mockupIMacSrcset.originalSrc"
             :alt="mockupIMacAlt"
         />
-      </picture>
+      </picture>-->
     </div>
   </section>
 </template>
