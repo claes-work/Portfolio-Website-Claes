@@ -9,7 +9,7 @@ import type { AllLocales as AllLocalesType } from "@/models/AllLocales";
 export const i18n = createI18n({
   legacy: false,
   globalInjection: true,
-  locale: AllLocales.DE,
+  locale: AllLocales.EN,
   fallbackLocale: AllLocales.DE,
   messages: {
     en: en,

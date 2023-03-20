@@ -51,7 +51,7 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
 
   /************** Localization **************/
 
-  const activeLocale: Ref<AllLocalesType> = ref(AllLocales.DE)
+  const activeLocale: Ref<AllLocalesType> = ref(AllLocales.EN)
 
   /**
    * Change locale and fetch sections data again

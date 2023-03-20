@@ -6,9 +6,7 @@ import {computed, onMounted, ref} from "vue";
 import {AllLocales} from "@/models/AllLocales";
 import gsap from "gsap";
 import {charFloatUp, wordFloatDown} from "@/composables/animations/TextAnimations";
-import BlurBubble from "@/components/icons/BlurBubble.vue";
 import {blinderTransition} from "@/composables/animations/BackgroundAnimations";
-import {FloatDirection} from "@/models/animations/FloatDirection";
 
 const mainStore = useMainStore()
 const strapiStore = useStrapiDataStore()
@@ -21,10 +19,10 @@ const blinderElements: Ref<HTMLElement[]> = ref([])
 const welcomeText: ComputedRef<string> = computed(() => {
   switch (strapiStore.activeLocale) {
     default:
-    case AllLocales.DE:
-      return 'Willkommen'
     case AllLocales.EN:
       return 'Welcome'
+    case AllLocales.DE:
+      return 'Willkommen'
   }
 })
 

@@ -16,7 +16,7 @@ export default {
     /**
      * Get all Navbar data
      */
-    async fetchNavbarData(locale: AllLocalesType = AllLocales.DE): Promise<INavbar> {
+    async fetchNavbarData(locale: AllLocalesType = AllLocales.EN): Promise<INavbar> {
         return axios.get(
             `https://strapi.claes-work.de/navbar?_locale=${locale}`
         )
@@ -27,7 +27,7 @@ export default {
     /**
      * Get all Footer data
      */
-    async fetchFooterData(locale: AllLocalesType = AllLocales.DE): Promise<IFooter> {
+    async fetchFooterData(locale: AllLocalesType = AllLocales.EN): Promise<IFooter> {
         return axios.get(
             `https://strapi.claes-work.de/footer?_locale=${locale}`
         )
@@ -38,7 +38,7 @@ export default {
     /**
      * Get all Rebalancing Tool Section data
      */
-    async fetchRebalancingToolSection(locale: AllLocalesType = AllLocales.DE): Promise<IRebalancingTool> {
+    async fetchRebalancingToolSection(locale: AllLocalesType = AllLocales.EN): Promise<IRebalancingTool> {
         return axios.get(
             `https://strapi.claes-work.de/rebalancing-tool-section?_locale=${locale}`
         )
@@ -49,7 +49,7 @@ export default {
     /**
      * Get all Suggest App Section data
      */
-    async fetchSuggestAppSection(locale: AllLocalesType = AllLocales.DE): Promise<ISuggestApp> {
+    async fetchSuggestAppSection(locale: AllLocalesType = AllLocales.EN): Promise<ISuggestApp> {
         return axios.get(
             `https://strapi.claes-work.de/suggest-app-section?_locale=${locale}`
         )
@@ -60,7 +60,7 @@ export default {
     /**
      * Get all Pure Air Section data
      */
-    async fetchPureAirSection(locale: AllLocalesType = AllLocales.DE): Promise<IPureAir> {
+    async fetchPureAirSection(locale: AllLocalesType = AllLocales.EN): Promise<IPureAir> {
         return axios.get(
             `https://strapi.claes-work.de/pure-air-section?_locale=${locale}`
         )
@@ -71,7 +71,7 @@ export default {
     /**
      * Get all Diewell Website Section data
      */
-    async fetchDiewellWebsiteSection(locale: AllLocalesType = AllLocales.DE): Promise<IDiewellWebsite> {
+    async fetchDiewellWebsiteSection(locale: AllLocalesType = AllLocales.EN): Promise<IDiewellWebsite> {
         return axios.get(
             `https://strapi.claes-work.de/diewell-website-section?_locale=${locale}`
         )
@@ -82,7 +82,7 @@ export default {
     /**
      * Get all Broady Pictures Section data
      */
-    async fetchBroadyPicturesSection(locale: AllLocalesType = AllLocales.DE): Promise<IBroadyPictures> {
+    async fetchBroadyPicturesSection(locale: AllLocalesType = AllLocales.EN): Promise<IBroadyPictures> {
         return axios.get(
             `https://strapi.claes-work.de/broady-pictures-section?_locale=${locale}`
         )
@@ -93,7 +93,7 @@ export default {
     /**
      * Get all about page data
      */
-    async fetchAboutPage(locale: AllLocalesType = AllLocales.DE): Promise<IAboutPage> {
+    async fetchAboutPage(locale: AllLocalesType = AllLocales.EN): Promise<IAboutPage> {
         return axios.get(
             `https://strapi.claes-work.de/about-section?_locale=${locale}`
         )
