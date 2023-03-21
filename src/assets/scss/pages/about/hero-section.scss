@@ -41,7 +41,7 @@
 
 @media only screen and (min-width: 768px) {
   #hero-section {
-    height: 70vh;
+    height: 540px;
     display: flex;
     flex-direction: column;
     padding: 0 20px;
@@ -70,7 +70,7 @@
         position: absolute;
         top: 0;
         left: calc(62% + 140px);
-        height: 70vh;
+        height: 100%;
         width: 100%;
         background-color: $bc-dark-4;
         z-index: 0;
@@ -87,7 +87,7 @@
 
 @media only screen and (min-width: 991px) {
   #hero-section {
-    height: 74vh;
+    height: 680px;
 
     .container {
       .text-wrapper {
@@ -103,7 +103,6 @@
 
       .hero-background {
         left: calc(62% + 155px);
-        height: 74vh;
 
         .shape {
           bottom: 70px;
@@ -115,6 +114,7 @@
 
 @media only screen and (min-width: 1280px) {
   #hero-section .container {
+    height: 680px;
 
     .text-wrapper {
       width: 770px;
