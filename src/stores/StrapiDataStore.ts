@@ -38,15 +38,15 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
   // About page data from strapi api
   const aboutData: Ref<IAboutPage> = ref({} as IAboutPage)
 
-  async function fetchAllStrapiData(): Promise<void> {
-    navBarData.value            = await FetchAppSections.fetchNavbarData()
-    projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection()
-    projectData.suggestApp      = await FetchAppSections.fetchSuggestAppSection()
-    websiteData.pureAir         = await FetchAppSections.fetchPureAirSection()
-    websiteData.diewellWebsite  = await FetchAppSections.fetchDiewellWebsiteSection()
-    websiteData.broadyPictures  = await FetchAppSections.fetchBroadyPicturesSection()
-    aboutData.value             = await FetchAppSections.fetchAboutPage()
-    footerData.value            = await FetchAppSections.fetchFooterData()
+  async function fetchAllStrapiData(locale: AllLocalesType = AllLocales.EN): Promise<void> {
+    navBarData.value            = await FetchAppSections.fetchNavbarData(locale)
+    projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection(locale)
+    projectData.suggestApp      = await FetchAppSections.fetchSuggestAppSection(locale)
+    websiteData.pureAir         = await FetchAppSections.fetchPureAirSection(locale)
+    websiteData.diewellWebsite  = await FetchAppSections.fetchDiewellWebsiteSection(locale)
+    websiteData.broadyPictures  = await FetchAppSections.fetchBroadyPicturesSection(locale)
+    aboutData.value             = await FetchAppSections.fetchAboutPage(locale)
+    footerData.value            = await FetchAppSections.fetchFooterData(locale)
   }
 
   /************** Localization **************/
@@ -62,7 +62,7 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
    */
   async function changeLocale(newLocale: AllLocalesType): Promise<void> {
     activeLocale.value = newLocale
-    await fetchAllStrapiData()
+    await fetchAllStrapiData(newLocale)
   }
 
   return {
