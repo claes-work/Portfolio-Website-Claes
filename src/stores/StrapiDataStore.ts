@@ -38,7 +38,7 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
   // About page data from strapi api
   const aboutData: Ref<IAboutPage> = ref({} as IAboutPage)
 
-  async function fetchAllStrapiData() {
+  async function fetchAllStrapiData(): Promise<void> {
     navBarData.value            = await FetchAppSections.fetchNavbarData()
     projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection()
     projectData.suggestApp      = await FetchAppSections.fetchSuggestAppSection()
@@ -61,29 +61,8 @@ export const useStrapiDataStore = defineStore('strapiDataStore', () => {
    * @return Promise<void>
    */
   async function changeLocale(newLocale: AllLocalesType): Promise<void> {
-
-    const routerPath = router.currentRoute.value.path
     activeLocale.value = newLocale
-
-    // Always fetch navbar and footer data
-    navBarData.value = await FetchAppSections.fetchNavbarData(newLocale)
-    footerData.value = await FetchAppSections.fetchFooterData(newLocale)
-
-    // Always fetch about page data
-    aboutData.value = await FetchAppSections.fetchAboutPage(newLocale)
-
-    // Fetch project data if route is projects page
-    if (routerPath === '/') {
-      projectData.rebalancingTool = await FetchAppSections.fetchRebalancingToolSection(newLocale)
-      projectData.suggestApp      = await FetchAppSections.fetchSuggestAppSection(newLocale)
-    }
-
-    // Fetch website data if route is websites page
-    if (routerPath === '/websites') {
-      websiteData.pureAir        = await FetchAppSections.fetchPureAirSection(newLocale)
-      websiteData.diewellWebsite = await FetchAppSections.fetchDiewellWebsiteSection(newLocale)
-      websiteData.broadyPictures = await FetchAppSections.fetchBroadyPicturesSection(newLocale)
-    }
+    await fetchAllStrapiData()
   }
 
   return {
