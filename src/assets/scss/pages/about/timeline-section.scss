@@ -22,6 +22,14 @@
           line-height: 1.1;
           letter-spacing: .4px;
           margin-bottom: 20px;
+
+          span {
+            color: #121212;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: 0.4px;
+            font-size: 22px;
+          }
         }
       }
 
@@ -143,6 +151,10 @@
   #timeline-section .container .timeline-row {
     .date-column h2 {
       font-size: 52px;
+
+      span {
+        font-size: 28px;
+      }
     }
 
     .text-column h3 {

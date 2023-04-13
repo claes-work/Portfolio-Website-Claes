@@ -51,7 +51,7 @@ onMounted(async () => {
 <template>
   <div class="timeline-row" ref="row">
     <div class="date-column" ref="date">
-      <h2>{{ props.rowData.date }}</h2>
+      <h2 v-html="props.rowData.date"></h2>
     </div>
     <div class="text-column" ref="text">
       <h3 v-html="props.rowData.heading"></h3>
