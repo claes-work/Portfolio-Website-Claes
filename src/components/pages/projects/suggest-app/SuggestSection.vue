@@ -57,7 +57,7 @@ const markdown: ComputedRef<string> = computed(() => {
               :href="button.link"
               :title="button.titleAttr"
               :target="button.openInNewTab ? '_blank' : ''"
-          ></a>
+          >{{ (index === 0) ? button.text : '' }}</a>
         </div>
       </div>
       <img
